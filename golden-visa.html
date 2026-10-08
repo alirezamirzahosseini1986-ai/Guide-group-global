@@ -23,6 +23,7 @@
   </style>
 </head>
 <body>
+<canvas id="earth-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.5;"></canvas>
 
 <div id="navbar-container"></div>
 
@@ -92,18 +93,23 @@
         <a href="https://wa.me/36705738870" target="_blank" class="btn-primary" style="margin-top:1.5rem;width:100%;justify-content:center;">مشاوره رایگان</a>
       </div>
 
-      <div class="investment-card">
+      <div class="investment-card" style="position:relative;opacity:0.65;pointer-events:none;">
+        <div style="position:absolute;inset:0;background:rgba(10,22,40,0.5);border-radius:var(--radius-lg);z-index:2;display:flex;align-items:center;justify-content:center;">
+          <div style="background:rgba(220,50,50,0.9);color:#fff;padding:0.6rem 1.4rem;border-radius:8px;font-weight:700;font-size:0.95rem;text-align:center;line-height:1.5;">
+            🚫 لغو شد<br><span style="font-size:0.75rem;font-weight:400;">از طرف دولت مجارستان این طرح لغو شد</span>
+          </div>
+        </div>
         <div style="font-size:2.5rem;margin-bottom:1rem;">🏠</div>
-        <h3 class="card-title" data-content="gv-opt2-title" data-label="عنوان گزینه ملک">خرید ملک مسکونی</h3>
-        <div class="invest-amount">€۵۰۰,۰۰۰</div>
+        <h3 class="card-title" style="text-decoration:line-through;color:var(--text-muted);">خرید ملک مسکونی</h3>
+        <div class="invest-amount" style="text-decoration:line-through;color:var(--text-muted);">€۵۰۰,۰۰۰</div>
         <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.2rem;">سرمایه‌گذاری در بازار مسکن</p>
         <ul class="feature-list" style="text-align:right;">
-          <li data-content="gv-opt2-f1" data-label="ویژگی ملک ۱">خرید ملک در بازار داغ بوداپست</li>
-          <li data-content="gv-opt2-f2" data-label="ویژگی ملک ۲">امکان اجاره ملک و کسب درآمد</li>
-          <li data-content="gv-opt2-f3" data-label="ویژگی ملک ۳">رشد ارزش سرمایه در طول زمان</li>
-          <li data-content="gv-opt2-f4" data-label="ویژگی ملک ۴">دارایی ملموس برای آینده</li>
+          <li>خرید ملک در بازار داغ بوداپست</li>
+          <li>امکان اجاره ملک و کسب درآمد</li>
+          <li>رشد ارزش سرمایه در طول زمان</li>
+          <li>دارایی ملموس برای آینده</li>
         </ul>
-        <a href="https://wa.me/36705738870" target="_blank" class="btn-outline" style="margin-top:1.5rem;width:100%;justify-content:center;">مشاوره رایگان</a>
+        <div class="btn-outline" style="margin-top:1.5rem;width:100%;justify-content:center;opacity:0.4;cursor:not-allowed;">لغو شده</div>
       </div>
 
       <div class="investment-card">
@@ -239,5 +245,6 @@
 <script src="components.js"></script>
 <script src="admin.js"></script>
 <script src="main.js"></script>
+<script src="earth.js"></script>
 </body>
 </html>

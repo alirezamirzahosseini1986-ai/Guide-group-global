@@ -22,16 +22,34 @@ function loadContent() {
 
 function applyContent() {
   Object.entries(contentStore).forEach(([id, value]) => {
-    const el = document.getElementById(id) || document.querySelector(`[data-content="${id}"]`);
+    const el = document.getElementById(id) || document.querySelector(`[data-content="${id}"]`) || document.querySelector(`[data-editable="${id}"]`);
     if (!el) return;
     if (el.tagName === 'IMG') {
-      el.src = value;
+      if (value) {
+        el.src = value;
+        el.style.display = 'block';
+        // hide emoji avatar if photo exists
+        const avatarId = id.replace('-photo', '-avatar');
+        const avatar = document.getElementById(avatarId);
+        if (avatar) avatar.style.display = 'none';
+      }
     } else if (el.tagName === 'VIDEO') {
       el.src = value;
+    } else if (el.classList && el.classList.contains('yt-embed')) {
+      // YouTube embed container
+      const ytId = extractYouTubeId(value);
+      if (ytId) {
+        el.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}" frameborder="0" allowfullscreen style="width:100%;height:100%;border-radius:inherit;"></iframe>`;
+      }
     } else {
       el.innerHTML = value;
     }
   });
+}
+
+function extractYouTubeId(url) {
+  const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
 }
 
 function saveContent(id, value) {
@@ -103,16 +121,35 @@ function setupEditableFields() {
     }
   });
 
-  // Image fields
-  document.querySelectorAll('img[data-editable]').forEach(img => {
-    if (!img.getAttribute('data-editable-init')) {
-      img.setAttribute('data-editable-init', 'true');
-      img.style.cursor = 'pointer';
-      img.title = 'کلیک کنید تا عکس را تغییر دهید';
-      img.addEventListener('click', (e) => {
+  // Image fields — including team photos (click on avatar emoji too)
+  document.querySelectorAll('img[data-editable], .team-photo-wrap').forEach(el => {
+    if (!el.getAttribute('data-editable-init')) {
+      el.setAttribute('data-editable-init', 'true');
+      el.style.cursor = 'pointer';
+      el.title = 'کلیک کنید تا عکس را تغییر دهید';
+      el.addEventListener('click', (e) => {
         if (adminMode) {
           e.preventDefault();
-          openImageEditor(img);
+          e.stopPropagation();
+          // find the img inside wrap, or the img itself
+          const img = el.tagName === 'IMG' ? el : el.querySelector('img[data-editable]');
+          if (img) openImageEditor(img);
+        }
+      });
+    }
+  });
+
+  // YouTube embed fields
+  document.querySelectorAll('.yt-embed[data-editable]').forEach(div => {
+    if (!div.getAttribute('data-editable-init')) {
+      div.setAttribute('data-editable-init', 'true');
+      div.style.cursor = 'pointer';
+      div.title = 'کلیک کنید تا ویدیوی یوتیوب را تنظیم کنید';
+      div.addEventListener('click', (e) => {
+        if (adminMode) {
+          e.preventDefault();
+          e.stopPropagation();
+          openYouTubeEditor(div);
         }
       });
     }
@@ -194,6 +231,37 @@ function handleImageFileUpload(input) {
 
 function closeImageModal() {
   const modal = document.getElementById('admin-image-modal');
+  if (modal) modal.style.display = 'none';
+  activeField = null;
+}
+
+// ── YOUTUBE EDITOR ──
+function openYouTubeEditor(div) {
+  activeField = div;
+  const modal = document.getElementById('admin-yt-modal');
+  if (!modal) return;
+  // try to extract existing URL from iframe if present
+  const iframe = div.querySelector('iframe');
+  const existingUrl = iframe ? iframe.src.replace('https://www.youtube.com/embed/', 'https://youtu.be/') : '';
+  document.getElementById('yt-url-input').value = existingUrl;
+  modal.style.display = 'flex';
+}
+
+function saveYouTubeUrl() {
+  if (!activeField) return;
+  const url = document.getElementById('yt-url-input').value.trim();
+  if (!url) return;
+  const ytId = extractYouTubeId(url);
+  if (!ytId) { showAdminToast('لینک یوتیوب نامعتبر است', 'error'); return; }
+  activeField.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}" frameborder="0" allowfullscreen style="width:100%;height:100%;border-radius:inherit;"></iframe>`;
+  const id = activeField.getAttribute('data-editable');
+  if (id) saveContent(id, url);
+  closeYTModal();
+  showAdminToast('ویدیو اضافه شد ✓');
+}
+
+function closeYTModal() {
+  const modal = document.getElementById('admin-yt-modal');
   if (modal) modal.style.display = 'none';
   activeField = null;
 }
@@ -305,5 +373,7 @@ window.gggAdmin = {
   handleImageFileUpload,
   exportContent,
   importContent,
-  resetContent
+  resetContent,
+  saveYouTubeUrl,
+  closeYTModal
 };

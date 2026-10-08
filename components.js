@@ -19,6 +19,7 @@ const NAV_HTML = `
       <li><a href="education.html">تحصیل</a></li>
       <li><a href="golden-visa.html">گلدن ویزا</a></li>
       <li><a href="about.html">درباره ما</a></li>
+      <li><a href="blog.html">📰 اخبار</a></li>
       <li><a href="index.html#contact" class="nav-cta">مشاوره رایگان</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="منو">
@@ -57,13 +58,14 @@ const FOOTER_HTML = `
           <li><a href="about.html#team">تیم ما</a></li>
           <li><a href="index.html#contact">تماس با ما</a></li>
           <li><a href="about.html#history">سابقه ما</a></li>
+          <li><a href="blog.html">اخبار و مقالات</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>تماس</h5>
         <ul>
-          <li><a href="tel:+36705738870">+۳۶ ۷۰ ۵۷۳ ۸۸ ۷۰</a></li>
-          <li><a href="tel:+36203875947">+۳۶ ۲۰ ۳۸۷ ۵۹ ۴۷</a></li>
+          <li><a href="tel:+36705738870" style="direction:ltr;display:inline-block;unicode-bidi:embed;">‎+36 70 573 88 70</a></li>
+          <li><a href="tel:+36203875947" style="direction:ltr;display:inline-block;unicode-bidi:embed;">‎+36 20 387 59 47</a></li>
           <li><a href="https://wa.me/36705738870" target="_blank">واتساپ</a></li>
           <li><a href="https://t.me/budapestguidegroup2009" target="_blank">تلگرام</a></li>
           <li><a href="mailto:info@persianguidegroup.co">ایمیل</a></li>
@@ -146,6 +148,22 @@ const ADMIN_UI_HTML = `
     <div style="display:flex;gap:1rem;margin-top:1.5rem;">
       <button onclick="gggAdmin.saveImageUrl()" style="flex:1;background:linear-gradient(135deg,#C9A84C,#A07C2E);color:#0A1628;padding:0.75rem;border:none;border-radius:8px;font-family:Vazirmatn,sans-serif;font-weight:700;cursor:pointer;">ذخیره</button>
       <button onclick="gggAdmin.closeImageModal()" style="flex:1;background:rgba(255,255,255,0.05);color:#8A9BB5;padding:0.75rem;border:1px solid rgba(255,255,255,0.15);border-radius:8px;font-family:Vazirmatn,sans-serif;cursor:pointer;">انصراف</button>
+    </div>
+  </div>
+</div>
+
+<!-- YouTube Editor Modal -->
+<div id="admin-yt-modal" class="admin-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:10000;align-items:center;justify-content:center;">
+  <div style="background:#0F1E38;border:1px solid rgba(201,168,76,0.3);border-radius:16px;padding:2.5rem;width:100%;max-width:520px;font-family:Vazirmatn,sans-serif;">
+    <h3 style="color:#fff;margin-bottom:0.5rem;">افزودن ویدیوی یوتیوب</h3>
+    <p style="color:#8A9BB5;font-size:0.85rem;margin-bottom:1.2rem;">لینک ویدیو را از یوتیوب کپی کنید و اینجا بگذارید</p>
+    <div style="margin-bottom:1rem;">
+      <label style="display:block;color:#8A9BB5;font-size:0.85rem;margin-bottom:0.5rem;">لینک ویدیو (مثال: https://youtu.be/XXXXX یا https://www.youtube.com/watch?v=XXXXX)</label>
+      <input id="yt-url-input" type="url" placeholder="https://youtu.be/..." style="width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.3);border-radius:8px;color:#fff;font-family:Vazirmatn,sans-serif;font-size:0.9rem;outline:none;direction:ltr;">
+    </div>
+    <div style="display:flex;gap:1rem;margin-top:1.2rem;">
+      <button onclick="gggAdmin.saveYouTubeUrl()" style="flex:1;background:linear-gradient(135deg,#C9A84C,#A07C2E);color:#0A1628;padding:0.75rem;border:none;border-radius:8px;font-family:Vazirmatn,sans-serif;font-weight:700;cursor:pointer;">ذخیره ویدیو</button>
+      <button onclick="gggAdmin.closeYTModal()" style="flex:1;background:rgba(255,255,255,0.05);color:#8A9BB5;padding:0.75rem;border:1px solid rgba(255,255,255,0.15);border-radius:8px;font-family:Vazirmatn,sans-serif;cursor:pointer;">انصراف</button>
     </div>
   </div>
 </div>

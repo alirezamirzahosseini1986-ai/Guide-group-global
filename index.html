@@ -53,6 +53,9 @@
 </head>
 <body>
 
+<!-- 3D Earth Background Canvas -->
+<canvas id="earth-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.7;"></canvas>
+
 <div id="navbar-container"></div>
 
 <!-- HERO -->
@@ -375,5 +378,6 @@ function handleContactForm(e) {
   window.open(`https://wa.me/36705738870?text=${encodeURIComponent(msg)}`, '_blank');
 }
 </script>
+<script src="earth.js"></script>
 </body>
 </html>

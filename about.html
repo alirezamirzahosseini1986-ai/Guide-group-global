@@ -21,6 +21,7 @@
   </style>
 </head>
 <body>
+<canvas id="earth-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.5;"></canvas>
 
 <div id="navbar-container"></div>
 
@@ -138,25 +139,37 @@
     </div>
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-avatar">👨‍⚖️</div>
+        <div class="team-photo-wrap" style="position:relative;width:90px;height:90px;margin:0 auto 1rem;">
+          <img data-editable="team1-photo" src="" alt="" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:none;" id="team1-photo">
+          <div class="team-avatar" id="team1-avatar">👨‍⚖️</div>
+        </div>
         <div class="team-name" data-content="team1-name" data-label="نام عضو ۱">مشاور ارشد مهاجرت</div>
         <div class="team-role" data-content="team1-role" data-label="سمت عضو ۱">متخصص قوانین مهاجرتی مجارستان</div>
         <p class="team-bio" data-content="team1-bio" data-label="بیو عضو ۱">بیش از ۱۲ سال تجربه در قوانین مهاجرتی EU. متخصص در ویزای تجاری و گلدن ویزا.</p>
       </div>
       <div class="team-card">
-        <div class="team-avatar">👩‍🎓</div>
+        <div class="team-photo-wrap" style="position:relative;width:90px;height:90px;margin:0 auto 1rem;">
+          <img data-editable="team2-photo" src="" alt="" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:none;" id="team2-photo">
+          <div class="team-avatar" id="team2-avatar">👩‍🎓</div>
+        </div>
         <div class="team-name" data-content="team2-name" data-label="نام عضو ۲">مشاور تحصیلی</div>
         <div class="team-role" data-content="team2-role" data-label="سمت عضو ۲">کارشناس پذیرش دانشگاه‌های اروپا</div>
         <p class="team-bio" data-content="team2-bio" data-label="بیو عضو ۲">فارغ‌التحصیل دانشگاه کوروینوس با تخصص در مشاوره تحصیلی و پذیرش دانشگاه‌های مجارستان.</p>
       </div>
       <div class="team-card">
-        <div class="team-avatar">👨‍💼</div>
+        <div class="team-photo-wrap" style="position:relative;width:90px;height:90px;margin:0 auto 1rem;">
+          <img data-editable="team3-photo" src="" alt="" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:none;" id="team3-photo">
+          <div class="team-avatar" id="team3-avatar">👨‍💼</div>
+        </div>
         <div class="team-name" data-content="team3-name" data-label="نام عضو ۳">مشاور سرمایه‌گذاری</div>
         <div class="team-role" data-content="team3-role" data-label="سمت عضو ۳">متخصص گلدن ویزا و بازار مسکن</div>
         <p class="team-bio" data-content="team3-bio" data-label="بیو عضو ۳">تخصص در برنامه ملی کارت مجارستان و راهنمایی سرمایه‌گذاری در بازار مسکن بوداپست.</p>
       </div>
       <div class="team-card">
-        <div class="team-avatar">👩‍💻</div>
+        <div class="team-photo-wrap" style="position:relative;width:90px;height:90px;margin:0 auto 1rem;">
+          <img data-editable="team4-photo" src="" alt="" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:none;" id="team4-photo">
+          <div class="team-avatar" id="team4-avatar">👩‍💻</div>
+        </div>
         <div class="team-name" data-content="team4-name" data-label="نام عضو ۴">مدیر پرونده</div>
         <div class="team-role" data-content="team4-role" data-label="سمت عضو ۴">هماهنگی مدارک و پیگیری اداری</div>
         <p class="team-bio" data-content="team4-bio" data-label="بیو عضو ۴">مدیریت و هماهنگی تمام مراحل اداری پرونده از ابتدا تا پایان با دقت و نظم کامل.</p>
@@ -212,5 +225,6 @@
 <script src="components.js"></script>
 <script src="admin.js"></script>
 <script src="main.js"></script>
+<script src="earth.js"></script>
 </body>
 </html>

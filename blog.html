@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اخبار و مقالات — Guide Group Global</title>
+  <meta name="description" content="آخرین اخبار مهاجرت، تحصیل و گلدن ویزا در مجارستان. اخبار فارسی مجارستان.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .blog-hero {
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 2rem 4rem;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(196,160,60,0.12) 0%, transparent 70%);
+    }
+    .blog-hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(196,160,60,0.15);
+      border: 1px solid rgba(196,160,60,0.3);
+      border-radius: 100px;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .blog-filters {
+      display: flex; flex-wrap: wrap; gap: 0.7rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .blog-filter-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.45rem 1.2rem;
+      color: var(--text-muted);
+      font-family: 'Vazirmatn', sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .blog-filter-btn:hover, .blog-filter-btn.active {
+      background: var(--gold);
+      color: #1a1200;
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ── TELEGRAM FEED ── */
+    .telegram-section {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .telegram-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .telegram-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, #229ED9, #1a7db5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .telegram-channel-name { font-size: 1rem; font-weight: 700; color: var(--white); }
+    .telegram-channel-desc { font-size: 0.82rem; color: var(--text-muted); }
+    .telegram-live-badge {
+      margin-right: auto;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(34,158,217,0.15);
+      border: 1px solid rgba(34,158,217,0.3);
+      border-radius: 100px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.78rem; color: #4dc3f5;
+    }
+    .telegram-live-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #4dc3f5;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
+
+    .telegram-config {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .telegram-config input {
+      flex: 1; min-width: 200px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.65rem 1rem;
+      color: var(--white);
+      font-family: 'Vazirmatn', sans-serif;
+      font-size: 0.9rem;
+      direction: ltr;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .telegram-config input:focus { border-color: #229ED9; }
+    .telegram-config input::placeholder { color: var(--text-muted); }
+    .btn-telegram {
+      background: linear-gradient(135deg, #229ED9, #1a7db5);
+      color: white; border: none; border-radius: 8px;
+      padding: 0.65rem 1.4rem;
+      font-family: 'Vazirmatn', sans-serif;
+      font-size: 0.9rem; font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.3s, transform 0.2s;
+    }
+    .btn-telegram:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .telegram-posts-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .telegram-post-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      transition: border-color 0.3s, transform 0.2s;
+      cursor: pointer;
+    }
+    .telegram-post-card:hover {
+      border-color: #229ED9;
+      transform: translateY(-2px);
+    }
+    .telegram-post-date {
+      font-size: 0.75rem; color: #4dc3f5;
+      margin-bottom: 0.6rem;
+    }
+    .telegram-post-text {
+      font-size: 0.88rem; line-height: 1.75;
+      color: var(--text-main);
+      display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .telegram-post-media {
+      width: 100%; border-radius: 8px; margin-top: 0.8rem;
+      max-height: 180px; object-fit: cover;
+    }
+    .telegram-post-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      margin-top: 0.8rem; font-size: 0.8rem; color: #4dc3f5;
+      text-decoration: none;
+    }
+    .telegram-post-link:hover { text-decoration: underline; }
+    .telegram-empty {
+      grid-column: 1/-1; text-align: center;
+      padding: 3rem 1rem; color: var(--text-muted);
+    }
+    .telegram-empty-icon { font-size: 3rem; margin-bottom: 0.8rem; }
+    .telegram-loading {
+      grid-column: 1/-1; text-align: center;
+      padding: 2rem; color: var(--text-muted);
+    }
+    .spinner {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 3px solid rgba(34,158,217,0.2);
+      border-top-color: #229ED9;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 0.8rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── BLOG POSTS ── */
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem; margin-bottom: 3rem;
+    }
+    .blog-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.25s;
+    }
+    .blog-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .blog-card-img {
+      width: 100%; height: 180px; object-fit: cover;
+      background: linear-gradient(135deg, rgba(196,160,60,0.15), rgba(30,60,100,0.3));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+    }
+    .blog-card-body { padding: 1.4rem; }
+    .blog-card-cat {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .blog-card-title {
+      font-size: 1.02rem; font-weight: 700; color: var(--white);
+      line-height: 1.55; margin-bottom: 0.7rem;
+    }
+    .blog-card-excerpt {
+      font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .blog-card-meta {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+    .blog-card-meta-dot { color: var(--border); }
+
+    /* YouTube embed in blog */
+    .blog-video-section { margin: 3rem 0; }
+    .blog-video-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .blog-yt-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .blog-yt-card:hover { border-color: var(--gold); }
+    .yt-embed {
+      aspect-ratio: 16/9;
+      background: #0d0d0d;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 2.5rem;
+    }
+    .blog-yt-card-body { padding: 1rem; }
+    .blog-yt-title { font-size: 0.9rem; font-weight: 700; color: var(--white); }
+
+    /* Newsletter signup */
+    .newsletter-box {
+      background: linear-gradient(135deg, rgba(196,160,60,0.1), rgba(30,60,100,0.2));
+      border: 1px solid rgba(196,160,60,0.25);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .newsletter-form {
+      display: flex; gap: 0.75rem; max-width: 460px; margin: 1.5rem auto 0;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .newsletter-form input {
+      flex: 1; min-width: 200px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.75rem 1rem;
+      color: var(--white); font-family: 'Vazirmatn', sans-serif;
+      font-size: 0.95rem; direction: rtl; outline: none;
+    }
+    .newsletter-form input:focus { border-color: var(--gold); }
+  </style>
+</head>
+<body>
+<canvas id="earth-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.5;"></canvas>
+
+<div id="navbar-placeholder"></div>
+
+<!-- Hero -->
+<section class="blog-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="blog-hero-badge">📰 اخبار و مقالات</div>
+    <h1 class="section-title" style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;">
+      آخرین اخبار <span class="gold">مهاجرت و مجارستان</span>
+    </h1>
+    <p class="section-sub" style="max-width:600px;margin:0 auto 2rem;">
+      جدیدترین اخبار مهاجرت، تحصیل، گلدن ویزا و زندگی در مجارستان — مستقیم از کانال تلگرامی ما
+    </p>
+
+    <div class="blog-filters">
+      <button class="blog-filter-btn active" onclick="filterPosts('all')">همه</button>
+      <button class="blog-filter-btn" onclick="filterPosts('telegram')">📢 تلگرام</button>
+      <button class="blog-filter-btn" onclick="filterPosts('migration')">مهاجرت</button>
+      <button class="blog-filter-btn" onclick="filterPosts('education')">تحصیل</button>
+      <button class="blog-filter-btn" onclick="filterPosts('visa')">گلدن ویزا</button>
+      <button class="blog-filter-btn" onclick="filterPosts('life')">زندگی در مجارستان</button>
+    </div>
+  </div>
+</section>
+
+<main class="container" style="padding:0 1rem 4rem;position:relative;z-index:1;">
+
+  <!-- ── TELEGRAM LIVE FEED ─────────────────────────────────── -->
+  <div class="telegram-section" id="telegram-section">
+    <div class="telegram-header">
+      <div class="telegram-icon">✈️</div>
+      <div>
+        <div class="telegram-channel-name" id="tg-channel-display">کانال تلگرام شما</div>
+        <div class="telegram-channel-desc">اخبار زنده از کانال تلگرامی</div>
+      </div>
+      <div class="telegram-live-badge">
+        <div class="telegram-live-dot"></div>
+        زنده
+      </div>
+    </div>
+
+    <!-- Channel config (admin only) -->
+    <div class="telegram-config" id="tg-config" style="display:none;">
+      <input type="text" id="tg-channel-input" placeholder="نام کانال مثال: @HungaryNewsFa" />
+      <button class="btn-telegram" onclick="connectTelegram()">🔗 اتصال کانال</button>
+      <button class="btn-telegram" style="background:rgba(255,255,255,0.1);" onclick="refreshTelegramFeed()">🔄 بارگزاری مجدد</button>
+    </div>
+
+    <div class="telegram-posts-grid" id="telegram-posts">
+      <div class="telegram-loading">
+        <div class="spinner"></div>
+        <div>در حال بارگزاری پست‌های تلگرام...</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a id="tg-channel-link" href="#" target="_blank" class="btn btn-outline" style="font-size:0.9rem;">
+        ✈️ عضویت در کانال تلگرام
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FEATURED VIDEO SECTION ─────────────────────────────── -->
+  <div class="blog-video-section">
+    <h2 class="section-title" style="text-align:right;font-size:1.5rem;margin-bottom:1.5rem;">
+      🎬 آخرین ویدیوها
+    </h2>
+    <div class="blog-video-grid">
+      <div class="blog-yt-card">
+        <div class="yt-embed" data-editable="blog-video-1" id="blog-video-1">▶</div>
+        <div class="blog-yt-card-body">
+          <div class="blog-yt-title" data-content="blog-video-1-title" id="blog-video-1-title">ویدیوی راهنمای مهاجرت به مجارستان</div>
+        </div>
+      </div>
+      <div class="blog-yt-card">
+        <div class="yt-embed" data-editable="blog-video-2" id="blog-video-2">▶</div>
+        <div class="blog-yt-card-body">
+          <div class="blog-yt-title" data-content="blog-video-2-title" id="blog-video-2-title">گلدن ویزا: راهنمای کامل ۲۰۲۴</div>
+        </div>
+      </div>
+      <div class="blog-yt-card">
+        <div class="yt-embed" data-editable="blog-video-3" id="blog-video-3">▶</div>
+        <div class="blog-yt-card-body">
+          <div class="blog-yt-title" data-content="blog-video-3-title" id="blog-video-3-title">زندگی در بوداپست: تجربه واقعی</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STATIC BLOG POSTS ──────────────────────────────────── -->
+  <h2 class="section-title" style="text-align:right;font-size:1.5rem;margin-bottom:1.5rem;">
+    📝 مقالات آموزشی
+  </h2>
+  <div class="blog-grid">
+    <article class="blog-card" data-cat="migration">
+      <div class="blog-card-img">🏛️</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat">مهاجرت</div>
+        <h3 class="blog-card-title">راهنمای کامل دریافت اقامت تجاری مجارستان در سال ۲۰۲۴</h3>
+        <p class="blog-card-excerpt">تمام مراحل، مدارک و هزینه‌های لازم برای دریافت اقامت از طریق ثبت شرکت در مجارستان را به تفصیل توضیح می‌دهیم.</p>
+        <div class="blog-card-meta">
+          <span>Guide Group Global</span>
+          <span class="blog-card-meta-dot">•</span>
+          <span>۱۵ دقیقه مطالعه</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="blog-card" data-cat="education">
+      <div class="blog-card-img">🎓</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat">تحصیل</div>
+        <h3 class="blog-card-title">بهترین دانشگاه‌های مجارستان برای دانشجویان ایرانی</h3>
+        <p class="blog-card-excerpt">معرفی برترین دانشگاه‌های مجارستان با رشته‌های محبوب، هزینه‌های تحصیل و امکانات رفاهی برای دانشجویان بین‌المللی.</p>
+        <div class="blog-card-meta">
+          <span>تیم تحصیلی GGG</span>
+          <span class="blog-card-meta-dot">•</span>
+          <span>۱۰ دقیقه مطالعه</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="blog-card" data-cat="visa">
+      <div class="blog-card-img">🥇</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat">گلدن ویزا</div>
+        <h3 class="blog-card-title">گلدن ویزا مجارستان ۲۰۲۴: گزینه‌های فعال سرمایه‌گذاری</h3>
+        <p class="blog-card-excerpt">پس از لغو گزینه خرید مسکن، گزینه‌های فعال سرمایه‌گذاری برای دریافت گلدن ویزا شامل صندوق سرمایه‌گذاری و کمک به دانشگاه‌ها.</p>
+        <div class="blog-card-meta">
+          <span>مشاور گلدن ویزا</span>
+          <span class="blog-card-meta-dot">•</span>
+          <span>۱۲ دقیقه مطالعه</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="blog-card" data-cat="life">
+      <div class="blog-card-img">🏙️</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat">زندگی در مجارستان</div>
+        <h3 class="blog-card-title">هزینه زندگی در بوداپست ۲۰۲۴: راهنمای کامل</h3>
+        <p class="blog-card-excerpt">اجاره خانه، غذا، حمل‌ونقل و سایر هزینه‌های روزانه در بوداپست — مقایسه با تهران و سایر پایتخت‌های اروپایی.</p>
+        <div class="blog-card-meta">
+          <span>تیم GGG</span>
+          <span class="blog-card-meta-dot">•</span>
+          <span>۸ دقیقه مطالعه</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="blog-card" data-cat="migration">
+      <div class="blog-card-img">📋</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat">مهاجرت</div>
+        <h3 class="blog-card-title">مدارک مورد نیاز برای پرونده مهاجرت به مجارستان</h3>
+        <p class="blog-card-excerpt">فهرست کامل و به‌روز مدارک مورد نیاز برای تقاضای اقامت در مجارستان همراه با نکات کلیدی ترجمه رسمی.</p>
+        <div class="blog-card-meta">
+          <span>مشاور حقوقی GGG</span>
+          <span class="blog-card-meta-dot">•</span>
+          <span>۷ دقیقه مطالعه</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="blog-card" data-cat="education">
+      <div class="blog-card-img">🌍</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat">تحصیل</div>
+        <h3 class="blog-card-title">بورسیه‌های تحصیلی مجارستان برای دانشجویان خارجی</h3>
+        <p class="blog-card-excerpt">برنامه Stipendium Hungaricum و سایر بورسیه‌های دولتی — شرایط، مهلت ثبت‌نام و نحوه درخواست.</p>
+        <div class="blog-card-meta">
+          <span>تیم تحصیلی GGG</span>
+          <span class="blog-card-meta-dot">•</span>
+          <span>۹ دقیقه مطالعه</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter-box">
+    <h2 class="section-title" style="font-size:1.6rem;margin-bottom:0.5rem;">
+      📬 عضویت در خبرنامه
+    </h2>
+    <p style="color:var(--text-muted);font-size:0.9rem;">
+      آخرین اخبار مهاجرت و تغییرات قوانین را مستقیماً دریافت کنید
+    </p>
+    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+      <input type="email" placeholder="آدرس ایمیل شما" required />
+      <button type="submit" class="btn btn-primary">عضویت رایگان</button>
+    </form>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+<div id="admin-ui-placeholder"></div>
+
+<script src="components.js"></script>
+<script src="js/admin.js"></script>
+<script src="earth.js"></script>
+<script>
+// ── TELEGRAM FEED ─────────────────────────────────────
+const TG_KEY = 'ggg_telegram_channel';
+
+function connectTelegram() {
+  const input = document.getElementById('tg-channel-input');
+  let ch = input.value.trim();
+  if (!ch) return;
+  // normalize: strip @, ensure no spaces
+  ch = ch.replace(/^@/, '').replace(/\s/g, '');
+  localStorage.setItem(TG_KEY, ch);
+  input.value = '';
+  loadTelegramFeed(ch);
+}
+
+function loadTelegramFeed(channel) {
+  if (!channel) {
+    channel = localStorage.getItem(TG_KEY);
+  }
+  const postsEl = document.getElementById('telegram-posts');
+  const chDisplay = document.getElementById('tg-channel-display');
+  const chLink = document.getElementById('tg-channel-link');
+
+  if (!channel) {
+    postsEl.innerHTML = `
+      <div class="telegram-empty">
+        <div class="telegram-empty-icon">📢</div>
+        <p>کانال تلگرامی هنوز متصل نشده است.</p>
+        <p style="font-size:0.82rem;margin-top:0.5rem;">برای اتصال، وارد پنل مدیریت شوید و نام کانال را وارد کنید.</p>
+      </div>`;
+    return;
+  }
+
+  chDisplay.textContent = '@' + channel;
+  chLink.href = 'https://t.me/' + channel;
+
+  // Show Telegram widget embed
+  postsEl.innerHTML = `
+    <div style="grid-column:1/-1;">
+      <script async src="https://telegram.org/js/telegram-widget.js?22"
+        data-telegram-post="${channel}/1"
+        data-width="100%"
+        data-color="343638"
+        data-dark-color="FFFFFF"
+        data-dark="1"
+        data-userpic="false"><\/script>
+      <div style="margin-top:1.2rem;text-align:center;">
+        <a href="https://t.me/${channel}" target="_blank" class="btn btn-outline" style="font-size:0.88rem;">
+          مشاهده همه پست‌ها در تلگرام ✈️
+        </a>
+      </div>
+    </div>`;
+
+  // Also try RSS2JSON for structured posts
+  fetchTelegramRSS(channel);
+}
+
+function fetchTelegramRSS(channel) {
+  // Telegram doesn't have a native RSS — use rsshub.app as proxy
+  const rssUrl = `https://rsshub.app/telegram/channel/${channel}`;
+  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&api_key=public&count=9`;
+
+  fetch(apiUrl)
+    .then(r => r.json())
+    .then(data => {
+      if (data.status !== 'ok' || !data.items || data.items.length === 0) return;
+
+      const postsEl = document.getElementById('telegram-posts');
+      const items = data.items.slice(0, 9);
+      postsEl.innerHTML = items.map(item => {
+        const date = new Date(item.pubDate).toLocaleDateString('fa-IR', {year:'numeric',month:'long',day:'numeric'});
+        const text = item.description ? item.description.replace(/<[^>]+>/g, '').substring(0, 220) : '';
+        const img = item.enclosure && item.enclosure.link ? `<img src="${item.enclosure.link}" class="telegram-post-media" alt="" loading="lazy">` : '';
+        return `
+          <div class="telegram-post-card" onclick="window.open('${item.link}','_blank')">
+            <div class="telegram-post-date">📅 ${date}</div>
+            <div class="telegram-post-text">${text}${text.length >= 220 ? '...' : ''}</div>
+            ${img}
+            <a href="${item.link}" target="_blank" class="telegram-post-link" onclick="event.stopPropagation()">
+              ادامه در تلگرام ↗
+            </a>
+          </div>`;
+      }).join('');
+    })
+    .catch(() => {
+      // RSS failed, Telegram widget embed (already shown) is the fallback
+    });
+}
+
+function refreshTelegramFeed() {
+  const ch = localStorage.getItem(TG_KEY);
+  if (ch) loadTelegramFeed(ch);
+}
+
+// ── FILTER ────────────────────────────────────────────
+function filterPosts(cat) {
+  document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  const cards = document.querySelectorAll('.blog-card');
+  cards.forEach(c => {
+    if (cat === 'all' || c.dataset.cat === cat) {
+      c.style.display = '';
+    } else {
+      c.style.display = 'none';
+    }
+  });
+
+  // Show/hide telegram section
+  const tgSection = document.getElementById('telegram-section');
+  tgSection.style.display = (cat === 'all' || cat === 'telegram') ? '' : 'none';
+}
+
+// ── NEWSLETTER ────────────────────────────────────────
+function subscribeNewsletter(e) {
+  e.preventDefault();
+  const email = e.target.querySelector('input').value;
+  // Open WhatsApp with subscription request
+  window.open(`https://wa.me/36705738870?text=${encodeURIComponent('سلام، می‌خواهم در خبرنامه GGG عضو شوم. ایمیل من: ' + email)}`, '_blank');
+  e.target.reset();
+}
+
+// ── INIT ──────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // Show telegram config in admin mode
+  document.addEventListener('adminEnabled', () => {
+    document.getElementById('tg-config').style.display = 'flex';
+    const saved = localStorage.getItem(TG_KEY);
+    if (saved) document.getElementById('tg-channel-input').value = '@' + saved;
+  });
+
+  // Load feed
+  loadTelegramFeed(null);
+
+  // Check admin
+  if (typeof checkAdminLogin === 'function' && checkAdminLogin()) {
+    document.getElementById('tg-config').style.display = 'flex';
+  }
+});
+</script>
+</body>
+</html>
