@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Group Global — مهاجرت، تحصیل و سرمایه‌گذاری در مجارستان</title>
+  <meta name="description" content="بیش از ۱۵ سال تجربه در خدمات مهاجرتی، تحصیل و گلدن ویزا در مجارستان. بوداپست | راهنمای متخصص شما به اروپا.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
+
+    .process-connector { display: flex; align-items: center; gap: 1.5rem; }
+    .process-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+    }
+    .testimonial-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; }
+    .testimonial-text { color: var(--text-main); font-size: 0.95rem; line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+    .testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--emerald)); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .testimonial-name { font-weight: 700; font-size: 0.9rem; color: var(--white); }
+    .testimonial-city { font-size: 0.8rem; color: var(--text-muted); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-group label { font-size: 0.85rem; color: var(--text-muted); }
+    .form-group input, .form-group select, .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: var(--white);
+      font-family: 'Vazirmatn', sans-serif;
+      font-size: 0.95rem;
+      direction: rtl;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-group select option { background: var(--navy-mid); }
+  </style>
+</head>
+<body>
+
+<div id="navbar-container"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span data-content="hero-badge-text" data-label="بج هیرو">از سال ۲۰۱۰ — مورد اعتماد بیش از ۳۰۰ خانواده</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-content="hero-title-line1" data-label="خط اول هیرو">مسیر شما به</span><br>
+          <span class="highlight" data-content="hero-title-line2" data-label="خط دوم هیرو">اروپای رویایی</span><br>
+          <span data-content="hero-title-line3" data-label="خط سوم هیرو">از بوداپست می‌گذرد</span>
+        </h1>
+        <p class="hero-desc" data-content="hero-desc" data-label="توضیح هیرو">
+          Guide Group Global با بیش از ۱۵ سال تجربه در مجارستان، راهنمای تخصصی شما در مهاجرت، تحصیل و اخذ اقامت اروپایی است. از مشاوره تا دریافت اقامت — کنارتان هستیم.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/36705738870" target="_blank" class="btn-primary">
+            💬 مشاوره رایگان واتساپ
+          </a>
+          <a href="#services" class="btn-outline">
+            مشاهده خدمات
+          </a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-num" data-target="15" data-suffix="+">۱۵+</span>
+          <span class="stat-label">سال تجربه</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="300" data-suffix="+">۳۰۰+</span>
+          <span class="stat-label">مشتری موفق</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="4" data-suffix="">۴</span>
+          <span class="stat-label">خدمات تخصصی</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="98" data-suffix="%">۹۸٪</span>
+          <span class="stat-label">نرخ موفقیت</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section-dark">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">خدمات ما</div>
+      <h2 class="section-title" data-content="services-title" data-label="عنوان بخش خدمات">راه‌های ورود به مجارستان</h2>
+      <p class="section-desc" data-content="services-desc" data-label="توضیح بخش خدمات">از ویزای تجاری تا گلدن ویزا — هر مسیری که برای شما مناسب‌تر است را با هم پیدا می‌کنیم</p>
+    </div>
+    <div class="services-grid">
+      <div class="card">
+        <div class="card-icon">🏢</div>
+        <h3 class="card-title" data-content="service1-title" data-label="عنوان خدمت ۱">ویزا و اقامت تجاری</h3>
+        <p class="card-text" data-content="service1-text" data-label="متن خدمت ۱">تأسیس یا خرید شرکت در مجارستان برای اخذ اقامت. راهنمایی کامل در ثبت شرکت، حساب بانکی و مجوزهای لازم.</p>
+        <a href="immigration.html" style="color:var(--gold);font-size:0.85rem;font-weight:600;display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;">بیشتر بدانید ←</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎓</div>
+        <h3 class="card-title" data-content="service2-title" data-label="عنوان خدمت ۲">تحصیل در دانشگاه‌های مجارستان</h3>
+        <p class="card-text" data-content="service2-text" data-label="متن خدمت ۲">ارزیابی مدرک، پذیرش دانشگاه، ویزای تحصیلی و مدیریت کامل فرایند تحصیل در بهترین دانشگاه‌های اروپایی.</p>
+        <a href="education.html" style="color:var(--gold);font-size:0.85rem;font-weight:600;display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;">بیشتر بدانید ←</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏠</div>
+        <h3 class="card-title" data-content="service3-title" data-label="عنوان خدمت ۳">اقامت از طریق ملک</h3>
+        <p class="card-text" data-content="service3-text" data-label="متن خدمت ۳">خرید ملک مسکونی یا تجاری در مجارستان به عنوان مسیر اخذ اقامت. راهنمایی در انتخاب، خرید و ثبت قانونی ملک.</p>
+        <a href="golden-visa.html" style="color:var(--gold);font-size:0.85rem;font-weight:600;display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;">بیشتر بدانید ←</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">💎</div>
+        <h3 class="card-title" data-content="service4-title" data-label="عنوان خدمت ۴">گلدن ویزا — اقامت با سرمایه‌گذاری</h3>
+        <p class="card-text" data-content="service4-text" data-label="متن خدمت ۴">برنامه ملی کارت مجارستان — اقامت ۱۰ ساله از طریق سرمایه‌گذاری از ۲۵۰,۰۰۰ یورو. بدون الزام سکونت.</p>
+        <a href="golden-visa.html" style="color:var(--gold);font-size:0.85rem;font-weight:600;display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;">بیشتر بدانید ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">چرا ما؟</div>
+      <h2 class="section-title" data-content="why-title" data-label="عنوان چرا ما">ما چه تفاوتی داریم؟</h2>
+    </div>
+    <div class="why-grid">
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🕐</div>
+        <h4 class="card-title" data-content="why1-title" data-label="عنوان مزیت ۱">۱۵+ سال سابقه</h4>
+        <p class="card-text" data-content="why1-text" data-label="متن مزیت ۱">از سال ۲۰۱۰ فعال در بازار مهاجرتی مجارستان — تجربه‌ای که تفاوت می‌سازد</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">⚖️</div>
+        <h4 class="card-title" data-content="why2-title" data-label="عنوان مزیت ۲">تیم حقوقی متخصص</h4>
+        <p class="card-text" data-content="why2-text" data-label="متن مزیت ۲">همکاری با وکلا و کارشناسان حقوقی متخصص در قوانین مهاجرتی مجارستان و اتحادیه اروپا</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🌐</div>
+        <h4 class="card-title" data-content="why3-title" data-label="عنوان مزیت ۳">حضور محلی در بوداپست</h4>
+        <p class="card-text" data-content="why3-text" data-label="متن مزیت ۳">دفتر فیزیکی در قلب بوداپست — در جلسات حضوری، تمام مراحل را پیش روی خود می‌بینید</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🇮🇷</div>
+        <h4 class="card-title" data-content="why4-title" data-label="عنوان مزیت ۴">مشاوره کامل به فارسی</h4>
+        <p class="card-text" data-content="why4-text" data-label="متن مزیت ۴">تمام مراحل از مشاوره تا پایان پرونده به زبان مادری شما — هیچ مانع زبانی وجود ندارد</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">📋</div>
+        <h4 class="card-title" data-content="why5-title" data-label="عنوان مزیت ۵">مدیریت کامل پرونده</h4>
+        <p class="card-text" data-content="why5-text" data-label="متن مزیت ۵">از جمع‌آوری مدارک تا تحویل نهایی اقامت — شما فقط نتیجه را تحویل می‌گیرید</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">👨‍👩‍👧‍👦</div>
+        <h4 class="card-title" data-content="why6-title" data-label="عنوان مزیت ۶">پشتیبانی خانوادگی</h4>
+        <p class="card-text" data-content="why6-text" data-label="متن مزیت ۶">اقامت همراه با خانواده — همسر و فرزندان شما نیز می‌توانند بدون محدودیت در مجارستان زندگی کنند</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section-dark">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">مراحل کار</div>
+      <h2 class="section-title">فرایند ساده‌ی همکاری با ما</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">۱</div>
+        <h4 style="color:var(--white);margin-bottom:0.7rem;">مشاوره رایگان</h4>
+        <p style="color:var(--text-muted);font-size:0.9rem;">بررسی شرایط شما و ارائه بهترین مسیر مهاجرتی — رایگان و بدون تعهد</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">۲</div>
+        <h4 style="color:var(--white);margin-bottom:0.7rem;">ارزیابی پرونده</h4>
+        <p style="color:var(--text-muted);font-size:0.9rem;">بررسی کامل مدارک، سابقه و اهداف شما توسط کارشناسان متخصص</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">۳</div>
+        <h4 style="color:var(--white);margin-bottom:0.7rem;">آماده‌سازی مدارک</h4>
+        <p style="color:var(--text-muted);font-size:0.9rem;">جمع‌آوری، ترجمه و تأیید تمام مدارک مورد نیاز با کمک تیم ما</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">۴</div>
+        <h4 style="color:var(--white);margin-bottom:0.7rem;">ثبت و پیگیری</h4>
+        <p style="color:var(--text-muted);font-size:0.9rem;">ثبت درخواست و پیگیری مستمر تا دریافت پاسخ نهایی</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">۵</div>
+        <h4 style="color:var(--white);margin-bottom:0.7rem;">دریافت اقامت</h4>
+        <p style="color:var(--text-muted);font-size:0.9rem;">تحویل اقامت و راهنمایی برای زندگی در مجارستان — جشن موفقیت کنار هم</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">تجربه مشتریان</div>
+      <h2 class="section-title">آن‌ها که موفق شدند</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-content="test1-text" data-label="نظر مشتری ۱">"از همان جلسه اول احساس کردم با متخصصین واقعی طرفم. تمام مراحل اقامت تجاری‌ام را با خیال راحت سپردم به Guide Group و بدون هیچ دغدغه‌ای اقامتم رو گرفتم."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">👨</div>
+          <div>
+            <div class="testimonial-name">علی رضایی</div>
+            <div class="testimonial-city">تهران → بوداپست | اقامت تجاری</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-content="test2-text" data-label="نظر مشتری ۲">"دخترم الان در دانشگاه BME تحصیل می‌کند. این تیم تمام مراحل پذیرش، ویزا و سکونت را برایمان انجام دادند. واقعاً دلسوزانه کار می‌کنند."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">👩</div>
+          <div>
+            <div class="testimonial-name">مریم کریمی</div>
+            <div class="testimonial-city">اصفهان → بوداپست | تحصیل دانشجویی</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-content="test3-text" data-label="نظر مشتری ۳">"گلدن ویزا را از طریق صندوق سرمایه‌گذاری گرفتم. برگشت سرمایه‌ام هم تضمین شد. Guide Group همه چیز را توضیح داد و اطمینان کامل داشتم."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">👨‍💼</div>
+          <div>
+            <div class="testimonial-name">محمد صادقی</div>
+            <div class="testimonial-city">مشهد → بوداپست | گلدن ویزا</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-dark">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">تماس با ما</div>
+      <h2 class="section-title">مشاوره رایگان بگیرید</h2>
+      <p class="section-desc">اولین قدم را بردارید — همین الان با ما در تماس باشید</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">آدرس دفتر</div>
+            <div class="contact-value" data-content="contact-address" data-label="آدرس">Budapest, Lechner Ödön fasor 2, 1095</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">تلفن مستقیم</div>
+            <div class="contact-value"><a href="tel:+36705738870" style="color:var(--white);">+۳۶ ۷۰ ۵۷۳ ۸۸ ۷۰</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">خط دوم</div>
+            <div class="contact-value"><a href="tel:+36203875947" style="color:var(--white);">+۳۶ ۲۰ ۳۸۷ ۵۹ ۴۷</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">ایمیل</div>
+            <div class="contact-value"><a href="mailto:info@persianguidegroup.co" style="color:var(--white);">info@persianguidegroup.co</a></div>
+          </div>
+        </div>
+        <div class="contact-social">
+          <a href="https://wa.me/36705738870" target="_blank" class="social-btn whatsapp">💬 واتساپ</a>
+          <a href="https://t.me/budapestguidegroup2009" target="_blank" class="social-btn telegram">✈️ تلگرام</a>
+          <a href="https://www.instagram.com/persianguidegroup" target="_blank" class="social-btn instagram">📷 اینستاگرام</a>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="handleContactForm(event)">
+          <div class="form-group">
+            <label>نام و نام خانوادگی</label>
+            <input type="text" placeholder="مثال: علی رضایی" required>
+          </div>
+          <div class="form-group">
+            <label>شماره تماس (واتساپ)</label>
+            <input type="tel" placeholder="+98 912 ..." required>
+          </div>
+          <div class="form-group">
+            <label>خدمت مورد نظر</label>
+            <select>
+              <option value="">انتخاب کنید</option>
+              <option>مهاجرت تجاری</option>
+              <option>تحصیل در مجارستان</option>
+              <option>گلدن ویزا</option>
+              <option>اقامت از طریق ملک</option>
+              <option>مشاوره عمومی</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>توضیحات (اختیاری)</label>
+            <textarea rows="3" placeholder="شرایط خود را به مختصر توضیح دهید..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+            ارسال درخواست مشاوره
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section>
+  <div class="container">
+    <div class="cta-banner">
+      <div class="section-tag">همین الان شروع کنید</div>
+      <h2 style="margin-bottom:1rem;" data-content="cta-title" data-label="عنوان CTA">آماده‌اید اولین قدم را بردارید؟</h2>
+      <p style="color:var(--text-muted);max-width:500px;margin:0 auto 2.5rem;" data-content="cta-desc" data-label="توضیح CTA">مشاوره اول رایگان است. همین الان با ما تماس بگیرید و مسیر مهاجرت خود را بسازید.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/36705738870" target="_blank" class="btn-primary">💬 مشاوره واتساپ — رایگان</a>
+        <a href="https://t.me/budapestguidegroup2009" target="_blank" class="btn-outline">ارتباط از طریق تلگرام</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-container"></div>
+<div id="admin-ui-container"></div>
+
+<script src="js/components.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/main.js"></script>
+<script>
+function handleContactForm(e) {
+  e.preventDefault();
+  const name = e.target.querySelector('input[type="text"]').value;
+  const phone = e.target.querySelector('input[type="tel"]').value;
+  const service = e.target.querySelector('select').value;
+  const msg = `سلام، من ${name} هستم. شماره تماسم: ${phone}. خدمت مورد نظر: ${service || 'مشاوره عمومی'}`;
+  window.open(`https://wa.me/36705738870?text=${encodeURIComponent(msg)}`, '_blank');
+}
+</script>
+</body>
+</html>
