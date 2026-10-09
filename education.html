@@ -1,195 +1,168 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تحصیل در مجارستان | Guide Group Global</title>
-  <meta name="description" content="پذیرش در دانشگاه‌های معتبر مجارستان، ارزیابی مدرک و اخذ ویزای تحصیلی. راهنمای کامل تحصیل در اروپا.">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .uni-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    @media (max-width: 600px) { .uni-grid { grid-template-columns: 1fr; } }
-    .uni-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      transition: var(--transition);
-      position: relative;
-    }
-    .uni-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
-    .uni-badge { position: absolute; top: 1rem; left: 1rem; background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 20px; }
-    .uni-name { font-size: 1.1rem; font-weight: 700; color: var(--white); margin: 2rem 0 0.5rem; }
-    .uni-full { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; }
-    .uni-fields { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .field-tag { background: rgba(255,255,255,0.06); color: var(--text-main); font-size: 0.75rem; padding: 0.2rem 0.7rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحصیل | Guide Group Global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Vazirmatn:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="earth-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.5;"></canvas>
+<div id="navbar-mount"></div>
 
-<div id="navbar-container"></div>
-
-<!-- PAGE HERO -->
 <section class="page-hero">
-  <div class="container" style="position:relative;z-index:2;">
-    <div class="breadcrumb">
-      <a href="index.html">خانه</a><span>/</span><span>تحصیل</span>
-    </div>
-    <div class="section-tag">تحصیل در اروپا</div>
-    <h1 style="margin-top:1rem;" data-content="edu-hero-title" data-label="عنوان صفحه تحصیل">مدرک اروپایی از مجارستان</h1>
-    <p style="color:var(--text-muted);max-width:600px;margin:1rem auto 0;" data-content="edu-hero-desc" data-label="توضیح صفحه تحصیل">دانشگاه‌های معتبر، هزینه زندگی مناسب، و محیط بین‌المللی — مجارستان انتخاب هوشمندانه برای تحصیل در اروپاست</p>
-  </div>
-</section>
-
-<!-- DIPLOMA RECOGNITION -->
-<section>
   <div class="container">
-    <div class="two-col">
-      <div>
-        <div class="section-tag">اعتبار بین‌المللی</div>
-        <h2 style="margin-top:1rem;" data-content="edu-diploma-title" data-label="عنوان ارزیابی مدرک">مدرک دومنظوره — ایران و اروپا</h2>
-        <div class="divider right"></div>
-        <p data-content="edu-diploma-p1" data-label="پاراگراف مدرک">مدارک تحصیلی دانشگاه‌های مجارستان هم توسط وزارت علوم ایران به رسمیت شناخته می‌شود و هم در سراسر اروپا و دنیا معتبر است. این ویژگی منحصربه‌فرد، مجارستان را به یکی از بهترین انتخاب‌ها برای دانشجویان ایرانی تبدیل کرده.</p>
-        <p data-content="edu-diploma-p2" data-label="پاراگراف مدرک ۲">تیم ما تمام فرایند ارزیابی و تصدیق مدرک را انجام می‌دهد تا مطمئن شوید مدرک شما هم در ایران و هم در اروپا قابل استفاده است.</p>
-        <div class="highlight-box">
-          <p style="margin:0;font-size:0.95rem;"><strong style="color:var(--gold);">✅ مدرک معتبر در:</strong> ایران، اتحادیه اروپا، و بیش از ۸۰ کشور دنیا</p>
-        </div>
-      </div>
-      <div>
-        <div class="card">
-          <h4 class="card-title">مزایای تحصیل در مجارستان</h4>
-          <ul class="feature-list" style="margin-top:1rem;">
-            <li data-content="edu-adv1" data-label="مزیت ۱">هزینه تحصیل پایین‌تر از سایر کشورهای اروپایی</li>
-            <li data-content="edu-adv2" data-label="مزیت ۲">محیط دانشگاهی چندملیتی و بین‌المللی</li>
-            <li data-content="edu-adv3" data-label="مزیت ۳">امکان کار حین تحصیل تا ۲۴ ساعت در هفته</li>
-            <li data-content="edu-adv4" data-label="مزیت ۴">ویزای تحصیلی قابل تبدیل به ویزای کاری پس از فارغ‌التحصیلی</li>
-            <li data-content="edu-adv5" data-label="مزیت ۵">زندگی در قلب اروپا با دسترسی آسان به همه کشورها</li>
-            <li data-content="edu-adv6" data-label="مزیت ۶">حمایت کامل از دانشجو در تمام دوره تحصیل</li>
-          </ul>
-        </div>
-      </div>
+    <div class="page-hero-tag reveal">
+      <span data-lang="fa">تحصیل</span><span data-lang="ar">التعليم</span><span data-lang="en">Education</span>
     </div>
+    <h1 class="page-hero-title">
+      <div class="hero-line">
+        <span data-lang="fa">تحصیل در بهترین</span>
+        <span data-lang="ar">ادرس في أفضل</span>
+        <span data-lang="en">Study at the best</span>
+      </div>
+      <div class="hero-line">
+        <span data-lang="fa">دانشگاه‌های اروپا</span>
+        <span data-lang="ar">جامعات أوروبا</span>
+        <span data-lang="en">universities in Europe</span>
+      </div>
+    </h1>
+    <p class="page-hero-sub reveal">
+      <span data-lang="fa">پذیرش تضمین‌شده در دانشگاه‌های معتبر مجارستان با راهنمایی تخصصی G³</span>
+      <span data-lang="ar">قبول مضمون في الجامعات المرموقة في المجر مع إرشاد G³ المتخصص</span>
+      <span data-lang="en">Guaranteed admission to Hungary's prestigious universities with G³'s expert guidance</span>
+    </p>
   </div>
 </section>
 
-<!-- UNIVERSITIES -->
-<section class="section-dark">
+<!-- Programs -->
+<section class="services-section">
   <div class="container">
-    <div class="section-header">
-      <div class="section-tag">دانشگاه‌های معتبر</div>
-      <h2 class="section-title">بهترین دانشگاه‌های مجارستان</h2>
-      <p class="section-desc">ما با بهترین دانشگاه‌های مجارستان همکاری داریم و می‌توانیم پذیرش شما را تسهیل کنیم</p>
+    <div class="section-header reveal">
+      <h2 class="section-title">
+        <span data-lang="fa">برنامه‌های تحصیلی</span>
+        <span data-lang="ar">البرامج الدراسية</span>
+        <span data-lang="en">Study programs</span>
+      </h2>
     </div>
-    <div class="uni-grid">
-      <div class="uni-card">
-        <div class="uni-badge">فنی-مهندسی</div>
-        <div class="uni-name" data-content="uni1-name" data-label="نام دانشگاه ۱">BME — Budapest University of Technology</div>
-        <div class="uni-full" data-content="uni1-full" data-label="نام کامل BME">دانشگاه فناوری و اقتصاد بوداپست</div>
-        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;" data-content="uni1-desc" data-label="توضیح BME">یکی از قدیمی‌ترین و معتبرترین دانشگاه‌های فنی اروپا. رتبه برتر در رشته‌های مهندسی.</p>
-        <div class="uni-fields">
-          <span class="field-tag">مهندسی</span>
-          <span class="field-tag">معماری</span>
-          <span class="field-tag">کامپیوتر</span>
-          <span class="field-tag">صنایع</span>
-        </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">BSc</div>
+        <h3 class="service-name">
+          <span data-lang="fa">کارشناسی</span>
+          <span data-lang="ar">البكالوريوس</span>
+          <span data-lang="en">Bachelor's</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang="fa" data-content="edu-bsc-fa">پذیرش در رشته‌های مهندسی، پزشکی، کسب‌وکار، هنر و علوم اجتماعی</span>
+          <span data-lang="ar" data-content="edu-bsc-ar">قبول في تخصصات الهندسة والطب والأعمال والفنون والعلوم الاجتماعية</span>
+          <span data-lang="en" data-content="edu-bsc-en">Admission in engineering, medicine, business, arts and social sciences</span>
+        </p>
       </div>
-      <div class="uni-card">
-        <div class="uni-badge">پزشکی</div>
-        <div class="uni-name" data-content="uni2-name" data-label="نام دانشگاه ۲">Semmelweis University</div>
-        <div class="uni-full" data-content="uni2-full" data-label="نام کامل سمل‌ویس">دانشگاه علوم پزشکی زمل‌ویس</div>
-        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;" data-content="uni2-desc" data-label="توضیح سمل‌ویس">پرآوازه‌ترین دانشگاه پزشکی مجارستان. دانش‌آموختگان ایرانی بسیاری در این دانشگاه تحصیل کرده‌اند.</p>
-        <div class="uni-fields">
-          <span class="field-tag">پزشکی</span>
-          <span class="field-tag">دندانپزشکی</span>
-          <span class="field-tag">داروسازی</span>
-          <span class="field-tag">پرستاری</span>
-        </div>
+      <div class="service-card reveal">
+        <div class="service-num">MSc</div>
+        <h3 class="service-name">
+          <span data-lang="fa">کارشناسی‌ارشد</span>
+          <span data-lang="ar">الماجستير</span>
+          <span data-lang="en">Master's</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang="fa" data-content="edu-msc-fa">برنامه‌های ارشد تخصصی در دانشگاه‌های رتبه‌بندی‌شده مجارستان</span>
+          <span data-lang="ar" data-content="edu-msc-ar">برامج الماجستير المتخصصة في الجامعات المصنّفة في المجر</span>
+          <span data-lang="en" data-content="edu-msc-en">Specialised master's programs at Hungary's ranked universities</span>
+        </p>
       </div>
-      <div class="uni-card">
-        <div class="uni-badge">اقتصاد</div>
-        <div class="uni-name" data-content="uni3-name" data-label="نام دانشگاه ۳">Corvinus University</div>
-        <div class="uni-full" data-content="uni3-full" data-label="نام کامل کوروینوس">دانشگاه کوروینوس بوداپست</div>
-        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;" data-content="uni3-desc" data-label="توضیح کوروینوس">دانشگاه تخصصی اقتصاد، مدیریت و علوم اجتماعی. مورد توجه دانشجویان بین‌الملل.</p>
-        <div class="uni-fields">
-          <span class="field-tag">MBA</span>
-          <span class="field-tag">اقتصاد</span>
-          <span class="field-tag">بازرگانی</span>
-          <span class="field-tag">امور مالی</span>
-        </div>
+      <div class="service-card reveal">
+        <div class="service-num">Lang</div>
+        <h3 class="service-name">
+          <span data-lang="fa">زبان‌آموزی</span>
+          <span data-lang="ar">تعلم اللغة</span>
+          <span data-lang="en">Language Courses</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang="fa" data-content="edu-lang-fa">دوره‌های فشرده آلمانی، انگلیسی و مجاری برای آمادگی تحصیل</span>
+          <span data-lang="ar" data-content="edu-lang-ar">دورات مكثفة في الألمانية والإنجليزية والمجرية للتحضير للدراسة</span>
+          <span data-lang="en" data-content="edu-lang-en">Intensive German, English and Hungarian courses to prepare for study</span>
+        </p>
       </div>
-      <div class="uni-card">
-        <div class="uni-badge">علوم پایه</div>
-        <div class="uni-name" data-content="uni4-name" data-label="نام دانشگاه ۴">ELTE — Eötvös Loránd University</div>
-        <div class="uni-full" data-content="uni4-full" data-label="نام کامل الته">دانشگاه اوتووس لورند — قدیمی‌ترین دانشگاه مجارستان</div>
-        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;" data-content="uni4-desc" data-label="توضیح الته">بزرگ‌ترین دانشگاه مجارستان با گستره وسیعی از رشته‌ها. پایه علوم انسانی و طبیعی قوی.</p>
-        <div class="uni-fields">
-          <span class="field-tag">علوم پایه</span>
-          <span class="field-tag">حقوق</span>
-          <span class="field-tag">علوم انسانی</span>
-          <span class="field-tag">روانشناسی</span>
-        </div>
+      <div class="service-card reveal">
+        <div class="service-num">MBA</div>
+        <h3 class="service-name">MBA</h3>
+        <p class="service-desc">
+          <span data-lang="fa" data-content="edu-mba-fa">برنامه‌های MBA معتبر با مدرک قابل اعتراف در سراسر اروپا</span>
+          <span data-lang="ar" data-content="edu-mba-ar">برامج MBA معتمدة بشهادة معترف بها في جميع أنحاء أوروبا</span>
+          <span data-lang="en" data-content="edu-mba-en">Accredited MBA programs with a degree recognised across Europe</span>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section>
+<!-- Universities -->
+<section class="unis-section">
   <div class="container">
-    <div class="section-header">
-      <div class="section-tag">فرایند پذیرش</div>
-      <h2 class="section-title">از انتخاب تا پذیرش — ما کنار شماییم</h2>
+    <div class="section-header reveal">
+      <h2 class="section-title">
+        <span data-lang="fa">دانشگاه‌های شریک</span>
+        <span data-lang="ar">الجامعات الشريكة</span>
+        <span data-lang="en">Partner universities</span>
+      </h2>
     </div>
-    <div class="steps-grid">
-      <div class="step-item">
-        <div class="step-num">۱</div>
-        <h4 style="color:var(--white);margin-bottom:0.7rem;">ارزیابی مدرک</h4>
-        <p style="color:var(--text-muted);font-size:0.85rem;">بررسی مدرک تحصیلی شما و تطابق با استانداردهای مجارستانی</p>
+    <div class="unis-grid">
+      <div class="uni-card reveal" data-content="uni1">
+        <div class="uni-name">ELTE</div>
+        <div class="uni-full">Eötvös Loránd University</div>
+        <div class="uni-city">Budapest</div>
       </div>
-      <div class="step-item">
-        <div class="step-num">۲</div>
-        <h4 style="color:var(--white);margin-bottom:0.7rem;">انتخاب رشته و دانشگاه</h4>
-        <p style="color:var(--text-muted);font-size:0.85rem;">راهنمایی در انتخاب بهترین رشته و دانشگاه متناسب با اهداف شما</p>
+      <div class="uni-card reveal" data-content="uni2">
+        <div class="uni-name">BME</div>
+        <div class="uni-full">Budapest University of Technology</div>
+        <div class="uni-city">Budapest</div>
       </div>
-      <div class="step-item">
-        <div class="step-num">۳</div>
-        <h4 style="color:var(--white);margin-bottom:0.7rem;">آماده‌سازی مدارک</h4>
-        <p style="color:var(--text-muted);font-size:0.85rem;">تهیه تمام مدارک لازم برای درخواست پذیرش دانشگاه</p>
+      <div class="uni-card reveal" data-content="uni3">
+        <div class="uni-name">Corvinus</div>
+        <div class="uni-full">Corvinus University of Budapest</div>
+        <div class="uni-city">Budapest</div>
       </div>
-      <div class="step-item">
-        <div class="step-num">۴</div>
-        <h4 style="color:var(--white);margin-bottom:0.7rem;">ثبت درخواست پذیرش</h4>
-        <p style="color:var(--text-muted);font-size:0.85rem;">ارسال درخواست پذیرش به دانشگاه‌های منتخب</p>
+      <div class="uni-card reveal" data-content="uni4">
+        <div class="uni-name">PTE</div>
+        <div class="uni-full">University of Pécs</div>
+        <div class="uni-city">Pécs</div>
       </div>
-      <div class="step-item">
-        <div class="step-num">۵</div>
-        <h4 style="color:var(--white);margin-bottom:0.7rem;">دریافت ویزای تحصیلی</h4>
-        <p style="color:var(--text-muted);font-size:0.85rem;">پس از پذیرش، اخذ ویزای تحصیلی از سفارت مجارستان</p>
+      <div class="uni-card reveal" data-content="uni5">
+        <div class="uni-name">DE</div>
+        <div class="uni-full">University of Debrecen</div>
+        <div class="uni-city">Debrecen</div>
+      </div>
+      <div class="uni-card reveal" data-content="uni6">
+        <div class="uni-name">SZTE</div>
+        <div class="uni-full">University of Szeged</div>
+        <div class="uni-city">Szeged</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section-dark">
+<section class="cta-band">
   <div class="container">
-    <div class="cta-banner">
-      <h2 style="margin-bottom:1rem;">آینده‌ات را در اروپا بساز</h2>
-      <p style="color:var(--text-muted);max-width:500px;margin:0 auto 2.5rem;">از مشاوره انتخاب دانشگاه تا سکونت در بوداپست — با ما همه چیز ساده‌تر است.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="https://wa.me/36705738870" target="_blank" class="btn-primary">💬 مشاوره تحصیلی</a>
-        <a href="https://t.me/budapestguidegroup2009" target="_blank" class="btn-outline">تلگرام</a>
+    <div class="cta-inner reveal">
+      <h2 class="cta-title">
+        <span data-lang="fa">مشاوره تحصیل رایگان</span>
+        <span data-lang="ar">استشارة دراسية مجانية</span>
+        <span data-lang="en">Free education consultation</span>
+      </h2>
+      <div class="cta-actions">
+        <a href="https://t.me/GGG_Immigration" target="_blank" class="btn-primary">Telegram</a>
+        <a href="https://wa.me/36705738870" target="_blank" class="btn-ghost">WhatsApp</a>
       </div>
     </div>
   </div>
 </section>
 
-<div id="footer-container"></div>
-<div id="admin-ui-container"></div>
-<script src="components.js"></script>
+<div id="footer-mount"></div>
 <script src="admin.js"></script>
-<script src="main.js"></script>
-<script src="earth.js"></script>
+<script src="components.js"></script>
 </body>
 </html>

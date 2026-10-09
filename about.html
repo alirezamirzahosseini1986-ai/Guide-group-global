@@ -1,230 +1,232 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>درباره ما | Guide Group Global</title>
-  <meta name="description" content="آشنایی با Guide Group Global — بیش از ۱۵ سال سابقه در مهاجرت، تحصیل و سرمایه‌گذاری در مجارستان از سال ۲۰۱۰.">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .timeline { position: relative; padding-right: 2rem; }
-    .timeline::before { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--gold), var(--emerald), transparent); }
-    .timeline-item { position: relative; margin-bottom: 2.5rem; }
-    .timeline-dot { position: absolute; right: -2.6rem; top: 0.3rem; width: 14px; height: 14px; background: var(--gold); border-radius: 50%; border: 3px solid var(--navy); }
-    .timeline-year { font-size: 0.8rem; color: var(--gold); font-weight: 700; margin-bottom: 0.3rem; }
-    .timeline-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
-    .timeline-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
-
-    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    @media (max-width: 768px) { .value-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 480px) { .value-grid { grid-template-columns: 1fr; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>درباره ما | Guide Group Global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Vazirmatn:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="earth-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.5;"></canvas>
+<div id="navbar-mount"></div>
 
-<div id="navbar-container"></div>
-
-<!-- PAGE HERO -->
+<!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
 <section class="page-hero">
-  <div class="container" style="position:relative;z-index:2;">
-    <div class="breadcrumb">
-      <a href="index.html">خانه</a><span>/</span><span>درباره ما</span>
-    </div>
-    <div class="section-tag">داستان ما</div>
-    <h1 style="margin-top:1rem;" data-content="about-hero-title" data-label="عنوان درباره ما">از بوداپست برای ایرانیان</h1>
-    <p style="color:var(--text-muted);max-width:600px;margin:1rem auto 0;" data-content="about-hero-desc" data-label="توضیح درباره ما">بیش از ۱۵ سال تجربه، ۳۰۰+ خانواده موفق، و تعهد به راهنمایی صادقانه — اینجاست که داستان شما شروع می‌شود</p>
+  <div class="container">
+    <div class="page-hero-tag reveal">G³</div>
+    <h1 class="page-hero-title">
+      <div class="hero-line">
+        <span data-lang="fa">درباره ما</span>
+        <span data-lang="ar">من نحن</span>
+        <span data-lang="en">About us</span>
+      </div>
+    </h1>
+    <p class="page-hero-sub reveal" data-content="about-intro">
+      <span data-lang="fa">Guide Group Global یک مرکز تخصصی مهاجرت و تحصیل است که از سال ۲۰۱۶ در بوداپست، مجارستان فعالیت می‌کند.</span>
+      <span data-lang="ar">Guide Group Global مركز متخصص في الهجرة والتعليم يعمل منذ عام 2016 في بودابست، المجر.</span>
+      <span data-lang="en">Guide Group Global is a specialist migration and education centre operating since 2016 in Budapest, Hungary.</span>
+    </p>
   </div>
 </section>
 
-<!-- STORY -->
-<section>
+<!-- ─── MISSION ───────────────────────────────────────────────── -->
+<section class="mission-section">
   <div class="container">
-    <div class="two-col">
-      <div>
-        <div class="section-tag">داستان شرکت</div>
-        <h2 style="margin-top:1rem;" data-content="about-story-title" data-label="عنوان داستان">از ۲۰۱۰ تا امروز</h2>
-        <div class="divider right"></div>
-        <p data-content="about-story-p1" data-label="پاراگراف داستان ۱">Guide Group Global (سابقاً Persian Guide Group) در سال ۲۰۱۰ در قلب بوداپست با یک هدف ساده شروع به کار کرد: کمک به ایرانیانی که می‌خواستند آینده‌ای بهتر در اروپا بسازند.</p>
-        <p data-content="about-story-p2" data-label="پاراگراف داستان ۲">در طول این سال‌ها، با هزاران نفر مشورت کرده‌ایم، بیش از ۳۰۰ پرونده موفق بسته‌ایم، و شاهد رشد و پیشرفت خانواده‌هایی بوده‌ایم که امروز در بوداپست صاحب کسب‌وکار، خانه و آینده هستند.</p>
-        <p data-content="about-story-p3" data-label="پاراگراف داستان ۳">تیم ما از متخصصان ایرانی‌الاصل با تجربه عملی در قوانین مهاجرتی مجارستان تشکیل شده. ما نه فقط مشاور، بلکه همراه واقعی مسیر شما هستیم.</p>
+    <div class="mission-grid">
+      <div class="mission-text reveal">
+        <h2 class="mission-heading">
+          <span data-lang="fa" data-content="mission-title-fa">ماموریت ما</span>
+          <span data-lang="ar" data-content="mission-title-ar">مهمتنا</span>
+          <span data-lang="en" data-content="mission-title-en">Our mission</span>
+        </h2>
+        <p class="mission-body" data-content="mission-body">
+          <span data-lang="fa">ما باور داریم که هر فردی مستحق یک آغاز جدید است. تیم G³ با تجربه عمیق در سیستم‌های حقوقی اروپا، مسیر مهاجرت و تحصیل را برای شما هموار می‌کند.</span>
+          <span data-lang="ar">نؤمن أن كل شخص يستحق بداية جديدة. فريق G³ بخبرته العميقة في الأنظمة القانونية الأوروبية يمهد طريق الهجرة والتعليم لك.</span>
+          <span data-lang="en">We believe every person deserves a fresh start. The G³ team, with deep expertise in European legal systems, smooths the path to migration and education for you.</span>
+        </p>
+        <div class="mission-values">
+          <div class="value-item reveal">
+            <div class="value-num">01</div>
+            <div>
+              <div class="value-title">
+                <span data-lang="fa">شفافیت</span><span data-lang="ar">الشفافية</span><span data-lang="en">Transparency</span>
+              </div>
+            </div>
+          </div>
+          <div class="value-item reveal">
+            <div class="value-num">02</div>
+            <div>
+              <div class="value-title">
+                <span data-lang="fa">تخصص</span><span data-lang="ar">الخبرة</span><span data-lang="en">Expertise</span>
+              </div>
+            </div>
+          </div>
+          <div class="value-item reveal">
+            <div class="value-num">03</div>
+            <div>
+              <div class="value-title">
+                <span data-lang="fa">پشتیبانی</span><span data-lang="ar">الدعم</span><span data-lang="en">Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <div class="timeline" id="history">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">۲۰۱۰</div>
-            <div class="timeline-title" data-content="tl1-title" data-label="رویداد ۲۰۱۰">تأسیس Persian Guide Group</div>
-            <div class="timeline-text" data-content="tl1-text" data-label="متن ۲۰۱۰">شروع فعالیت در بوداپست با تمرکز بر خدمات مهاجرتی برای اتباع ایرانی</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">۲۰۱۴</div>
-            <div class="timeline-title" data-content="tl2-title" data-label="رویداد ۲۰۱۴">توسعه خدمات تحصیلی</div>
-            <div class="timeline-text" data-content="tl2-text" data-label="متن ۲۰۱۴">راه‌اندازی بخش تخصصی پذیرش دانشگاه و خدمات ویزای تحصیلی</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">۲۰۱۸</div>
-            <div class="timeline-title" data-content="tl3-title" data-label="رویداد ۲۰۱۸">صدمین مشتری موفق</div>
-            <div class="timeline-text" data-content="tl3-text" data-label="متن ۲۰۱۸">رسیدن به ۱۰۰ پرونده موفق — نقطه عطفی در تاریخ شرکت</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">۲۰۲۲</div>
-            <div class="timeline-title" data-content="tl4-title" data-label="رویداد ۲۰۲۲">گلدن ویزا و ری‌برندینگ</div>
-            <div class="timeline-text" data-content="tl4-text" data-label="متن ۲۰۲۲">افزودن خدمات گلدن ویزا و برنامه ملی کارت به پورتفولیوی خدمات</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot" style="background:var(--gold-light);"></div>
-            <div class="timeline-year">۲۰۲۴</div>
-            <div class="timeline-title" data-content="tl5-title" data-label="رویداد ۲۰۲۴">Guide Group Global</div>
-            <div class="timeline-text" data-content="tl5-text" data-label="متن ۲۰۲۴">ری‌برندینگ به Guide Group Global — چشم‌انداز خدمات بین‌المللی‌تر</div>
-          </div>
+      <div class="mission-image reveal">
+        <div class="about-image-wrap">
+          <img data-editable="about-main-photo" src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800" alt="G3 Office" loading="lazy">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALUES -->
-<section class="section-dark">
+<!-- ─── TEAM ──────────────────────────────────────────────────── -->
+<section class="team-section">
   <div class="container">
-    <div class="section-header">
-      <div class="section-tag">ارزش‌های ما</div>
-      <h2 class="section-title">اصولی که ما را هدایت می‌کنند</h2>
-    </div>
-    <div class="value-grid">
-      <div class="card" style="text-align:center;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🤝</div>
-        <h4 class="card-title" data-content="val1-title" data-label="ارزش ۱">صداقت</h4>
-        <p class="card-text" data-content="val1-text" data-label="متن ارزش ۱">هیچ وعده غیرواقعی نمی‌دهیم. وضعیت واقعی پرونده شما را شفاف توضیح می‌دهیم</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🎯</div>
-        <h4 class="card-title" data-content="val2-title" data-label="ارزش ۲">تخصص</h4>
-        <p class="card-text" data-content="val2-text" data-label="متن ارزش ۲">سال‌ها تجربه در قوانین مهاجرتی مجارستان — دانشی که از تجربه واقعی آمده</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">💛</div>
-        <h4 class="card-title" data-content="val3-title" data-label="ارزش ۳">همدلی</h4>
-        <p class="card-text" data-content="val3-text" data-label="متن ارزش ۳">مهاجرت یک تصمیم بزرگ زندگی است. با احترام و درک کامل کنارتان می‌ایستیم</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">⚡</div>
-        <h4 class="card-title" data-content="val4-title" data-label="ارزش ۴">سرعت</h4>
-        <p class="card-text" data-content="val4-text" data-label="متن ارزش ۴">زمان برای شما مهم است. هر پرونده را با بیشترین سرعت ممکن پیش می‌بریم</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🔒</div>
-        <h4 class="card-title" data-content="val5-title" data-label="ارزش ۵">امنیت</h4>
-        <p class="card-text" data-content="val5-text" data-label="متن ارزش ۵">اطلاعات شما کاملاً محرمانه است. امنیت و حریم خصوصی اولویت ماست</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🌟</div>
-        <h4 class="card-title" data-content="val6-title" data-label="ارزش ۶">کیفیت</h4>
-        <p class="card-text" data-content="val6-text" data-label="متن ارزش ۶">هر پرونده را مثل پرونده خودمان پیگیری می‌کنیم. کمتر از بهترین قبول نداریم</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section id="team">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag">تیم ما</div>
-      <h2 class="section-title">متخصصانی که کنارتان هستند</h2>
-      <p class="section-desc">تیم ما از کارشناسان باتجربه در حقوق مهاجرت، آموزش و مالی تشکیل شده</p>
+    <div class="section-header reveal">
+      <span class="section-tag">
+        <span data-lang="fa">تیم</span><span data-lang="ar">الفريق</span><span data-lang="en">Team</span>
+      </span>
+      <h2 class="section-title">
+        <span data-lang="fa">افراد پشت G³</span>
+        <span data-lang="ar">الأشخاص وراء G³</span>
+        <span data-lang="en">The people behind G³</span>
+      </h2>
     </div>
     <div class="team-grid">
-      <div class="team-card">
-        <div class="team-photo-wrap" style="position:relative;width:90px;height:90px;margin:0 auto 1rem;">
-          <img data-editable="team1-photo" src="" alt="" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:none;" id="team1-photo">
-          <div class="team-avatar" id="team1-avatar">👨‍⚖️</div>
+      <!-- Member 1 -->
+      <div class="team-card reveal">
+        <div class="team-photo-wrap">
+          <img data-editable="team1-photo" src="" alt="" style="display:none;" loading="lazy">
+          <div class="team-avatar">ع.م</div>
         </div>
-        <div class="team-name" data-content="team1-name" data-label="نام عضو ۱">مشاور ارشد مهاجرت</div>
-        <div class="team-role" data-content="team1-role" data-label="سمت عضو ۱">متخصص قوانین مهاجرتی مجارستان</div>
-        <p class="team-bio" data-content="team1-bio" data-label="بیو عضو ۱">بیش از ۱۲ سال تجربه در قوانین مهاجرتی EU. متخصص در ویزای تجاری و گلدن ویزا.</p>
+        <div class="team-info">
+          <div class="team-name" data-content="team1-name">علی میرزاحسینی</div>
+          <div class="team-role" data-content="team1-role">
+            <span data-lang="fa">بنیانگذار و مدیرعامل</span>
+            <span data-lang="ar">المؤسس والرئيس التنفيذي</span>
+            <span data-lang="en">Founder & CEO</span>
+          </div>
+          <p class="team-bio" data-content="team1-bio">
+            <span data-lang="fa">متخصص مهاجرت با بیش از ۸ سال تجربه در حقوق اروپایی</span>
+            <span data-lang="ar">متخصص هجرة بأكثر من 8 سنوات خبرة في القانون الأوروبي</span>
+            <span data-lang="en">Immigration specialist with 8+ years in European law</span>
+          </p>
+        </div>
       </div>
-      <div class="team-card">
-        <div class="team-photo-wrap" style="position:relative;width:90px;height:90px;margin:0 auto 1rem;">
-          <img data-editable="team2-photo" src="" alt="" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:none;" id="team2-photo">
-          <div class="team-avatar" id="team2-avatar">👩‍🎓</div>
+      <!-- Member 2 -->
+      <div class="team-card reveal">
+        <div class="team-photo-wrap">
+          <img data-editable="team2-photo" src="" alt="" style="display:none;" loading="lazy">
+          <div class="team-avatar">ز.ک</div>
         </div>
-        <div class="team-name" data-content="team2-name" data-label="نام عضو ۲">مشاور تحصیلی</div>
-        <div class="team-role" data-content="team2-role" data-label="سمت عضو ۲">کارشناس پذیرش دانشگاه‌های اروپا</div>
-        <p class="team-bio" data-content="team2-bio" data-label="بیو عضو ۲">فارغ‌التحصیل دانشگاه کوروینوس با تخصص در مشاوره تحصیلی و پذیرش دانشگاه‌های مجارستان.</p>
+        <div class="team-info">
+          <div class="team-name" data-content="team2-name">زهرا کریمی</div>
+          <div class="team-role" data-content="team2-role">
+            <span data-lang="fa">مشاور ارشد تحصیل</span>
+            <span data-lang="ar">المستشارة التعليمية الأولى</span>
+            <span data-lang="en">Senior Education Advisor</span>
+          </div>
+          <p class="team-bio" data-content="team2-bio">
+            <span data-lang="fa">فارغ‌التحصیل دانشگاه بوداپست، متخصص پذیرش دانشگاه‌های اروپایی</span>
+            <span data-lang="ar">خريجة جامعة بودابست، متخصصة في قبول الجامعات الأوروبية</span>
+            <span data-lang="en">Budapest University graduate, specialist in European university admissions</span>
+          </p>
+        </div>
       </div>
-      <div class="team-card">
-        <div class="team-photo-wrap" style="position:relative;width:90px;height:90px;margin:0 auto 1rem;">
-          <img data-editable="team3-photo" src="" alt="" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:none;" id="team3-photo">
-          <div class="team-avatar" id="team3-avatar">👨‍💼</div>
+      <!-- Member 3 -->
+      <div class="team-card reveal">
+        <div class="team-photo-wrap">
+          <img data-editable="team3-photo" src="" alt="" style="display:none;" loading="lazy">
+          <div class="team-avatar">م.ح</div>
         </div>
-        <div class="team-name" data-content="team3-name" data-label="نام عضو ۳">مشاور سرمایه‌گذاری</div>
-        <div class="team-role" data-content="team3-role" data-label="سمت عضو ۳">متخصص گلدن ویزا و بازار مسکن</div>
-        <p class="team-bio" data-content="team3-bio" data-label="بیو عضو ۳">تخصص در برنامه ملی کارت مجارستان و راهنمایی سرمایه‌گذاری در بازار مسکن بوداپست.</p>
+        <div class="team-info">
+          <div class="team-name" data-content="team3-name">محمد حسینی</div>
+          <div class="team-role" data-content="team3-role">
+            <span data-lang="fa">مشاور حقوقی</span>
+            <span data-lang="ar">المستشار القانوني</span>
+            <span data-lang="en">Legal Advisor</span>
+          </div>
+          <p class="team-bio" data-content="team3-bio">
+            <span data-lang="fa">وکیل دادگستری، متخصص قوانین مهاجرت اتحادیه اروپا</span>
+            <span data-lang="ar">محامٍ، متخصص في قوانين الهجرة للاتحاد الأوروبي</span>
+            <span data-lang="en">Barrister specialising in EU immigration law</span>
+          </p>
+        </div>
       </div>
-      <div class="team-card">
-        <div class="team-photo-wrap" style="position:relative;width:90px;height:90px;margin:0 auto 1rem;">
-          <img data-editable="team4-photo" src="" alt="" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:none;" id="team4-photo">
-          <div class="team-avatar" id="team4-avatar">👩‍💻</div>
+      <!-- Member 4 -->
+      <div class="team-card reveal">
+        <div class="team-photo-wrap">
+          <img data-editable="team4-photo" src="" alt="" style="display:none;" loading="lazy">
+          <div class="team-avatar">ن.ر</div>
         </div>
-        <div class="team-name" data-content="team4-name" data-label="نام عضو ۴">مدیر پرونده</div>
-        <div class="team-role" data-content="team4-role" data-label="سمت عضو ۴">هماهنگی مدارک و پیگیری اداری</div>
-        <p class="team-bio" data-content="team4-bio" data-label="بیو عضو ۴">مدیریت و هماهنگی تمام مراحل اداری پرونده از ابتدا تا پایان با دقت و نظم کامل.</p>
+        <div class="team-info">
+          <div class="team-name" data-content="team4-name">نیلوفر رضایی</div>
+          <div class="team-role" data-content="team4-role">
+            <span data-lang="fa">مدیر روابط مشتریان</span>
+            <span data-lang="ar">مديرة علاقات العملاء</span>
+            <span data-lang="en">Client Relations Manager</span>
+          </div>
+          <p class="team-bio" data-content="team4-bio">
+            <span data-lang="fa">مسئول هماهنگی جلسات مشاوره و پشتیبانی مشتریان</span>
+            <span data-lang="ar">مسؤولة تنسيق جلسات الاستشارة ودعم العملاء</span>
+            <span data-lang="en">Responsible for coordinating advisory sessions and client support</span>
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NUMBERS -->
-<section class="section-dark">
+<!-- ─── OFFICE ─────────────────────────────────────────────────── -->
+<section class="office-section">
   <div class="container">
-    <div class="section-header">
-      <div class="section-tag">عملکرد ما</div>
-      <h2 class="section-title">ارقامی که به آن‌ها افتخار می‌کنیم</h2>
-    </div>
-    <div class="hero-stats" style="max-width:800px;margin:0 auto;grid-template-columns:repeat(4,1fr);">
-      <div class="stat-card">
-        <span class="stat-num" data-target="15" data-suffix="+">۱۵+</span>
-        <span class="stat-label">سال فعالیت</span>
+    <div class="office-grid">
+      <div class="office-info reveal">
+        <h2 class="section-title" style="margin-bottom:2rem">
+          <span data-lang="fa">دفتر ما</span>
+          <span data-lang="ar">مكتبنا</span>
+          <span data-lang="en">Our office</span>
+        </h2>
+        <div class="contact-item">
+          <div class="contact-label">
+            <span data-lang="fa">آدرس</span><span data-lang="ar">العنوان</span><span data-lang="en">Address</span>
+          </div>
+          <div class="contact-value" data-content="office-addr">Budapest, Hungary</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">
+            <span data-lang="fa">تلفن</span><span data-lang="ar">الهاتف</span><span data-lang="en">Phone</span>
+          </div>
+          <div class="contact-value">
+            <span style="direction:ltr;unicode-bidi:embed;display:inline-block;">+36 70 573 88 70</span><br>
+            <span style="direction:ltr;unicode-bidi:embed;display:inline-block;">+36 20 387 59 47</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">
+            <span data-lang="fa">ساعات کاری</span><span data-lang="ar">ساعات العمل</span><span data-lang="en">Working hours</span>
+          </div>
+          <div class="contact-value" data-content="office-hours">
+            <span data-lang="fa">شنبه تا پنجشنبه، ۹ صبح تا ۶ عصر</span>
+            <span data-lang="ar">السبت–الخميس ٩ص–٦م</span>
+            <span data-lang="en">Sat–Thu, 9am–6pm CET</span>
+          </div>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-num" data-target="300" data-suffix="+">۳۰۰+</span>
-        <span class="stat-label">پرونده موفق</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-num" data-target="98" data-suffix="%">۹۸٪</span>
-        <span class="stat-label">نرخ موفقیت</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-num" data-target="4" data-suffix="">۴</span>
-        <span class="stat-label">خدمات تخصصی</span>
+      <div class="office-photo reveal">
+        <div class="about-image-wrap">
+          <img data-editable="office-photo" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" alt="Office" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section>
-  <div class="container">
-    <div class="cta-banner">
-      <h2 style="margin-bottom:1rem;">آماده‌اید داستان موفقیت خود را بنویسید؟</h2>
-      <p style="color:var(--text-muted);max-width:500px;margin:0 auto 2.5rem;">همین الان با ما در تماس باشید و اولین قدم را بردارید.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="https://wa.me/36705738870" target="_blank" class="btn-primary">💬 مشاوره رایگان</a>
-        <a href="index.html#contact" class="btn-outline">فرم تماس</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-container"></div>
-<div id="admin-ui-container"></div>
-<script src="components.js"></script>
+<div id="footer-mount"></div>
 <script src="admin.js"></script>
-<script src="main.js"></script>
-<script src="earth.js"></script>
+<script src="components.js"></script>
 </body>
 </html>

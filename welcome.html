@@ -1,504 +1,63 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guide Group Global — Welcome</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&family=Cinzel:wght@400;700&family=Noto+Sans+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Group Global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Vazirmatn:wght@300;400;500&family=Noto+Sans+Arabic:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { background: var(--bg); min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .welcome-wrap { text-align: center; padding: 2rem; }
+  .welcome-logo { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 10vw, 6rem); color: var(--white); letter-spacing: -2px; line-height: 1; margin-bottom: 0.25rem; }
+  .welcome-logo span { color: var(--gold); }
+  .welcome-wordmark { font-family: 'DM Serif Display', serif; font-size: clamp(0.75rem, 2vw, 1rem); letter-spacing: 0.35em; color: var(--muted); text-transform: uppercase; margin-bottom: clamp(2rem, 6vw, 4rem); }
+  .welcome-prompt { font-family: 'Vazirmatn', sans-serif; font-size: 0.875rem; color: var(--muted2); margin-bottom: 2rem; letter-spacing: 0.1em; }
+  .lang-options { display: flex; gap: 0; border: 1px solid var(--border-hi); border-radius: var(--radius-md); overflow: hidden; max-width: 480px; margin: 0 auto; }
+  .lang-option { flex: 1; padding: 2rem 1.5rem; cursor: pointer; border: none; background: transparent; color: var(--muted); transition: background 0.25s, color 0.25s; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .lang-option:not(:last-child) { border-right: 1px solid var(--border-hi); }
+  html[dir="rtl"] .lang-option:not(:last-child) { border-right: none; border-left: 1px solid var(--border-hi); }
+  .lang-option:hover { background: var(--surface); color: var(--white); }
+  .lang-option:hover .lang-code { color: var(--gold); }
+  .lang-code { font-family: 'DM Serif Display', serif; font-size: 1.75rem; color: var(--white); }
+  .lang-native { font-size: 0.8rem; color: var(--muted); }
+  .bg-lines { position: fixed; inset: 0; pointer-events: none; opacity: 0.03; }
+  .bg-lines::before, .bg-lines::after { content:''; position:absolute; inset:0; background: repeating-linear-gradient(0deg, var(--white) 0, var(--white) 1px, transparent 1px, transparent 80px); }
+  .bg-lines::after { background: repeating-linear-gradient(90deg, var(--white) 0, var(--white) 1px, transparent 1px, transparent 80px); }
 
-    :root {
-      --navy: #0A1628;
-      --navy-mid: #0F1E38;
-      --gold: #C9A84C;
-      --gold-light: #E8C96A;
-      --emerald: #1D9E75;
-      --white: #FFFFFF;
-    }
-
-    html, body {
-      width: 100%; height: 100%;
-      background: var(--navy);
-      overflow: hidden;
-    }
-
-    /* ── Canvas Earth ── */
-    #earth-canvas {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
-    /* ── Stars ── */
-    .stars {
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      background: transparent;
-      pointer-events: none;
-    }
-
-    /* ── Main Content ── */
-    .welcome-wrap {
-      position: fixed;
-      inset: 0;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    /* Logo */
-    .logo-wrap {
-      text-align: center;
-      margin-bottom: 3rem;
-      animation: fadeDown 0.8s ease both;
-    }
-    .logo-mark {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(3rem, 8vw, 5rem);
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-      text-shadow: 0 0 40px rgba(201,168,76,0.4), 0 0 80px rgba(201,168,76,0.15);
-      line-height: 1;
-    }
-    .logo-sub {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(0.6rem, 1.5vw, 0.85rem);
-      letter-spacing: 0.35em;
-      color: rgba(201,168,76,0.6);
-      margin-top: 0.5rem;
-    }
-    .logo-divider {
-      width: 80px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      margin: 1rem auto;
-    }
-
-    /* Question */
-    .question {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      animation: fadeDown 0.8s 0.2s ease both;
-    }
-    .question p {
-      font-size: clamp(0.75rem, 2vw, 0.95rem);
-      color: rgba(255,255,255,0.45);
-      letter-spacing: 0.2em;
-      font-family: 'Cinzel', serif;
-    }
-
-    /* Language Buttons */
-    .lang-grid {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      animation: fadeUp 0.8s 0.4s ease both;
-    }
-
-    .lang-btn {
-      position: relative;
-      width: 160px;
-      height: 200px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 20px;
-      cursor: pointer;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      text-decoration: none;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .lang-btn::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(201,168,76,0.08), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .lang-btn:hover {
-      border-color: rgba(201,168,76,0.6);
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(201,168,76,0.15);
-    }
-    .lang-btn:hover::before { opacity: 1; }
-
-    .lang-flag {
-      font-size: 2.8rem;
-      line-height: 1;
-    }
-
-    .lang-name {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--white);
-      font-family: 'Vazirmatn', sans-serif;
-    }
-
-    .lang-btn[data-lang="ar"] .lang-name {
-      font-family: 'Noto Sans Arabic', sans-serif;
-    }
-
-    .lang-btn[data-lang="en"] .lang-name {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-    }
-
-    .lang-sub {
-      font-size: 0.7rem;
-      color: rgba(201,168,76,0.6);
-      letter-spacing: 0.1em;
-      font-family: 'Cinzel', serif;
-    }
-
-    /* Shimmer on hover */
-    .lang-btn::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -100%;
-      width: 60%;
-      height: 200%;
-      background: linear-gradient(105deg, transparent, rgba(255,255,255,0.07), transparent);
-      transform: skewX(-15deg);
-      transition: left 0.5s ease;
-    }
-    .lang-btn:hover::after { left: 150%; }
-
-    /* Animations */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Mobile */
-    @media (max-width: 520px) {
-      .lang-btn { width: 130px; height: 170px; gap: 0.8rem; }
-      .lang-flag { font-size: 2.2rem; }
-      .lang-name { font-size: 1.2rem; }
-      .lang-grid { gap: 1rem; }
-    }
-  </style>
+  @media(max-width:480px){
+    .lang-options { flex-direction: column; max-width: 280px; }
+    .lang-option:not(:last-child) { border-right: none; border-left: none; border-bottom: 1px solid var(--border-hi); }
+  }
+</style>
 </head>
 <body>
-
-<!-- Stars Canvas -->
-<canvas id="earth-canvas"></canvas>
-<div class="stars" id="stars-container"></div>
-
-<!-- Welcome UI -->
+<div class="bg-lines"></div>
 <div class="welcome-wrap">
-  <div class="logo-wrap">
-    <div class="logo-mark">G³</div>
-    <div class="logo-divider"></div>
-    <div class="logo-sub">GUIDE GROUP GLOBAL</div>
-  </div>
-
-  <div class="question">
-    <p>SELECT YOUR LANGUAGE · انتخاب زبان · اختر لغتك</p>
-  </div>
-
-  <div class="lang-grid">
-    <a href="index.html?lang=fa" class="lang-btn" data-lang="fa" onclick="setLang('fa')">
-      <div class="lang-flag">🇮🇷</div>
-      <div class="lang-name">فارسی</div>
-      <div class="lang-sub">PERSIAN</div>
-    </a>
-    <a href="index.html?lang=ar" class="lang-btn" data-lang="ar" onclick="setLang('ar')">
-      <div class="lang-flag">🌙</div>
-      <div class="lang-name">العربية</div>
-      <div class="lang-sub">ARABIC</div>
-    </a>
-    <a href="index.html?lang=en" class="lang-btn" data-lang="en" onclick="setLang('en')">
-      <div class="lang-flag">🌍</div>
-      <div class="lang-name">English</div>
-      <div class="lang-sub">ENGLISH</div>
-    </a>
+  <div class="welcome-logo">G<span>³</span></div>
+  <div class="welcome-wordmark">Guide Group Global</div>
+  <div class="welcome-prompt">Select your language / زبان خود را انتخاب کنید / اختر لغتك</div>
+  <div class="lang-options">
+    <button class="lang-option" onclick="chooseLang('fa')">
+      <span class="lang-code">FA</span>
+      <span class="lang-native">فارسی</span>
+    </button>
+    <button class="lang-option" onclick="chooseLang('ar')">
+      <span class="lang-code">AR</span>
+      <span class="lang-native">العربية</span>
+    </button>
+    <button class="lang-option" onclick="chooseLang('en')">
+      <span class="lang-code">EN</span>
+      <span class="lang-native">English</span>
+    </button>
   </div>
 </div>
-
 <script>
-function setLang(lang) {
-  localStorage.setItem('ggg_lang', lang);
-}
-
-// Check if already chose a language this session
-window.addEventListener('DOMContentLoaded', () => {
-  // Don't auto-redirect — let them always choose on welcome page
-  initStars();
-  initEarth();
-});
-
-// ── STARS ──
-function initStars() {
-  const c = document.getElementById('stars-container');
-  const count = 180;
-  let html = '';
-  for (let i = 0; i < count; i++) {
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    const s = Math.random() * 2 + 0.5;
-    const op = Math.random() * 0.6 + 0.1;
-    const dur = Math.random() * 3 + 2;
-    html += `<div style="position:absolute;left:${x}%;top:${y}%;width:${s}px;height:${s}px;border-radius:50%;background:#fff;opacity:${op};animation:twinkle ${dur}s ease-in-out infinite alternate;"></div>`;
-  }
-  c.innerHTML = html;
-
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes twinkle {
-      from { opacity: 0.05; transform: scale(0.8); }
-      to   { opacity: 0.7;  transform: scale(1.2); }
-    }
-  `;
-  document.head.appendChild(style);
-}
-
-// ── EARTH (WebGL) ──
-function initEarth() {
-  const canvas = document.getElementById('earth-canvas');
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-  if (!gl) { canvas.style.display = 'none'; return; }
-
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-    gl.viewport(0, 0, canvas.width, canvas.height);
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  // Vertex shader
-  const vsrc = `
-    attribute vec2 a_pos;
-    varying vec2 v_uv;
-    void main() {
-      v_uv = a_pos * 0.5 + 0.5;
-      gl_Position = vec4(a_pos, 0.0, 1.0);
-    }
-  `;
-
-  // Fragment shader — ray-marched glowing globe
-  const fsrc = `
-    precision highp float;
-    varying vec2 v_uv;
-    uniform float u_time;
-    uniform vec2  u_res;
-    uniform float u_scroll; // 0..1 progress
-
-    #define PI 3.14159265
-
-    // Hash / noise
-    float hash(vec2 p) {
-      p = fract(p * vec2(234.34, 435.345) + 0.353);
-      p += dot(p, p + 34.23);
-      return fract(p.x * p.y);
-    }
-    float noise(vec2 p) {
-      vec2 i = floor(p);
-      vec2 f = fract(p);
-      f = f*f*(3.0-2.0*f);
-      return mix(mix(hash(i), hash(i+vec2(1,0)), f.x),
-                 mix(hash(i+vec2(0,1)), hash(i+vec2(1,1)), f.x), f.y);
-    }
-    float fbm(vec2 p) {
-      float v = 0.0; float a = 0.5;
-      for (int i = 0; i < 5; i++) { v += a*noise(p); p *= 2.1; a *= 0.5; }
-      return v;
-    }
-
-    // Sphere ray intersect
-    bool raySphere(vec3 ro, vec3 rd, float r, out float t) {
-      float b = dot(ro, rd);
-      float c = dot(ro, ro) - r*r;
-      float d = b*b - c;
-      if (d < 0.0) return false;
-      t = -b - sqrt(d);
-      return t > 0.0;
-    }
-
-    // Sphere normal
-    vec3 sphereNormal(vec3 p) { return normalize(p); }
-
-    // Globe surface color
-    vec3 globeColor(vec3 p, float t_val) {
-      // Spherical UV
-      vec3 n = normalize(p);
-      float lon = atan(n.z, n.x) / (2.0*PI) + 0.5;
-      float lat = acos(n.y) / PI;
-
-      // Rotation
-      float rot = u_time * 0.08 + u_scroll * 1.5;
-      float s = sin(rot); float c2 = cos(rot);
-      vec3 rn;
-      rn.x = n.x*c2 + n.z*s;
-      rn.y = n.y;
-      rn.z = -n.x*s + n.z*c2;
-      lon = atan(rn.z, rn.x) / (2.0*PI) + 0.5;
-
-      vec2 uv = vec2(lon, lat);
-
-      // Land/ocean noise
-      float land = fbm(uv * 4.5 + 0.3) * fbm(uv * 8.0);
-      float isLand = smoothstep(0.18, 0.26, land);
-
-      // Ocean color
-      vec3 oceanDeep  = vec3(0.04, 0.12, 0.28);
-      vec3 oceanShall = vec3(0.07, 0.25, 0.45);
-      vec3 ocean = mix(oceanDeep, oceanShall, fbm(uv*12.0+u_time*0.02)*0.7);
-
-      // Land color
-      vec3 lowland  = vec3(0.12, 0.28, 0.14);
-      vec3 highland = vec3(0.25, 0.32, 0.18);
-      vec3 snow     = vec3(0.85, 0.88, 0.90);
-      float elevation = fbm(uv * 9.0 + 1.5);
-      float snowLine = smoothstep(0.55, 0.65, lat) + smoothstep(0.35, 0.45, 1.0-lat);
-      vec3 landColor = mix(mix(lowland, highland, elevation), snow, snowLine*0.8);
-
-      // Grid lines (golden)
-      float gridLon = abs(fract(uv.x * 18.0) - 0.5);
-      float gridLat = abs(fract(uv.y * 9.0) - 0.5);
-      float grid = smoothstep(0.48, 0.5, max(gridLon, gridLat));
-      vec3 gridColor = vec3(0.78, 0.65, 0.28);
-
-      vec3 surface = mix(ocean, landColor, isLand);
-      surface = mix(surface, gridColor, grid * 0.35);
-
-      // City lights (dark side)
-      vec3 lightDir = normalize(vec3(1.5, 0.8, 0.5));
-      float sun = dot(n, lightDir);
-      float cityLights = fbm(uv * 20.0 + 5.0) * step(0.4, fbm(uv * 8.0));
-      vec3 lights = vec3(1.0, 0.9, 0.7) * cityLights * 2.0;
-      float nightMix = smoothstep(0.0, 0.3, -sun);
-      surface += lights * nightMix * 0.6;
-
-      // Lighting
-      vec3 norm = sphereNormal(p);
-      float diff = max(dot(norm, lightDir), 0.0);
-      float amb  = 0.15;
-      float spec = pow(max(dot(reflect(-lightDir, norm), vec3(0,0,-1)), 0.0), 32.0);
-      surface = surface * (diff + amb) + vec3(0.4, 0.55, 0.9) * spec * 0.4;
-
-      return surface;
-    }
-
-    void main() {
-      vec2 uv = (v_uv * 2.0 - 1.0) * vec2(u_res.x/u_res.y, 1.0);
-
-      // Ray
-      vec3 ro = vec3(0.0, 0.0, -3.0);
-      vec3 rd = normalize(vec3(uv, 1.0));
-
-      // Globe size: zoom out as scroll increases (pull back)
-      float radius = 0.85 + u_scroll * 0.1;
-      vec3 globeCenter = vec3(0.0, 0.0 + u_scroll * -0.3, 0.0);
-      vec3 ro2 = ro - globeCenter;
-
-      vec3 col = vec3(0.0);
-
-      float t;
-      if (raySphere(ro2, rd, radius, t)) {
-        vec3 p = ro2 + rd * t;
-        col = globeColor(p, t);
-
-        // Edge glow
-        float rim = 1.0 - max(dot(-rd, normalize(p)), 0.0);
-        col += vec3(0.1, 0.3, 0.6) * pow(rim, 3.5) * 0.7;
-      }
-
-      // Atmospheric halo
-      float atmT;
-      if (raySphere(ro2, rd, radius + 0.06, atmT)) {
-        float atmRim = 1.0 - max(dot(-rd, normalize(ro2 + rd*atmT)), 0.0);
-        float atmT2;
-        bool hitSurface = raySphere(ro2, rd, radius, atmT2);
-        if (!hitSurface) {
-          col += vec3(0.1, 0.35, 0.7) * pow(atmRim, 5.0) * 0.5;
-        }
-      }
-
-      // Vignette
-      float vig = 1.0 - length(v_uv - 0.5) * 1.4;
-      col *= max(vig, 0.0);
-
-      // Tone map
-      col = col / (col + 0.5);
-      col = pow(col, vec3(0.85));
-
-      gl_FragColor = vec4(col, 1.0);
-    }
-  `;
-
-  function compileShader(type, src) {
-    const sh = gl.createShader(type);
-    gl.shaderSource(sh, src);
-    gl.compileShader(sh);
-    return sh;
-  }
-
-  const prog = gl.createProgram();
-  gl.attachShader(prog, compileShader(gl.VERTEX_SHADER, vsrc));
-  gl.attachShader(prog, compileShader(gl.FRAGMENT_SHADER, fsrc));
-  gl.linkProgram(prog);
-  gl.useProgram(prog);
-
-  // Full-screen quad
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-  const loc = gl.getAttribLocation(prog, 'a_pos');
-  gl.enableVertexAttribArray(loc);
-  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-
-  const uTime   = gl.getUniformLocation(prog, 'u_time');
-  const uRes    = gl.getUniformLocation(prog, 'u_res');
-  const uScroll = gl.getUniformLocation(prog, 'u_scroll');
-
-  let scrollY = 0;
-  let scrollTarget = 0;
-
-  function loop(t) {
-    scrollY += (scrollTarget - scrollY) * 0.08;
-
-    gl.uniform1f(uTime, t * 0.001);
-    gl.uniform2f(uRes, canvas.width, canvas.height);
-    gl.uniform1f(uScroll, scrollY);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    requestAnimationFrame(loop);
-  }
-  requestAnimationFrame(loop);
-
-  // Gentle auto-rotation feel — welcome page has no scroll
-  // so we gently pulse scroll value for zoom in/out effect
-  let pulse = 0;
-  setInterval(() => {
-    pulse = Math.sin(Date.now() * 0.0003) * 0.15 + 0.15;
-    scrollTarget = pulse;
-  }, 50);
+function chooseLang(l){
+  localStorage.setItem('ggg_lang', l);
+  window.location.href = 'index.html';
 }
 </script>
 </body>

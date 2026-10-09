@@ -1,250 +1,189 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>گلدن ویزا مجارستان | Guide Group Global</title>
-  <meta name="description" content="اقامت ۱۰ ساله مجارستان از طریق سرمایه‌گذاری — برنامه ملی کارت. سه گزینه سرمایه‌گذاری از ۲۵۰,۰۰۰ یورو.">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .invest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    @media (max-width: 900px) { .invest-grid { grid-template-columns: 1fr; } }
-
-    .benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    @media (max-width: 600px) { .benefit-grid { grid-template-columns: 1fr; } }
-    .benefit-item {
-      display: flex; gap: 1rem; align-items: flex-start;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem;
-    }
-    .benefit-icon { font-size: 1.5rem; flex-shrink: 0; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ویزای طلایی | Guide Group Global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Vazirmatn:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="earth-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.5;"></canvas>
+<div id="navbar-mount"></div>
 
-<div id="navbar-container"></div>
-
-<!-- HERO -->
-<section class="page-hero" style="background:linear-gradient(180deg,rgba(201,168,76,0.08) 0%,var(--navy) 100%);">
-  <div class="container" style="position:relative;z-index:2;">
-    <div class="breadcrumb">
-      <a href="index.html">خانه</a><span>/</span><span>گلدن ویزا</span>
-    </div>
-    <div class="section-tag" style="background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.5);">💎 گلدن ویزا</div>
-    <h1 style="margin-top:1rem;" data-content="gv-hero-title" data-label="عنوان گلدن ویزا">اقامت ۱۰ ساله مجارستان<br><span style="color:var(--gold);">با سرمایه‌گذاری هوشمند</span></h1>
-    <p style="color:var(--text-muted);max-width:600px;margin:1rem auto 0;" data-content="gv-hero-desc" data-label="توضیح گلدن ویزا">برنامه ملی کارت مجارستان — اقامت برای کل خانواده بدون نیاز به سکونت دائم</p>
+<!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-tag reveal">Golden Visa</div>
+    <h1 class="page-hero-title">
+      <div class="hero-line">
+        <span data-lang="fa">ویزای طلایی اروپا</span>
+        <span data-lang="ar">التأشيرة الذهبية الأوروبية</span>
+        <span data-lang="en">European Golden Visa</span>
+      </div>
+    </h1>
+    <p class="page-hero-sub reveal">
+      <span data-lang="fa">اقامت دائم اروپا از طریق سرمایه‌گذاری — راهی هوشمندانه برای آینده‌ای مطمئن‌تر</span>
+      <span data-lang="ar">الإقامة الدائمة الأوروبية عبر الاستثمار — طريق ذكي لمستقبل أكثر أماناً</span>
+      <span data-lang="en">Permanent European residence through investment — a smart path to a more secure future</span>
+    </p>
   </div>
 </section>
 
-<!-- INTRO -->
-<section>
+<!-- ─── HUNGARY GOLDEN VISA ─────────────────────────────────── -->
+<section class="gv-section">
   <div class="container">
-    <div class="two-col">
-      <div>
-        <div class="section-tag">برنامه ملی کارت</div>
-        <h2 style="margin-top:1rem;" data-content="gv-intro-title" data-label="عنوان معرفی گلدن ویزا">گلدن ویزا چیست؟</h2>
-        <div class="divider right"></div>
-        <p data-content="gv-intro-p1" data-label="پاراگراف اول گلدن ویزا">برنامه ملی کارت مجارستان (Guest Investor Program) یک برنامه سرمایه‌گذاری دولتی است که به سرمایه‌گذاران خارجی امکان می‌دهد در ازای سرمایه‌گذاری در مجارستان، اقامت ۱۰ ساله دریافت کنند.</p>
-        <p data-content="gv-intro-p2" data-label="پاراگراف دوم گلدن ویزا">این برنامه برای خانواده‌هایی طراحی شده که به دنبال اقامت اروپایی هستند اما نمی‌خواهند لزوماً در مجارستان زندگی کنند. سرمایه‌گذاری هم می‌تواند بازده مالی داشته باشد.</p>
-        <div class="highlight-box">
-          <p style="margin:0;font-size:0.95rem;">⏰ <strong style="color:var(--gold);">زمان پردازش:</strong> معمولاً ۳ تا ۶ ماه از ثبت درخواست تا دریافت اقامت</p>
-        </div>
-      </div>
-      <div>
-        <div class="card" style="border-right:4px solid var(--gold);">
-          <h4 style="color:var(--gold);margin-bottom:1.2rem;">✅ ویژگی‌های کلیدی</h4>
-          <ul class="feature-list">
-            <li>اقامت ۱۰ ساله قابل تمدید</li>
-            <li>شامل همسر و فرزندان زیر ۱۸ سال</li>
-            <li>بدون الزام سکونت دائم در مجارستان</li>
-            <li>حق کار و کسب‌وکار در مجارستان</li>
-            <li>دسترسی به کل حوزه شنگن</li>
-            <li>مسیر به سمت اقامت دائم</li>
-          </ul>
-        </div>
-      </div>
+    <div class="section-header reveal">
+      <span class="section-tag">
+        <span data-lang="fa">مجارستان</span><span data-lang="ar">المجر</span><span data-lang="en">Hungary</span>
+      </span>
+      <h2 class="section-title">
+        <span data-lang="fa">ویزای طلایی مجارستان</span>
+        <span data-lang="ar">التأشيرة الذهبية المجرية</span>
+        <span data-lang="en">Hungarian Golden Visa</span>
+      </h2>
     </div>
-  </div>
-</section>
-
-<!-- INVESTMENT OPTIONS -->
-<section class="section-dark">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag">گزینه‌های سرمایه‌گذاری</div>
-      <h2 class="section-title">سه مسیر برای اقامت مجارستان</h2>
-      <p class="section-desc">یکی از این سه گزینه را بر اساس شرایط و ترجیحات خود انتخاب کنید</p>
-    </div>
-    <div class="invest-grid">
-      <div class="investment-card featured">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">📊</div>
-        <h3 class="card-title" data-content="gv-opt1-title" data-label="عنوان گزینه صندوق">صندوق سرمایه‌گذاری</h3>
-        <div class="invest-amount">€۲۵۰,۰۰۰</div>
-        <p style="color:var(--gold-light);font-size:0.85rem;margin-bottom:1.2rem;">برگشت سرمایه تضمین شده</p>
-        <ul class="feature-list" style="text-align:right;">
-          <li data-content="gv-opt1-f1" data-label="ویژگی صندوق ۱">سرمایه‌گذاری در صندوق‌های مجاز دولتی</li>
-          <li data-content="gv-opt1-f2" data-label="ویژگی صندوق ۲">برگشت کامل سرمایه پس از ۵ سال</li>
-          <li data-content="gv-opt1-f3" data-label="ویژگی صندوق ۳">کمترین ریسک — بیشترین تضمین</li>
-          <li data-content="gv-opt1-f4" data-label="ویژگی صندوق ۴">مناسب برای سرمایه‌گذاران محافظه‌کار</li>
-        </ul>
-        <a href="https://wa.me/36705738870" target="_blank" class="btn-primary" style="margin-top:1.5rem;width:100%;justify-content:center;">مشاوره رایگان</a>
+    <div class="gv-grid">
+      <div class="gv-card reveal">
+        <div class="gv-card-num">01</div>
+        <h3 class="gv-card-title">
+          <span data-lang="fa">سرمایه‌گذاری در صندوق</span>
+          <span data-lang="ar">الاستثمار في الصندوق</span>
+          <span data-lang="en">Fund Investment</span>
+        </h3>
+        <div class="gv-amount">€250,000</div>
+        <p class="gv-card-desc">
+          <span data-lang="fa" data-content="gv-fund-fa">خرید واحدهای صندوق‌های سرمایه‌گذاری مورد تایید دولت مجارستان</span>
+          <span data-lang="ar" data-content="gv-fund-ar">شراء وحدات صناديق الاستثمار المعتمدة من الحكومة المجرية</span>
+          <span data-lang="en" data-content="gv-fund-en">Purchase of units in investment funds approved by the Hungarian government</span>
+        </p>
       </div>
-
-      <div class="investment-card" style="position:relative;opacity:0.65;pointer-events:none;">
-        <div style="position:absolute;inset:0;background:rgba(10,22,40,0.5);border-radius:var(--radius-lg);z-index:2;display:flex;align-items:center;justify-content:center;">
-          <div style="background:rgba(220,50,50,0.9);color:#fff;padding:0.6rem 1.4rem;border-radius:8px;font-weight:700;font-size:0.95rem;text-align:center;line-height:1.5;">
-            🚫 لغو شد<br><span style="font-size:0.75rem;font-weight:400;">از طرف دولت مجارستان این طرح لغو شد</span>
+      <div class="gv-card reveal">
+        <div class="gv-card-num">02</div>
+        <h3 class="gv-card-title">
+          <span data-lang="fa">سرمایه‌گذاری در مسکن</span>
+          <span data-lang="ar">الاستثمار العقاري</span>
+          <span data-lang="en">Real Estate Investment</span>
+        </h3>
+        <div class="gv-amount">€500,000
+          <div class="gv-cancelled-badge">
+            <span data-lang="fa">لغو شده</span>
+            <span data-lang="ar">ملغى</span>
+            <span data-lang="en">Cancelled</span>
           </div>
         </div>
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🏠</div>
-        <h3 class="card-title" style="text-decoration:line-through;color:var(--text-muted);">خرید ملک مسکونی</h3>
-        <div class="invest-amount" style="text-decoration:line-through;color:var(--text-muted);">€۵۰۰,۰۰۰</div>
-        <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.2rem;">سرمایه‌گذاری در بازار مسکن</p>
-        <ul class="feature-list" style="text-align:right;">
-          <li>خرید ملک در بازار داغ بوداپست</li>
-          <li>امکان اجاره ملک و کسب درآمد</li>
-          <li>رشد ارزش سرمایه در طول زمان</li>
-          <li>دارایی ملموس برای آینده</li>
-        </ul>
-        <div class="btn-outline" style="margin-top:1.5rem;width:100%;justify-content:center;opacity:0.4;cursor:not-allowed;">لغو شده</div>
+        <p class="gv-card-desc">
+          <span data-lang="fa" data-content="gv-re-fa">گزینه سرمایه‌گذاری مسکونی از ژانویه ۲۰۲۴ توسط دولت مجارستان لغو شد</span>
+          <span data-lang="ar" data-content="gv-re-ar">تم إلغاء خيار الاستثمار العقاري من قِبل الحكومة المجرية منذ يناير 2024</span>
+          <span data-lang="en" data-content="gv-re-en">The residential real estate investment option was cancelled by the Hungarian government as of January 2024</span>
+        </p>
       </div>
-
-      <div class="investment-card">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🏛️</div>
-        <h3 class="card-title" data-content="gv-opt3-title" data-label="عنوان گزینه خیریه">کمک به موسسه فرهنگی</h3>
-        <div class="invest-amount">€۱,۰۰۰,۰۰۰</div>
-        <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.2rem;">کمک غیرقابل برگشت</p>
-        <ul class="feature-list" style="text-align:right;">
-          <li data-content="gv-opt3-f1" data-label="ویژگی خیریه ۱">کمک به موسسات فرهنگی و دانشگاهی معتبر</li>
-          <li data-content="gv-opt3-f2" data-label="ویژگی خیریه ۲">بدون نیاز به مدیریت سرمایه‌گذاری</li>
-          <li data-content="gv-opt3-f3" data-label="ویژگی خیریه ۳">سریع‌ترین مسیر پردازش پرونده</li>
-          <li data-content="gv-opt3-f4" data-label="ویژگی خیریه ۴">مناسب برای سرمایه‌داران بزرگ</li>
-        </ul>
-        <a href="https://wa.me/36705738870" target="_blank" class="btn-outline" style="margin-top:1.5rem;width:100%;justify-content:center;">مشاوره رایگان</a>
+      <div class="gv-card reveal">
+        <div class="gv-card-num">03</div>
+        <h3 class="gv-card-title">
+          <span data-lang="fa">کمک به دانشگاه</span>
+          <span data-lang="ar">التبرع للجامعة</span>
+          <span data-lang="en">University Donation</span>
+        </h3>
+        <div class="gv-amount">€1,000,000</div>
+        <p class="gv-card-desc">
+          <span data-lang="fa" data-content="gv-uni-fa">کمک‌هزینه به یکی از دانشگاه‌های دولتی مجارستان به عنوان اهدای عام‌المنفعه</span>
+          <span data-lang="ar" data-content="gv-uni-ar">منحة دراسية لإحدى الجامعات الحكومية المجرية كتبرع للمنفعة العامة</span>
+          <span data-lang="en" data-content="gv-uni-en">Donation to a Hungarian state university as a public-interest contribution</span>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section>
+<!-- ─── BENEFITS ──────────────────────────────────────────────── -->
+<section class="benefits-section">
   <div class="container">
-    <div class="section-header">
-      <div class="section-tag">مزایا</div>
-      <h2 class="section-title">با گلدن ویزا چه چیزی به دست می‌آورید؟</h2>
+    <div class="section-header reveal">
+      <h2 class="section-title">
+        <span data-lang="fa">مزایای ویزای طلایی</span>
+        <span data-lang="ar">مزايا التأشيرة الذهبية</span>
+        <span data-lang="en">Golden Visa benefits</span>
+      </h2>
     </div>
-    <div class="benefit-grid">
-      <div class="benefit-item">
-        <div class="benefit-icon">🛂</div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.3rem;">اقامت بلند مدت</h4>
-          <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">اقامت ۱۰ ساله با امکان تمدید — بدون محدودیت زمانی در آینده</p>
-        </div>
+    <div class="benefits-list">
+      <div class="benefit-item reveal">
+        <div class="benefit-num">—</div>
+        <p class="benefit-text">
+          <span data-lang="fa">اقامت ۱۰ ساله قابل تمدید برای متقاضی و خانواده</span>
+          <span data-lang="ar">إقامة 10 سنوات قابلة للتجديد للمتقدم وعائلته</span>
+          <span data-lang="en">10-year renewable residence for the applicant and family</span>
+        </p>
       </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">👨‍👩‍👧‍👦</div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.3rem;">خانواده همراه</h4>
-          <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">همسر و فرزندان زیر ۱۸ سال بدون هزینه اضافی اقامت می‌گیرند</p>
-        </div>
+      <div class="benefit-item reveal">
+        <div class="benefit-num">—</div>
+        <p class="benefit-text">
+          <span data-lang="fa">دسترسی آزاد به تمام کشورهای شنگن</span>
+          <span data-lang="ar">حرية السفر إلى جميع دول شنغن</span>
+          <span data-lang="en">Free access to all Schengen countries</span>
+        </p>
       </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">🌍</div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.3rem;">دسترسی شنگن</h4>
-          <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">سفر آزاد به ۲۶ کشور اروپایی بدون نیاز به ویزا</p>
-        </div>
+      <div class="benefit-item reveal">
+        <div class="benefit-num">—</div>
+        <p class="benefit-text">
+          <span data-lang="fa">امکان تحصیل فرزندان در مدارس اروپایی</span>
+          <span data-lang="ar">إمكانية دراسة الأطفال في المدارس الأوروبية</span>
+          <span data-lang="en">Children may attend European schools</span>
+        </p>
       </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">🏥</div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.3rem;">بیمه درمانی</h4>
-          <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">دسترسی به سیستم بهداشتی اروپایی برای کل خانواده</p>
-        </div>
+      <div class="benefit-item reveal">
+        <div class="benefit-num">—</div>
+        <p class="benefit-text">
+          <span data-lang="fa">بدون شرط اقامت حداقلی برای حفظ اقامت</span>
+          <span data-lang="ar">بدون اشتراط حد أدنى للإقامة للحفاظ عليها</span>
+          <span data-lang="en">No minimum stay requirement to maintain the residence</span>
+        </p>
       </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">💼</div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.3rem;">حق کار</h4>
-          <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">امکان کار، کسب‌وکار و سرمایه‌گذاری در مجارستان و اروپا</p>
-        </div>
+      <div class="benefit-item reveal">
+        <div class="benefit-num">—</div>
+        <p class="benefit-text">
+          <span data-lang="fa">امکان دریافت شهروندی اروپایی پس از ۸ سال</span>
+          <span data-lang="ar">إمكانية الحصول على الجنسية الأوروبية بعد 8 سنوات</span>
+          <span data-lang="en">Possible path to European citizenship after 8 years</span>
+        </p>
       </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">🏠</div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.3rem;">بدون الزام سکونت</h4>
-          <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">نیازی به سکونت دائم در مجارستان ندارید — اقامت فقط برای حفظ نیاز به ۱ بار ورود در سال</p>
-        </div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">📚</div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.3rem;">تحصیل فرزندان</h4>
-          <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">فرزندان می‌توانند در بهترین مدارس و دانشگاه‌های اروپایی تحصیل کنند</p>
-        </div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">⚖️</div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.3rem;">مسیر اقامت دائم</h4>
-          <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">پس از ۵ سال سکونت پیوسته، امکان درخواست اقامت دائم اروپایی</p>
-        </div>
+      <div class="benefit-item reveal">
+        <div class="benefit-num">—</div>
+        <p class="benefit-text">
+          <span data-lang="fa">بازار سرمایه‌گذاری متنوع در مجارستان</span>
+          <span data-lang="ar">سوق استثمار متنوع في المجر</span>
+          <span data-lang="en">Diverse investment market in Hungary</span>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section-dark">
+<!-- ─── CTA ───────────────────────────────────────────────────── -->
+<section class="cta-band">
   <div class="container">
-    <div class="section-header">
-      <div class="section-tag">سوالات متداول</div>
-      <h2 class="section-title">پرسش‌های رایج</h2>
-    </div>
-    <div style="max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;">
-      <details style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
-        <summary style="color:var(--white);font-weight:600;cursor:pointer;list-style:none;" data-content="faq1-q" data-label="سوال ۱">آیا باید در مجارستان زندگی کنم؟</summary>
-        <p style="margin-top:1rem;color:var(--text-muted);font-size:0.9rem;" data-content="faq1-a" data-label="پاسخ ۱">خیر. برای حفظ اقامت تنها نیاز به ۱ بار ورود به مجارستان در سال دارید. لازم نیست دائماً در این کشور زندگی کنید.</p>
-      </details>
-      <details style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
-        <summary style="color:var(--white);font-weight:600;cursor:pointer;list-style:none;" data-content="faq2-q" data-label="سوال ۲">آیا سرمایه‌ام برمی‌گردد؟</summary>
-        <p style="margin-top:1rem;color:var(--text-muted);font-size:0.9rem;" data-content="faq2-a" data-label="پاسخ ۲">در گزینه صندوق سرمایه‌گذاری، پس از ۵ سال کل مبلغ ۲۵۰,۰۰۰ یورو بازپس داده می‌شود. در گزینه ملک هم سرمایه شما به صورت ملک محفوظ است.</p>
-      </details>
-      <details style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
-        <summary style="color:var(--white);font-weight:600;cursor:pointer;list-style:none;" data-content="faq3-q" data-label="سوال ۳">آیا اقامت مجارستان پاسپورت اروپایی می‌دهد؟</summary>
-        <p style="margin-top:1rem;color:var(--text-muted);font-size:0.9rem;" data-content="faq3-a" data-label="پاسخ ۳">اقامت گلدن ویزا تابعیت نمی‌دهد. اما پس از ۸ سال سکونت پیوسته می‌توانید درخواست تابعیت مجارستان و پاسپورت اروپایی کنید.</p>
-      </details>
-      <details style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
-        <summary style="color:var(--white);font-weight:600;cursor:pointer;list-style:none;" data-content="faq4-q" data-label="سوال ۴">آیا فرزندان بزرگسال هم شامل می‌شوند؟</summary>
-        <p style="margin-top:1rem;color:var(--text-muted);font-size:0.9rem;" data-content="faq4-a" data-label="پاسخ ۴">برنامه استاندارد برای فرزندان زیر ۱۸ سال است. فرزندان بالای ۱۸ سال باید به صورت مستقل درخواست دهند که می‌توانیم در این مورد راهنمایی کامل ارائه دهیم.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section>
-  <div class="container">
-    <div class="cta-banner">
-      <div class="section-tag">شروع کنید</div>
-      <h2 style="margin-bottom:1rem;">گلدن ویزا — سرمایه‌گذاری در آینده خانواده‌تان</h2>
-      <p style="color:var(--text-muted);max-width:500px;margin:0 auto 2.5rem;">با یک مشاوره رایگان، تمام جزئیات را برایتان توضیح می‌دهیم.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="https://wa.me/36705738870" target="_blank" class="btn-primary">💬 مشاوره گلدن ویزا</a>
-        <a href="https://t.me/budapestguidegroup2009" target="_blank" class="btn-outline">تلگرام</a>
+    <div class="cta-inner reveal">
+      <h2 class="cta-title">
+        <span data-lang="fa">مشاوره رایگان ویزای طلایی</span>
+        <span data-lang="ar">استشارة مجانية للتأشيرة الذهبية</span>
+        <span data-lang="en">Free Golden Visa consultation</span>
+      </h2>
+      <p class="cta-sub">
+        <span data-lang="fa">با کارشناسان G³ تماس بگیرید و گزینه‌های سرمایه‌گذاری را بررسی کنید.</span>
+        <span data-lang="ar">تواصل مع خبراء G³ واستعرض خيارات الاستثمار.</span>
+        <span data-lang="en">Contact G³ experts and explore your investment options.</span>
+      </p>
+      <div class="cta-actions">
+        <a href="https://t.me/GGG_Immigration" target="_blank" class="btn-primary">Telegram</a>
+        <a href="https://wa.me/36705738870" target="_blank" class="btn-ghost">WhatsApp</a>
       </div>
     </div>
   </div>
 </section>
 
-<div id="footer-container"></div>
-<div id="admin-ui-container"></div>
-<script src="components.js"></script>
+<div id="footer-mount"></div>
 <script src="admin.js"></script>
-<script src="main.js"></script>
-<script src="earth.js"></script>
+<script src="components.js"></script>
 </body>
 </html>
