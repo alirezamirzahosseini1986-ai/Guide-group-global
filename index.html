@@ -1,236 +1,226 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" class="rtl">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guide Group Global | مهاجرت و تحصیل در اروپا</title>
+<title>G³ — Guide Group Global</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="navbar-mount"></div>
 
-<!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-tag reveal">
-        <span data-lang="fa">مجارستان · اروپا · بوداپست</span>
-        <span data-lang="ar">المجر · أوروبا · بودابست</span>
-        <span data-lang="en">Hungary · Europe · Budapest</span>
-      </div>
-      <h1 class="hero-title">
-        <div class="hero-line">
-          <span data-lang="fa">آینده‌ات را</span>
-          <span data-lang="ar">ابنِ مستقبلك</span>
-          <span data-lang="en">Build your future</span>
+<!-- NAV injected by components.js -->
+
+<!-- ══════════════════════════════════════════════════════
+     SCROLL SCENE — 600vh sticky globe
+═══════════════════════════════════════════════════════ -->
+<div class="scroll-scene" id="scroll-scene">
+  <div class="scroll-sticky">
+    <canvas id="globe-canvas"></canvas>
+
+    <!-- Hero text overlay -->
+    <div class="hero-content" id="hero-content">
+      <div class="hero-inner">
+        <p class="hero-eyebrow" data-lang="fa">مهاجرت · تحصیل · آینده</p>
+        <p class="hero-eyebrow" data-lang="ar">الهجرة · التعليم · المستقبل</p>
+        <p class="hero-eyebrow" data-lang="en">Migration · Education · Future</p>
+
+        <h1 class="hero-title">
+          <span class="hero-line" data-lang="fa">راه شما به</span>
+          <span class="hero-line" data-lang="fa">اروپا از اینجا شروع می‌شود</span>
+          <span class="hero-line" data-lang="ar">طريقك إلى</span>
+          <span class="hero-line" data-lang="ar">أوروبا يبدأ من هنا</span>
+          <span class="hero-line" data-lang="en">Your path to</span>
+          <span class="hero-line" data-lang="en">Europe starts here</span>
+        </h1>
+
+        <div class="hero-cta">
+          <a href="immigration.html" class="btn btn-gold" data-lang="fa">مشاوره رایگان</a>
+          <a href="immigration.html" class="btn btn-gold" data-lang="ar">استشارة مجانية</a>
+          <a href="immigration.html" class="btn btn-gold" data-lang="en">Free Consultation</a>
+          <a href="about.html" class="btn btn-ghost" data-lang="fa">درباره ما</a>
+          <a href="about.html" class="btn btn-ghost" data-lang="ar">عنّا</a>
+          <a href="about.html" class="btn btn-ghost" data-lang="en">About Us</a>
         </div>
-        <div class="hero-line">
-          <span data-lang="fa">در اروپا بساز</span>
-          <span data-lang="ar">في قلب أوروبا</span>
-          <span data-lang="en">in the heart of Europe</span>
-        </div>
-      </h1>
-      <p class="hero-sub reveal">
-        <span data-lang="fa">G³ همراه مطمئن شما در مسیر مهاجرت، تحصیل و سرمایه‌گذاری در اروپا</span>
-        <span data-lang="ar">G³ رفيقك الموثوق في رحلة الهجرة والدراسة والاستثمار في أوروبا</span>
-        <span data-lang="en">G³ is your trusted partner for migration, education and investment in Europe</span>
-      </p>
-      <div class="hero-cta reveal">
-        <a href="https://t.me/GGG_Immigration" target="_blank" class="btn-primary">
-          <span data-lang="fa">مشاوره رایگان</span>
-          <span data-lang="ar">استشارة مجانية</span>
-          <span data-lang="en">Free Consultation</span>
-        </a>
-        <a href="about.html" class="btn-ghost">
-          <span data-lang="fa">درباره ما</span>
-          <span data-lang="ar">عنّا</span>
-          <span data-lang="en">About Us</span>
-        </a>
       </div>
     </div>
-    <div class="hero-globe">
-      <canvas id="globe-canvas"></canvas>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint" id="scroll-hint">
+      <span class="scroll-hint-text" data-lang="fa">اسکرول کنید</span>
+      <span class="scroll-hint-text" data-lang="ar">مرر للأسفل</span>
+      <span class="scroll-hint-text" data-lang="en">Scroll to explore</span>
+      <div class="scroll-hint-line"></div>
     </div>
+
+    <!-- Globe scene label -->
+    <div class="globe-label" id="globe-label"></div>
   </div>
-</section>
+</div>
 
-<!-- ─── STATS STRIP ───────────────────────────────────────────────────────── -->
-<section class="stats-strip">
+<!-- ══════════════════════════════════════════════════════
+     STATS STRIP
+═══════════════════════════════════════════════════════ -->
+<section class="stats-strip reveal">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-num" dir="ltr">500+</div>
-        <div class="stat-label">
-          <span data-lang="fa">پرونده موفق</span>
-          <span data-lang="ar">ملف ناجح</span>
-          <span data-lang="en">Successful cases</span>
-        </div>
+      <div class="stat-item">
+        <div class="stat-num" dir="ltr">500<span class="stat-plus">+</span></div>
+        <div class="stat-label" data-lang="fa">مشتری موفق</div>
+        <div class="stat-label" data-lang="ar">عميل ناجح</div>
+        <div class="stat-label" data-lang="en">Successful Clients</div>
       </div>
-      <div class="stat-item reveal">
+      <div class="stat-item">
         <div class="stat-num" dir="ltr">8</div>
-        <div class="stat-label">
-          <span data-lang="fa">سال تجربه</span>
-          <span data-lang="ar">سنوات خبرة</span>
-          <span data-lang="en">Years of experience</span>
-        </div>
+        <div class="stat-label" data-lang="fa">سال تجربه</div>
+        <div class="stat-label" data-lang="ar">سنوات خبرة</div>
+        <div class="stat-label" data-lang="en">Years Experience</div>
       </div>
-      <div class="stat-item reveal">
+      <div class="stat-item">
         <div class="stat-num" dir="ltr">12</div>
-        <div class="stat-label">
-          <span data-lang="fa">متخصص حقوقی</span>
-          <span data-lang="ar">متخصص قانوني</span>
-          <span data-lang="en">Legal specialists</span>
-        </div>
+        <div class="stat-label" data-lang="fa">دانشگاه شریک</div>
+        <div class="stat-label" data-lang="ar">جامعة شريكة</div>
+        <div class="stat-label" data-lang="en">Partner Universities</div>
       </div>
-      <div class="stat-item reveal">
-        <div class="stat-num" dir="ltr">98%</div>
-        <div class="stat-label">
-          <span data-lang="fa">نرخ موفقیت</span>
-          <span data-lang="ar">معدل النجاح</span>
-          <span data-lang="en">Success rate</span>
-        </div>
+      <div class="stat-item">
+        <div class="stat-num" dir="ltr">98<span class="stat-plus">%</span></div>
+        <div class="stat-label" data-lang="fa">نرخ موفقیت</div>
+        <div class="stat-label" data-lang="ar">معدل النجاح</div>
+        <div class="stat-label" data-lang="en">Success Rate</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── SERVICES ─────────────────────────────────────────────────────────── -->
-<section class="services-section">
+<!-- ══════════════════════════════════════════════════════
+     SERVICES SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="services-section reveal">
   <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">
-        <span data-lang="fa">خدمات ما</span>
-        <span data-lang="ar">خدماتنا</span>
-        <span data-lang="en">Our services</span>
-      </h2>
-      <p class="section-sub">
-        <span data-lang="fa">راهکارهای جامع برای مهاجرت، تحصیل و سرمایه‌گذاری</span>
-        <span data-lang="ar">حلول شاملة للهجرة والتعليم والاستثمار</span>
-        <span data-lang="en">Comprehensive solutions for migration, education and investment</span>
-      </p>
+    <div class="section-header">
+      <h2 class="section-title" data-lang="fa">خدمات ما</h2>
+      <h2 class="section-title" data-lang="ar">خدماتنا</h2>
+      <h2 class="section-title" data-lang="en">Our Services</h2>
+      <p class="section-sub" data-lang="fa">راهنمای جامع شما از ایران تا مجارستان</p>
+      <p class="section-sub" data-lang="ar">دليلك الشامل من وطنك إلى المجر</p>
+      <p class="section-sub" data-lang="en">Your complete guide from home to Hungary</p>
     </div>
     <div class="services-grid">
-      <a href="immigration.html" class="service-card reveal">
-        <div class="service-num">01</div>
-        <h3 class="service-name">
-          <span data-lang="fa">مهاجرت</span>
-          <span data-lang="ar">الهجرة</span>
-          <span data-lang="en">Immigration</span>
-        </h3>
-        <p class="service-desc">
-          <span data-lang="fa" data-content="svc-imm-fa">اخذ ویزا، اقامت و شهروندی مجارستان با راهنمایی کامل حقوقی</span>
-          <span data-lang="ar" data-content="svc-imm-ar">الحصول على تأشيرة وإقامة وجنسية المجر مع إرشاد قانوني كامل</span>
-          <span data-lang="en" data-content="svc-imm-en">Obtain Hungarian visa, residence and citizenship with full legal guidance</span>
-        </p>
+      <a href="immigration.html" class="svc-card">
+        <div class="svc-icon">✦</div>
+        <h3 class="svc-title" data-lang="fa">ویزا و مهاجرت</h3>
+        <h3 class="svc-title" data-lang="ar">تأشيرة وهجرة</h3>
+        <h3 class="svc-title" data-lang="en">Visa & Immigration</h3>
+        <p class="svc-desc" data-lang="fa">اخذ ویزای تحصیلی، کاری و اقامت دائم در مجارستان</p>
+        <p class="svc-desc" data-lang="ar">استخراج تأشيرة الدراسة والعمل والإقامة الدائمة في المجر</p>
+        <p class="svc-desc" data-lang="en">Student, work, and permanent residence visas in Hungary</p>
       </a>
-      <a href="education.html" class="service-card reveal">
-        <div class="service-num">02</div>
-        <h3 class="service-name">
-          <span data-lang="fa">تحصیل</span>
-          <span data-lang="ar">التعليم</span>
-          <span data-lang="en">Education</span>
-        </h3>
-        <p class="service-desc">
-          <span data-lang="fa" data-content="svc-edu-fa">پذیرش تضمین‌شده در بهترین دانشگاه‌های مجارستان</span>
-          <span data-lang="ar" data-content="svc-edu-ar">قبول مضمون في أفضل الجامعات المجرية</span>
-          <span data-lang="en" data-content="svc-edu-en">Guaranteed admission to Hungary's top universities</span>
-        </p>
+      <a href="education.html" class="svc-card">
+        <div class="svc-icon">◈</div>
+        <h3 class="svc-title" data-lang="fa">تحصیل در مجارستان</h3>
+        <h3 class="svc-title" data-lang="ar">الدراسة في المجر</h3>
+        <h3 class="svc-title" data-lang="en">Study in Hungary</h3>
+        <p class="svc-desc" data-lang="fa">پذیرش در بهترین دانشگاه‌های اروپایی با مدرک معتبر</p>
+        <p class="svc-desc" data-lang="ar">القبول في أفضل الجامعات الأوروبية بشهادات معترف بها</p>
+        <p class="svc-desc" data-lang="en">Admission to top European universities with recognized degrees</p>
       </a>
-      <a href="golden-visa.html" class="service-card reveal">
-        <div class="service-num">03</div>
-        <h3 class="service-name">
-          <span data-lang="fa">ویزای طلایی</span>
-          <span data-lang="ar">التأشيرة الذهبية</span>
-          <span data-lang="en">Golden Visa</span>
-        </h3>
-        <p class="service-desc">
-          <span data-lang="fa" data-content="svc-gv-fa">اقامت اروپا از طریق سرمایه‌گذاری از ۲۵۰,۰۰۰ یورو</span>
-          <span data-lang="ar" data-content="svc-gv-ar">إقامة أوروبية عبر الاستثمار بدءاً من 250,000 يورو</span>
-          <span data-lang="en" data-content="svc-gv-en">European residence through investment from €250,000</span>
-        </p>
-      </a>
-      <a href="about.html" class="service-card reveal">
-        <div class="service-num">04</div>
-        <h3 class="service-name">
-          <span data-lang="fa">مشاوره</span>
-          <span data-lang="ar">الاستشارة</span>
-          <span data-lang="en">Consulting</span>
-        </h3>
-        <p class="service-desc">
-          <span data-lang="fa" data-content="svc-consult-fa">بررسی دقیق شرایط و ارائه بهترین مسیر برای اهداف شما</span>
-          <span data-lang="ar" data-content="svc-consult-ar">تقييم دقيق للوضع وتقديم أفضل مسار لتحقيق أهدافك</span>
-          <span data-lang="en" data-content="svc-consult-en">Careful assessment of your situation and the best path to your goals</span>
-        </p>
+      <a href="golden-visa.html" class="svc-card">
+        <div class="svc-icon">◇</div>
+        <h3 class="svc-title" data-lang="fa">ویزای طلایی</h3>
+        <h3 class="svc-title" data-lang="ar">التأشيرة الذهبية</h3>
+        <h3 class="svc-title" data-lang="en">Golden Visa</h3>
+        <p class="svc-desc" data-lang="fa">اقامت اروپایی از طریق سرمایه‌گذاری در مجارستان</p>
+        <p class="svc-desc" data-lang="ar">الإقامة الأوروبية من خلال الاستثمار في المجر</p>
+        <p class="svc-desc" data-lang="en">European residency through investment in Hungary</p>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ─── WHY G3 ─────────────────────────────────────────────────────────────── -->
-<section class="why-section">
+<!-- ══════════════════════════════════════════════════════
+     WHY HUNGARY SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="why-section reveal">
   <div class="container">
-    <div class="why-grid">
-      <div class="why-text reveal">
-        <div class="section-tag">
-          <span data-lang="fa">چرا G³</span>
-          <span data-lang="ar">لماذا G³</span>
-          <span data-lang="en">Why G³</span>
-        </div>
-        <h2 class="section-title">
-          <span data-lang="fa">تخصص واقعی، نتایج قابل اثبات</span>
-          <span data-lang="ar">خبرة حقيقية، نتائج قابلة للإثبات</span>
-          <span data-lang="en">Real expertise, provable results</span>
-        </h2>
-        <p class="why-body">
-          <span data-lang="fa" data-content="why-body-fa">با بیش از ۸ سال تجربه در حوزه مهاجرت به مجارستان و اروپا، تیم G³ هزاران متقاضی را در مسیر اخذ اقامت و تحصیل راهنمایی کرده است. وکلای مجرب، متخصصان آموزشی و مشاوران حرفه‌ای ما در کنار شما هستند.</span>
-          <span data-lang="ar" data-content="why-body-ar">بأكثر من 8 سنوات من الخبرة في مجال الهجرة إلى المجر وأوروبا، وجّه فريق G³ آلاف المتقدمين في مسار الحصول على الإقامة والدراسة.</span>
-          <span data-lang="en" data-content="why-body-en">With over 8 years' experience in Hungarian and European immigration, G³'s team has guided thousands of applicants through the path to residence and study. Our experienced lawyers, education specialists and professional advisors are with you every step of the way.</span>
-        </p>
-        <a href="about.html" class="btn-outline">
-          <span data-lang="fa">بیشتر بدانید</span>
-          <span data-lang="ar">اعرف أكثر</span>
-          <span data-lang="en">Learn more</span>
-        </a>
+    <div class="why-layout">
+      <div class="why-text">
+        <h2 class="section-title" data-lang="fa">چرا مجارستان؟</h2>
+        <h2 class="section-title" data-lang="ar">لماذا المجر؟</h2>
+        <h2 class="section-title" data-lang="en">Why Hungary?</h2>
+
+        <ul class="why-list">
+          <li class="why-item" data-lang="fa">
+            <span class="why-dot"></span>
+            <span>عضو اتحادیه اروپا با آزادی تردد شنگن</span>
+          </li>
+          <li class="why-item" data-lang="fa">
+            <span class="why-dot"></span>
+            <span>هزینه زندگی بسیار پایین‌تر از اروپای غربی</span>
+          </li>
+          <li class="why-item" data-lang="fa">
+            <span class="why-dot"></span>
+            <span>دانشگاه‌های معتبر با مدرک اروپایی</span>
+          </li>
+          <li class="why-item" data-lang="fa">
+            <span class="why-dot"></span>
+            <span>مسیر سریع به اقامت دائم و شهروندی</span>
+          </li>
+          <li class="why-item" data-lang="ar">
+            <span class="why-dot"></span>
+            <span>عضو في الاتحاد الأوروبي مع حرية التنقل شنغن</span>
+          </li>
+          <li class="why-item" data-lang="ar">
+            <span class="why-dot"></span>
+            <span>تكاليف معيشة أقل بكثير من غرب أوروبا</span>
+          </li>
+          <li class="why-item" data-lang="ar">
+            <span class="why-dot"></span>
+            <span>جامعات مرموقة بشهادات أوروبية معترف بها</span>
+          </li>
+          <li class="why-item" data-lang="ar">
+            <span class="why-dot"></span>
+            <span>مسار سريع للإقامة الدائمة والجنسية</span>
+          </li>
+          <li class="why-item" data-lang="en">
+            <span class="why-dot"></span>
+            <span>EU member with full Schengen freedom of movement</span>
+          </li>
+          <li class="why-item" data-lang="en">
+            <span class="why-dot"></span>
+            <span>Cost of living far lower than Western Europe</span>
+          </li>
+          <li class="why-item" data-lang="en">
+            <span class="why-dot"></span>
+            <span>Prestigious universities with EU-recognized degrees</span>
+          </li>
+          <li class="why-item" data-lang="en">
+            <span class="why-dot"></span>
+            <span>Fast track to permanent residency and citizenship</span>
+          </li>
+        </ul>
+
+        <a href="about.html" class="btn btn-gold" data-lang="fa" style="margin-top:2rem;display:inline-flex">بیشتر بدانید</a>
+        <a href="about.html" class="btn btn-gold" data-lang="ar" style="margin-top:2rem;display:inline-flex">اعرف أكثر</a>
+        <a href="about.html" class="btn btn-gold" data-lang="en" style="margin-top:2rem;display:inline-flex">Learn More</a>
       </div>
-      <div class="why-features reveal">
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div>
-            <h4 class="feature-title">
-              <span data-lang="fa">وکلای مجاز مجارستانی</span>
-              <span data-lang="ar">محامون مرخصون في المجر</span>
-              <span data-lang="en">Licensed Hungarian lawyers</span>
-            </h4>
+      <div class="why-visual">
+        <div class="why-card-stack">
+          <div class="why-card" data-content="why-card-1">
+            <div class="why-card-num" dir="ltr">26</div>
+            <div class="why-card-label" data-lang="fa">کشور شنگن</div>
+            <div class="why-card-label" data-lang="ar">دول شنغن</div>
+            <div class="why-card-label" data-lang="en">Schengen Countries</div>
           </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div>
-            <h4 class="feature-title">
-              <span data-lang="fa">پشتیبانی ۷/۲۴ به ۳ زبان</span>
-              <span data-lang="ar">دعم 24/7 بثلاث لغات</span>
-              <span data-lang="en">24/7 support in 3 languages</span>
-            </h4>
+          <div class="why-card why-card--accent" data-content="why-card-2">
+            <div class="why-card-num" dir="ltr">€400</div>
+            <div class="why-card-label" data-lang="fa">هزینه ماهانه زندگی</div>
+            <div class="why-card-label" data-lang="ar">تكلفة المعيشة الشهرية</div>
+            <div class="why-card-label" data-lang="en">Monthly living cost</div>
           </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div>
-            <h4 class="feature-title">
-              <span data-lang="fa">شفافیت کامل در قیمت‌گذاری</span>
-              <span data-lang="ar">شفافية كاملة في التسعير</span>
-              <span data-lang="en">Full pricing transparency</span>
-            </h4>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div>
-            <h4 class="feature-title">
-              <span data-lang="fa">ضمانت بازگشت وجه در صورت رد</span>
-              <span data-lang="ar">ضمان استرداد المبلغ عند الرفض</span>
-              <span data-lang="en">Refund guarantee on rejection</span>
-            </h4>
+          <div class="why-card" data-content="why-card-3">
+            <div class="why-card-num" dir="ltr">3</div>
+            <div class="why-card-label" data-lang="fa">سال تا اقامت دائم</div>
+            <div class="why-card-label" data-lang="ar">سنوات حتى الإقامة الدائمة</div>
+            <div class="why-card-label" data-lang="en">Years to permanent residency</div>
           </div>
         </div>
       </div>
@@ -238,113 +228,88 @@
   </div>
 </section>
 
-<!-- ─── TESTIMONIALS ──────────────────────────────────────────────────────── -->
-<section class="testimonials-section">
+<!-- ══════════════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════════════ -->
+<section class="testi-section reveal">
   <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">
-        <span data-lang="fa">نظرات مشتریان</span>
-        <span data-lang="ar">آراء العملاء</span>
-        <span data-lang="en">Client testimonials</span>
-      </h2>
+    <div class="section-header">
+      <h2 class="section-title" data-lang="fa">تجربه مشتریان</h2>
+      <h2 class="section-title" data-lang="ar">تجارب عملائنا</h2>
+      <h2 class="section-title" data-lang="en">Client Stories</h2>
     </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">
-          <span data-lang="fa" data-content="test1-fa">با کمک G³ موفق شدم در مدت ۶ ماه اقامت مجارستان را دریافت کنم. تیم بسیار حرفه‌ای و پاسخگو بودند.</span>
-          <span data-lang="ar" data-content="test1-ar">بمساعدة G³ حصلت على إقامة المجر في 6 أشهر. الفريق محترف جداً ومستجيب.</span>
-          <span data-lang="en" data-content="test1-en">With G³'s help I obtained Hungarian residence in 6 months. The team was very professional and responsive.</span>
-        </p>
-        <div class="testimonial-author">
-          <div class="testimonial-name">
-            <span data-lang="fa">علی محمدی</span>
-            <span data-lang="ar">علي محمدي</span>
-            <span data-lang="en">Ali Mohammadi</span>
-          </div>
-          <div class="testimonial-role">
-            <span data-lang="fa">تهران، ایران</span>
-            <span data-lang="ar">طهران، إيران</span>
-            <span data-lang="en">Tehran, Iran</span>
-          </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-quote">&#8220;</div>
+        <p class="testi-text" data-lang="fa">با کمک تیم G³ توانستم در کمتر از ۶ ماه پذیرش دانشگاه بوداپست را بگیرم. فرآیند ویزا هم کاملاً بدون مشکل بود.</p>
+        <p class="testi-text" data-lang="ar">بمساعدة فريق G³ تمكنت من الحصول على القبول في جامعة بودابست في أقل من ٦ أشهر. وكانت عملية التأشيرة سلسة تماماً.</p>
+        <p class="testi-text" data-lang="en">With G³'s help, I received admission to Budapest University in under 6 months. The visa process was completely smooth.</p>
+        <div class="testi-author">
+          <div class="testi-name" data-lang="fa">محمد رضایی</div>
+          <div class="testi-name" data-lang="ar">محمد الرضائي</div>
+          <div class="testi-name" data-lang="en">Mohammad Rezaei</div>
+          <div class="testi-role" data-lang="fa">دانشجوی کارشناسی ارشد — بوداپست</div>
+          <div class="testi-role" data-lang="ar">طالب ماجستير — بودابست</div>
+          <div class="testi-role" data-lang="en">MSc Student — Budapest</div>
         </div>
       </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">
-          <span data-lang="fa" data-content="test2-fa">پذیرش دانشگاه BME را با راهنمایی G³ دریافت کردم. از شروع تا اتمام همه چیز عالی بود.</span>
-          <span data-lang="ar" data-content="test2-ar">حصلت على قبول جامعة BME بإرشاد G³. من البداية حتى النهاية كان كل شيء رائعاً.</span>
-          <span data-lang="en" data-content="test2-en">I got my BME admission with G³'s guidance. From start to finish everything was excellent.</span>
-        </p>
-        <div class="testimonial-author">
-          <div class="testimonial-name">
-            <span data-lang="fa">سارا احمدی</span>
-            <span data-lang="ar">سارة أحمدي</span>
-            <span data-lang="en">Sara Ahmadi</span>
-          </div>
-          <div class="testimonial-role">
-            <span data-lang="fa">مشهد، ایران</span>
-            <span data-lang="ar">مشهد، إيران</span>
-            <span data-lang="en">Mashhad, Iran</span>
-          </div>
+      <div class="testi-card">
+        <div class="testi-quote">&#8220;</div>
+        <p class="testi-text" data-lang="fa">سرمایه‌گذاری از طریق ویزای طلایی با راهنمایی G³ بهترین تصمیم زندگی‌ام بود. الان با خانواده‌ام در بوداپست زندگی می‌کنم.</p>
+        <p class="testi-text" data-lang="ar">كان الاستثمار من خلال التأشيرة الذهبية بتوجيه من G³ أفضل قرار في حياتي. الآن أعيش مع عائلتي في بودابست.</p>
+        <p class="testi-text" data-lang="en">Investing through the Golden Visa with G³'s guidance was the best decision of my life. I now live with my family in Budapest.</p>
+        <div class="testi-author">
+          <div class="testi-name" data-lang="fa">سارا الحسن</div>
+          <div class="testi-name" data-lang="ar">سارة الحسن</div>
+          <div class="testi-name" data-lang="en">Sara Al-Hassan</div>
+          <div class="testi-role" data-lang="fa">مقیم دائم مجارستان</div>
+          <div class="testi-role" data-lang="ar">مقيمة دائمة في المجر</div>
+          <div class="testi-role" data-lang="en">Permanent Resident, Hungary</div>
         </div>
       </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">
-          <span data-lang="fa" data-content="test3-fa">سرمایه‌گذاری در صندوق طلایی مجارستان با راهنمایی G³ انجام دادم. تمام مراحل بدون دردسر پیش رفت.</span>
-          <span data-lang="ar" data-content="test3-ar">استثمرت في صندوق المجر الذهبي بإرشاد G³. سارت جميع المراحل دون أي متاعب.</span>
-          <span data-lang="en" data-content="test3-en">I invested in Hungary's golden fund with G³'s guidance. Every step went without any trouble.</span>
-        </p>
-        <div class="testimonial-author">
-          <div class="testimonial-name">
-            <span data-lang="fa">محمد الکریمی</span>
-            <span data-lang="ar">محمد الكريمي</span>
-            <span data-lang="en">Mohammed Al-Karimi</span>
-          </div>
-          <div class="testimonial-role">
-            <span data-lang="fa">دبی، امارات</span>
-            <span data-lang="ar">دبي، الإمارات</span>
-            <span data-lang="en">Dubai, UAE</span>
-          </div>
+      <div class="testi-card">
+        <div class="testi-quote">&#8220;</div>
+        <p class="testi-text" data-lang="fa">تیم حرفه‌ای و پاسخگو. از اولین مشاوره تا دریافت اقامت همراهم بودند. کاملاً به G³ اعتماد دارم.</p>
+        <p class="testi-text" data-lang="ar">فريق محترف ومتجاوب. كانوا معي من الاستشارة الأولى حتى الحصول على الإقامة. أثق تمامًا في G³.</p>
+        <p class="testi-text" data-lang="en">Professional and responsive team. They were with me from the first consultation to receiving residency. I fully trust G³.</p>
+        <div class="testi-author">
+          <div class="testi-name" data-lang="fa">احمد کریمی</div>
+          <div class="testi-name" data-lang="ar">أحمد الكريمي</div>
+          <div class="testi-name" data-lang="en">Ahmad Karimi</div>
+          <div class="testi-role" data-lang="fa">صاحب کسب‌وکار — بوداپست</div>
+          <div class="testi-role" data-lang="ar">رجل أعمال — بودابست</div>
+          <div class="testi-role" data-lang="en">Business Owner — Budapest</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── CTA BAND ───────────────────────────────────────────────────────────── -->
-<section class="cta-band">
+<!-- ══════════════════════════════════════════════════════
+     CTA BAND
+═══════════════════════════════════════════════════════ -->
+<section class="cta-band reveal">
   <div class="container">
-    <div class="cta-inner reveal">
-      <h2 class="cta-title">
-        <span data-lang="fa">آماده شروع هستید؟</span>
-        <span data-lang="ar">هل أنت مستعد للبدء؟</span>
-        <span data-lang="en">Ready to start?</span>
-      </h2>
-      <p class="cta-sub">
-        <span data-lang="fa">همین امروز با تیم G³ تماس بگیرید</span>
-        <span data-lang="ar">تواصل مع فريق G³ اليوم</span>
-        <span data-lang="en">Contact the G³ team today</span>
-      </p>
+    <div class="cta-inner">
+      <h2 class="cta-title" data-lang="fa">آماده شروع هستید؟</h2>
+      <h2 class="cta-title" data-lang="ar">هل أنت مستعد للبدء؟</h2>
+      <h2 class="cta-title" data-lang="en">Ready to begin?</h2>
+      <p class="cta-sub" data-lang="fa">همین امروز با تیم ما مشاوره رایگان بگیرید</p>
+      <p class="cta-sub" data-lang="ar">احصل على استشارة مجانية مع فريقنا اليوم</p>
+      <p class="cta-sub" data-lang="en">Get a free consultation with our team today</p>
       <div class="cta-actions">
-        <a href="https://t.me/GGG_Immigration" target="_blank" class="btn-primary">Telegram</a>
-        <a href="https://wa.me/36705738870" target="_blank" class="btn-ghost">WhatsApp</a>
+        <a href="tel:+36705738870" class="btn btn-gold" dir="ltr">+36 70 573 88 70</a>
+        <a href="immigration.html" class="btn btn-ghost" data-lang="fa">خدمات ما</a>
+        <a href="immigration.html" class="btn btn-ghost" data-lang="ar">خدماتنا</a>
+        <a href="immigration.html" class="btn btn-ghost" data-lang="en">Our Services</a>
       </div>
     </div>
   </div>
 </section>
 
-<div id="footer-mount"></div>
-<script src="earth.js"></script>
+<!-- FOOTER injected by components.js -->
+
+<script src="globe.js"></script>
 <script src="components.js"></script>
-<script>
-// Initialize globe
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof initGlobe === 'function') {
-    initGlobe('globe-canvas');
-  }
-});
-</script>
 </body>
 </html>
