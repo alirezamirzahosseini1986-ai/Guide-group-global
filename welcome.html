@@ -4,60 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guide Group Global</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Vazirmatn:wght@300;400;500&family=Noto+Sans+Arabic:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  body { background: var(--bg); min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .welcome-wrap { text-align: center; padding: 2rem; }
-  .welcome-logo { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 10vw, 6rem); color: var(--white); letter-spacing: -2px; line-height: 1; margin-bottom: 0.25rem; }
-  .welcome-logo span { color: var(--gold); }
-  .welcome-wordmark { font-family: 'DM Serif Display', serif; font-size: clamp(0.75rem, 2vw, 1rem); letter-spacing: 0.35em; color: var(--muted); text-transform: uppercase; margin-bottom: clamp(2rem, 6vw, 4rem); }
-  .welcome-prompt { font-family: 'Vazirmatn', sans-serif; font-size: 0.875rem; color: var(--muted2); margin-bottom: 2rem; letter-spacing: 0.1em; }
-  .lang-options { display: flex; gap: 0; border: 1px solid var(--border-hi); border-radius: var(--radius-md); overflow: hidden; max-width: 480px; margin: 0 auto; }
-  .lang-option { flex: 1; padding: 2rem 1.5rem; cursor: pointer; border: none; background: transparent; color: var(--muted); transition: background 0.25s, color 0.25s; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-  .lang-option:not(:last-child) { border-right: 1px solid var(--border-hi); }
-  html[dir="rtl"] .lang-option:not(:last-child) { border-right: none; border-left: 1px solid var(--border-hi); }
-  .lang-option:hover { background: var(--surface); color: var(--white); }
-  .lang-option:hover .lang-code { color: var(--gold); }
-  .lang-code { font-family: 'DM Serif Display', serif; font-size: 1.75rem; color: var(--white); }
-  .lang-native { font-size: 0.8rem; color: var(--muted); }
-  .bg-lines { position: fixed; inset: 0; pointer-events: none; opacity: 0.03; }
-  .bg-lines::before, .bg-lines::after { content:''; position:absolute; inset:0; background: repeating-linear-gradient(0deg, var(--white) 0, var(--white) 1px, transparent 1px, transparent 80px); }
-  .bg-lines::after { background: repeating-linear-gradient(90deg, var(--white) 0, var(--white) 1px, transparent 1px, transparent 80px); }
-
-  @media(max-width:480px){
-    .lang-options { flex-direction: column; max-width: 280px; }
-    .lang-option:not(:last-child) { border-right: none; border-left: none; border-bottom: 1px solid var(--border-hi); }
-  }
-</style>
 </head>
-<body>
-<div class="bg-lines"></div>
+<body class="welcome-body">
+
 <div class="welcome-wrap">
-  <div class="welcome-logo">G<span>³</span></div>
-  <div class="welcome-wordmark">Guide Group Global</div>
-  <div class="welcome-prompt">Select your language / زبان خود را انتخاب کنید / اختر لغتك</div>
-  <div class="lang-options">
-    <button class="lang-option" onclick="chooseLang('fa')">
-      <span class="lang-code">FA</span>
-      <span class="lang-native">فارسی</span>
+
+  <div class="welcome-logo">
+    <div class="welcome-g3">G³</div>
+    <div class="welcome-brand-name">Guide Group Global</div>
+  </div>
+
+  <h1 class="welcome-headline">
+    <span class="wl-fa">زبان خود را انتخاب کنید</span>
+    <span class="wl-ar">اختر لغتك</span>
+    <span class="wl-en">Choose your language</span>
+  </h1>
+
+  <div class="welcome-langs">
+    <button class="welcome-lang-btn" data-lang="fa" onclick="chooseLang('fa')">
+      <span class="wl-flag">🇮🇷</span>
+      <span class="wl-name">فارسی</span>
     </button>
-    <button class="lang-option" onclick="chooseLang('ar')">
-      <span class="lang-code">AR</span>
-      <span class="lang-native">العربية</span>
+    <button class="welcome-lang-btn" data-lang="ar" onclick="chooseLang('ar')">
+      <span class="wl-flag">🇸🇦</span>
+      <span class="wl-name">العربية</span>
     </button>
-    <button class="lang-option" onclick="chooseLang('en')">
-      <span class="lang-code">EN</span>
-      <span class="lang-native">English</span>
+    <button class="welcome-lang-btn" data-lang="en" onclick="chooseLang('en')">
+      <span class="wl-flag">🇬🇧</span>
+      <span class="wl-name">English</span>
     </button>
   </div>
+
 </div>
+
 <script>
-function chooseLang(l){
-  localStorage.setItem('ggg_lang', l);
+function chooseLang(lang) {
+  localStorage.setItem('ggg_lang', lang);
   window.location.href = 'index.html';
+}
+// If lang already set, skip welcome
+if (localStorage.getItem('ggg_lang')) {
+  window.location.replace('index.html');
 }
 </script>
 </body>
