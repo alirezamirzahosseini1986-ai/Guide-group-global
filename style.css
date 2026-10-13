@@ -55,14 +55,43 @@ a { color: inherit; text-decoration: none; }
 button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
 
 /* ── Language visibility ──────────────────────────────────────── */
-[data-lang] { display: none; }
-html[lang="fa"] [data-lang="fa"],
-html[lang="ar"] [data-lang="ar"],
-html[lang="en"] [data-lang="en"] { display: inline; }
-.block-lang { display: none; }
-html[lang="fa"] .block-lang[data-lang="fa"],
-html[lang="ar"] .block-lang[data-lang="ar"],
-html[lang="en"] .block-lang[data-lang="en"] { display: block; }
+[data-lang] { display: none !important; }
+html[lang="fa"] [data-lang="fa"] { display: inline !important; }
+html[lang="ar"] [data-lang="ar"] { display: inline !important; }
+html[lang="en"] [data-lang="en"] { display: inline !important; }
+
+/* Block-level elements (h1, h2, p, div, li, a with full width) */
+html[lang="fa"] h1[data-lang="fa"],
+html[lang="fa"] h2[data-lang="fa"],
+html[lang="fa"] h3[data-lang="fa"],
+html[lang="fa"] p[data-lang="fa"],
+html[lang="fa"] div[data-lang="fa"],
+html[lang="fa"] li[data-lang="fa"],
+html[lang="fa"] span.hero-line[data-lang="fa"],
+html[lang="fa"] a.btn[data-lang="fa"] { display: block !important; }
+
+html[lang="ar"] h1[data-lang="ar"],
+html[lang="ar"] h2[data-lang="ar"],
+html[lang="ar"] h3[data-lang="ar"],
+html[lang="ar"] p[data-lang="ar"],
+html[lang="ar"] div[data-lang="ar"],
+html[lang="ar"] li[data-lang="ar"],
+html[lang="ar"] span.hero-line[data-lang="ar"],
+html[lang="ar"] a.btn[data-lang="ar"] { display: block !important; }
+
+html[lang="en"] h1[data-lang="en"],
+html[lang="en"] h2[data-lang="en"],
+html[lang="en"] h3[data-lang="en"],
+html[lang="en"] p[data-lang="en"],
+html[lang="en"] div[data-lang="en"],
+html[lang="en"] li[data-lang="en"],
+html[lang="en"] span.hero-line[data-lang="en"],
+html[lang="en"] a.btn[data-lang="en"] { display: block !important; }
+
+/* Inline buttons */
+html[lang="fa"] a.btn[data-lang="fa"] { display: inline-flex !important; }
+html[lang="ar"] a.btn[data-lang="ar"] { display: inline-flex !important; }
+html[lang="en"] a.btn[data-lang="en"] { display: inline-flex !important; }
 
 /* ── Layout helpers ──────────────────────────────────────────── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }

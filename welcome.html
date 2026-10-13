@@ -118,29 +118,30 @@ canvas#stars{position:fixed;inset:0;width:100%;height:100%;z-index:0}
   <div class="choose-label">زبان خود را انتخاب کنید &nbsp;/&nbsp; اختر لغتك &nbsp;/&nbsp; Choose your language</div>
 
   <div class="lang-options">
-    <a href="index.html" class="lang-card" data-lang="fa" onclick="setWelcomeLang('fa')">
+    <div class="lang-card" onclick="chooseLang('fa')">
       <div class="lang-flag">🇮🇷</div>
       <div class="lang-native fa-text">فارسی</div>
       <div class="lang-name">Persian</div>
-    </a>
-    <a href="index.html" class="lang-card" data-lang="ar" onclick="setWelcomeLang('ar')">
+    </div>
+    <div class="lang-card" onclick="chooseLang('ar')">
       <div class="lang-flag">🇸🇦</div>
       <div class="lang-native fa-text">العربية</div>
       <div class="lang-name">Arabic</div>
-    </a>
-    <a href="index.html" class="lang-card" data-lang="en" onclick="setWelcomeLang('en')">
+    </div>
+    <div class="lang-card" onclick="chooseLang('en')">
       <div class="lang-flag">🇬🇧</div>
       <div class="lang-native en-text">English</div>
       <div class="lang-name">English</div>
-    </a>
+    </div>
   </div>
 
   <div class="budapest-tag">Budapest, Hungary · Est. 2015</div>
 </div>
 
 <script>
-function setWelcomeLang(l){
-  localStorage.setItem('ggg_lang',l);
+function chooseLang(l){
+  try { localStorage.setItem('ggg_lang', l); } catch(e){}
+  window.location.href = 'index.html?lang=' + l;
 }
 
 // Starfield animation

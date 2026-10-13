@@ -4,9 +4,26 @@
 ═══════════════════════════════════════════════════════ */
 
 // ── Language ─────────────────────────────────────────────
-function getLang() { return localStorage.getItem('ggg_lang') || 'fa'; }
+function getLang() {
+  // 1. URL param (from welcome page redirect)
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  if (urlLang && ['fa','ar','en'].includes(urlLang)) {
+    try { localStorage.setItem('ggg_lang', urlLang); } catch(e){}
+    // Clean URL without reload
+    const clean = location.pathname + location.hash;
+    history.replaceState(null, '', clean);
+    return urlLang;
+  }
+  // 2. localStorage
+  try {
+    const saved = localStorage.getItem('ggg_lang');
+    if (saved && ['fa','ar','en'].includes(saved)) return saved;
+  } catch(e){}
+  // 3. default
+  return 'fa';
+}
 function setLang(l) {
-  localStorage.setItem('ggg_lang', l);
+  try { localStorage.setItem('ggg_lang', l); } catch(e){}
   applyLang(l);
 }
 function applyLang(l) {
@@ -22,7 +39,10 @@ function applyLang(l) {
 (function(){
   const isWelcome = location.pathname.endsWith('welcome.html');
   const isIndex   = location.pathname.endsWith('index.html') || location.pathname.endsWith('/');
-  if (!isWelcome && isIndex && !localStorage.getItem('ggg_lang')) {
+  const hasLangParam = new URLSearchParams(location.search).get('lang');
+  let hasSaved = false;
+  try { hasSaved = !!localStorage.getItem('ggg_lang'); } catch(e){}
+  if (!isWelcome && isIndex && !hasSaved && !hasLangParam) {
     location.replace('welcome.html');
   }
 })();
