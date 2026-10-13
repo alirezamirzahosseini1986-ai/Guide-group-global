@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Group Global — G³</title>
+<style>
+@import url('https://cdn.jsdelivr.net/npm/vazirmatn@33.003/Vazirmatn.css');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08090C;
+  --gold:#C9A84C;
+  --gold-lt:rgba(201,168,76,0.15);
+  --white:#F0EDE8;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+  --fa:'Vazirmatn',Tahoma,'Arial Unicode MS',sans-serif;
+}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--bg)}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+
+canvas#stars{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+
+.welcome-wrap{
+  position:relative;z-index:10;
+  display:flex;flex-direction:column;align-items:center;
+  gap:2.5rem;text-align:center;padding:2rem;
+}
+
+.logo-emblem{
+  font-family:var(--serif);font-size:5rem;font-weight:300;letter-spacing:0.04em;
+  color:var(--gold);line-height:1;
+  text-shadow:0 0 60px rgba(201,168,76,0.4);
+  animation:fadeDown 1.2s cubic-bezier(0.16,1,0.3,1) both;
+}
+.logo-sub{
+  font-family:var(--sans);font-size:0.75rem;font-weight:300;letter-spacing:0.3em;
+  color:rgba(240,237,232,0.45);text-transform:uppercase;margin-top:0.3rem;
+  animation:fadeDown 1.2s 0.15s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+.divider{
+  width:1px;height:48px;
+  background:linear-gradient(to bottom,transparent,var(--gold),transparent);
+  animation:fadeIn 1s 0.5s both;
+}
+
+.choose-label{
+  font-family:var(--fa);font-size:0.85rem;font-weight:300;
+  color:rgba(240,237,232,0.5);letter-spacing:0.05em;
+  animation:fadeIn 1s 0.6s both;
+}
+
+.lang-options{
+  display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
+  animation:fadeIn 1s 0.8s both;
+}
+
+.lang-card{
+  display:flex;flex-direction:column;align-items:center;gap:0.6rem;
+  padding:1.4rem 2rem;
+  border:1px solid rgba(201,168,76,0.2);
+  background:rgba(201,168,76,0.04);
+  cursor:pointer;transition:all 0.35s cubic-bezier(0.16,1,0.3,1);
+  min-width:140px;
+  text-decoration:none;
+  position:relative;overflow:hidden;
+}
+.lang-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(201,168,76,0.08),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.lang-card:hover{border-color:rgba(201,168,76,0.6);transform:translateY(-4px);}
+.lang-card:hover::before{opacity:1;}
+
+.lang-flag{font-size:2rem;line-height:1}
+.lang-native{font-size:1.2rem;font-weight:500;color:var(--white);}
+.lang-native.fa-text{font-family:var(--fa)}
+.lang-native.en-text{font-family:var(--serif);font-style:italic}
+.lang-name{font-size:0.7rem;font-weight:300;letter-spacing:0.12em;
+  color:rgba(240,237,232,0.4);text-transform:uppercase;font-family:var(--sans)}
+
+.budapest-tag{
+  font-family:var(--sans);font-size:0.68rem;font-weight:300;
+  letter-spacing:0.2em;color:rgba(201,168,76,0.4);text-transform:uppercase;
+  animation:fadeIn 1s 1.1s both;
+}
+
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeIn{
+  from{opacity:0}to{opacity:1}
+}
+
+@media(max-width:480px){
+  .logo-emblem{font-size:3.5rem}
+  .lang-options{gap:0.7rem}
+  .lang-card{min-width:110px;padding:1.1rem 1.4rem}
+}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<div class="welcome-wrap">
+  <div>
+    <div class="logo-emblem">G³</div>
+    <div class="logo-sub">Guide Group Global</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="choose-label">زبان خود را انتخاب کنید &nbsp;/&nbsp; اختر لغتك &nbsp;/&nbsp; Choose your language</div>
+
+  <div class="lang-options">
+    <div class="lang-card" onclick="chooseLang('fa')">
+      <div class="lang-flag">🇮🇷</div>
+      <div class="lang-native fa-text">فارسی</div>
+      <div class="lang-name">Persian</div>
+    </div>
+    <div class="lang-card" onclick="chooseLang('ar')">
+      <div class="lang-flag">🇸🇦</div>
+      <div class="lang-native fa-text">العربية</div>
+      <div class="lang-name">Arabic</div>
+    </div>
+    <div class="lang-card" onclick="chooseLang('en')">
+      <div class="lang-flag">🇬🇧</div>
+      <div class="lang-native en-text">English</div>
+      <div class="lang-name">English</div>
+    </div>
+  </div>
+
+  <div class="budapest-tag">Budapest, Hungary · Est. 2015</div>
+</div>
+
+<script>
+function chooseLang(l){
+  try { localStorage.setItem('ggg_lang', l); } catch(e){}
+  window.location.href = 'index.html?lang=' + l;
+}
+
+// Starfield animation
+(function(){
+  const c = document.getElementById('stars');
+  const gl = c.getContext('webgl') || c.getContext('experimental-webgl');
+  if(!gl){ fallbackCanvas(); return; }
+
+  function resize(){
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+    gl.viewport(0,0,c.width,c.height);
+  }
+  window.addEventListener('resize',resize);
+  resize();
+
+  const N = 900;
+  const pos = new Float32Array(N*2);
+  const sizes = new Float32Array(N);
+  const brightness = new Float32Array(N);
+  for(let i=0;i<N;i++){
+    pos[i*2] = Math.random()*2-1;
+    pos[i*2+1] = Math.random()*2-1;
+    sizes[i] = 0.5 + Math.random()*2.5;
+    brightness[i] = 0.3 + Math.random()*0.7;
+  }
+
+  const vs = `
+    attribute vec2 aPos;
+    attribute float aSize;
+    attribute float aBright;
+    varying float vBright;
+    void main(){
+      gl_Position = vec4(aPos,0.0,1.0);
+      gl_PointSize = aSize;
+      vBright = aBright;
+    }`;
+  const fs = `
+    precision mediump float;
+    varying float vBright;
+    uniform float uTime;
+    void main(){
+      vec2 uv = gl_PointCoord - 0.5;
+      float d = length(uv);
+      if(d>0.5) discard;
+      float alpha = (1.0-d*2.0)*vBright;
+      float twinkle = 0.7 + 0.3*sin(uTime*2.0 + vBright*10.0);
+      gl_FragColor = vec4(1.0,0.97,0.92,alpha*twinkle);
+    }`;
+
+  function compileShader(type,src){
+    const s = gl.createShader(type);
+    gl.shaderSource(s,src); gl.compileShader(s); return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog,compileShader(gl.VERTEX_SHADER,vs));
+  gl.attachShader(prog,compileShader(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(prog); gl.useProgram(prog);
+
+  function mkBuf(data){
+    const b=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,b);
+    gl.bufferData(gl.ARRAY_BUFFER,data,gl.STATIC_DRAW);
+    return b;
+  }
+  const posB=mkBuf(pos), szB=mkBuf(sizes), brB=mkBuf(brightness);
+
+  const aPos=gl.getAttribLocation(prog,'aPos');
+  const aSize=gl.getAttribLocation(prog,'aSize');
+  const aBright=gl.getAttribLocation(prog,'aBright');
+  const uTime=gl.getUniformLocation(prog,'uTime');
+
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA,gl.ONE);
+
+  let start=null;
+  function frame(t){
+    if(!start) start=t;
+    const elapsed=(t-start)/1000;
+    gl.clearColor(0.03,0.035,0.047,1); gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.useProgram(prog);
+    gl.uniform1f(uTime,elapsed);
+
+    gl.bindBuffer(gl.ARRAY_BUFFER,posB);
+    gl.enableVertexAttribArray(aPos);
+    gl.vertexAttribPointer(aPos,2,gl.FLOAT,false,0,0);
+
+    gl.bindBuffer(gl.ARRAY_BUFFER,szB);
+    gl.enableVertexAttribArray(aSize);
+    gl.vertexAttribPointer(aSize,1,gl.FLOAT,false,0,0);
+
+    gl.bindBuffer(gl.ARRAY_BUFFER,brB);
+    gl.enableVertexAttribArray(aBright);
+    gl.vertexAttribPointer(aBright,1,gl.FLOAT,false,0,0);
+
+    gl.drawArrays(gl.POINTS,0,N);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  function fallbackCanvas(){
+    const ctx=c.getContext('2d');
+    function draw(){
+      c.width=window.innerWidth; c.height=window.innerHeight;
+      ctx.fillStyle='#08090C'; ctx.fillRect(0,0,c.width,c.height);
+      for(let i=0;i<600;i++){
+        const x=Math.random()*c.width, y=Math.random()*c.height;
+        const r=Math.random()*1.5;
+        ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(255,248,235,${Math.random()*0.8+0.1})`; ctx.fill();
+      }
+    }
+    draw();
+    window.addEventListener('resize',draw);
+  }
+})();
+</script>
+</body>
+</html>
