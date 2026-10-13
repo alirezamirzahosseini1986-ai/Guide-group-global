@@ -1,9 +1,12 @@
 /* ═══════════════════════════════════════════════════════════════
-   Guide Group Global — G³  |  v5
+   Guide Group Global — G³  |  v6
    Design: Dark space → Budapest — premium immigration agency
    Fonts: Cormorant Garamond (display) + Inter (body) + Vazirmatn (FA/AR)
 ═══════════════════════════════════════════════════════════════ */
 
+/* Vazirmatn via jsDelivr — works in Iran */
+@import url('https://cdn.jsdelivr.net/npm/vazirmatn@33.003/Vazirmatn.css');
+/* Google Fonts for Latin fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
 
 :root {
