@@ -1,0 +1,68 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+pageKey: study
+layout: base.njk
+permalink: "/{{ lang.code }}/study-in-hungary/"
+preloadRatio: 1.6
+eleventyComputed:
+  preloadImage: "{{ i18n[lang.code].study.hero.image }}"
+---
+{%- import "macros.njk" as m -%}
+{%- set L = lang.code -%}
+{%- set d = i18n[L].study -%}
+{%- set ui = i18n[L].ui -%}
+
+{{ m.pageHero(d.hero, ui, L, "study", 1.6) }}
+
+<section class="section" aria-label="{{ ui.nav.study }}">
+  <div class="container">
+    <ul class="highlights">
+      {%- for h in d.highlights %}
+      <li class="highlight" data-tilt="6" data-reveal="{{ loop.index0 }}">
+        <span class="hl-n" aria-hidden="true">{{ loop.index | pad2(L) }}</span>
+        <h2 class="display-sm">{{ h.title }}</h2>
+        <p>{{ h.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section split split-video" aria-labelledby="dip-title">
+  <div class="container split-grid">
+    <div class="split-media-video">{{ m.videoCard(d.diploma.video, d.diploma.poster, ui) }}</div>
+    <div class="split-copy">
+      <p class="eyebrow" data-reveal>{{ d.diploma.kicker }}</p>
+      <h2 class="display-md" id="dip-title" data-reveal="1">{{ d.diploma.title }}</h2>
+      <p class="body-lg" data-reveal="2">{{ d.diploma.text }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="uni-title">
+  <div class="container">
+    {{ m.sectionHead("", d.universities.title, d.universities.text, "uni-title") }}
+    <ul class="uni-grid">
+      {%- for u in d.universities.items %}
+      <li class="uni" data-tilt="6" data-reveal="{{ loop.index0 }}">
+        <span class="uni-abbr" lang="en" dir="ltr" aria-hidden="true">{{ u.abbr }}</span>
+        <h3>{{ u.name }} <span class="uni-tag" lang="en" dir="ltr">({{ u.abbr }})</span></h3>
+        <p>{{ u.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section promise" aria-labelledby="sf-title">
+  <div class="container narrow">
+    <h2 class="eyebrow" id="sf-title" data-reveal>{{ d.future.title }}</h2>
+    <p class="statement statement-sm" data-split>{{ d.future.text_1 }}</p>
+    <p class="body-lg center" data-reveal>{{ d.future.text_2 }}</p>
+  </div>
+</section>
+
+{{ m.ctaBand(ui, L, site) }}

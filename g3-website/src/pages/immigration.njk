@@ -1,0 +1,67 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+pageKey: immigration
+layout: base.njk
+permalink: "/{{ lang.code }}/immigration/"
+preloadRatio: 1.6
+eleventyComputed:
+  preloadImage: "{{ i18n[lang.code].immigration.hero.image }}"
+---
+{%- import "macros.njk" as m -%}
+{%- set L = lang.code -%}
+{%- set d = i18n[L].immigration -%}
+{%- set ui = i18n[L].ui -%}
+
+{{ m.pageHero(d.hero, ui, L, "immigration", 1.6) }}
+
+<section class="section" aria-labelledby="biz-title">
+  <div class="container two-col">
+    <div>
+      <p class="eyebrow" data-reveal>{{ d.business.kicker }}</p>
+      <h2 class="display-lg sticky-title" id="biz-title" data-reveal="1">{{ d.business.title }}</h2>
+    </div>
+    <div class="prose">
+      <p class="body-lg dropcap" data-reveal>{{ d.business.text }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section split split-video" aria-labelledby="re-title">
+  <div class="container split-grid">
+    <div class="split-copy">
+      <p class="eyebrow" data-reveal>{{ d.realestate.kicker }}</p>
+      <h2 class="display-md" id="re-title" data-reveal="1">{{ d.realestate.title }}</h2>
+      <p class="body-lg" data-reveal="2">{{ d.realestate.text_1 }}</p>
+      <p data-reveal="3">{{ d.realestate.text_2 }}</p>
+      <a class="btn btn-gold" href="{{ 'golden' | localUrl(L) }}" data-reveal="4">{{ d.realestate.cta }} <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+    <div class="split-media-video">{{ m.videoCard(d.realestate.video, d.realestate.poster, ui) }}</div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="steps-title">
+  <div class="container">
+    {{ m.sectionHead("", d.steps.title, "", "steps-title") }}
+    <ol class="timeline">
+      {%- for s in d.steps.items %}
+      <li class="tl-step" data-reveal="{{ loop.index0 }}">
+        <span class="tl-n" aria-hidden="true">{{ loop.index | pad2(L) }}</span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section promise" aria-labelledby="future-title">
+  <div class="container narrow">
+    <h2 class="eyebrow" id="future-title" data-reveal>{{ d.future.title }}</h2>
+    <p class="statement statement-sm" data-split>{{ d.future.text }}</p>
+  </div>
+</section>
+
+{{ m.ctaBand(ui, L, site) }}

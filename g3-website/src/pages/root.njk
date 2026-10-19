@@ -1,0 +1,60 @@
+---
+permalink: "/"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ site.brand.name }} — مهاجرت به مجارستان · Hungary Immigration · الهجرة إلى المجر</title>
+  <meta name="description" content="{{ i18n.fa.home.seo.description }}">
+  <link rel="canonical" href="{{ '/' | abs }}">
+  {%- for l in langs %}
+  <link rel="alternate" hreflang="{{ l.code }}" href="{{ 'home' | localUrl(l.code) | abs }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ '/' | abs }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ site.brand.name }}">
+  <meta property="og:description" content="{{ i18n.en.home.seo.description }}">
+  <meta property="og:url" content="{{ '/' | abs }}">
+  <meta property="og:image" content="{{ site.seo.og_image | img(1200, 630) }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#070b14">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <script>
+    // Returning visitors go straight to their language; Persian/Arabic browsers too.
+    (function () {
+      var map = { fa: 1, en: 1, ar: 1 }, pick = null;
+      try { pick = localStorage.getItem("lang"); } catch (e) {}
+      if (!map[pick]) {
+        var langs = navigator.languages || [navigator.language || ""];
+        for (var i = 0; i < langs.length && !pick; i++) {
+          var c = String(langs[i]).slice(0, 2).toLowerCase();
+          if (c === "fa" || c === "ar") pick = c;
+        }
+      }
+      if (map[pick]) location.replace(document.querySelector('link[hreflang="' + pick + '"]').href);
+    })();
+  </script>
+  <link rel="stylesheet" href="/assets/fonts/all.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="chooser">
+  <main class="chooser-main">
+    {% include "partials/mark.njk" %}
+    <p class="brand-word chooser-brand" lang="en" dir="ltr">Guide Group <em>Global</em></p>
+    <h1 class="sr-only">{{ site.brand.name }}</h1>
+    <ul class="chooser-list">
+      {%- for l in langs %}
+      <li><a href="{{ 'home' | localUrl(l.code) }}" hreflang="{{ l.code }}" lang="{{ l.code }}" dir="{{ l.dir }}" class="chooser-link chooser-{{ l.code }}" onclick="try{localStorage.setItem('lang','{{ l.code }}')}catch(e){}">
+        <span class="chooser-name">{{ l.name }}</span>
+        <span class="chooser-sub">{{ i18n[l.code].home.hero.title_1 }} {{ i18n[l.code].home.hero.title_2 }}</span>
+      </a></li>
+      {%- endfor %}
+    </ul>
+    <p class="chooser-foot" dir="ltr">Budapest · Since {{ site.founded }}</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "seo": {
+    "title": "About Us | Hungary Immigration since 2010 | Guide Group Global",
+    "description": "Since 2010, our Budapest team has guided clients through immigration, study, business set-up and investment in Hungary. Meet our vision and values."
+  },
+  "hero": {
+    "kicker": "About us",
+    "title": "Your trusted partner in the heart of Europe",
+    "text": "We believe immigration is more than a change of address. It is an important step toward progress and toward making your dreams real.",
+    "image": "https://static.wixstatic.com/media/nsplsh_ab0c3be077e547c594487d673af99a9b~mv2.jpg",
+    "image_alt": "Historic European architecture"
+  },
+  "story": {
+    "title": "Our story",
+    "text_1": "With many years of experience and expertise, we act as your trusted partner for immigration, study and investment in Hungary. Since 2010, our goal has been to offer professional, precise services to people looking for a new opportunity in one of Europe's most popular destinations.",
+    "text_2": "With a deep understanding of our clients' needs and concerns and full knowledge of Hungarian laws and regulations, our team manages every stage of immigration, study, business set-up, investment and visas in one integrated, professional process. Through diverse programmes and dedicated advice, we make your path smoother and safer."
+  },
+  "vision": {
+    "kicker": "Our vision",
+    "title": "A bright future, with confidence and peace of mind",
+    "text": "Our vision is to create a platform that lets you plan a bright future in Hungary and Europe with confidence and peace of mind. Our mission is to accompany you at every step of the way, so that with awareness and the right choices you reach a new life and future.",
+    "image": "https://static.wixstatic.com/media/nsplsh_524fd77ae2cc4de79f102e5e2323bd27~mv2.jpg",
+    "image_alt": "A view of a European city"
+  },
+  "promise": {
+    "title": "Our promise to you",
+    "text": "Throughout these years we have been proud to serve with honesty and professionalism, and we keep building an ideal experience for every person, founded on commitment, expertise and partnership. To have your case reviewed and learn the best routes and latest conditions for moving to Hungary, book a consultation."
+  },
+  "pillars": [
+    {
+      "title": "Commitment",
+      "text": "Your case is a personal responsibility for us until the day you receive your residence permit."
+    },
+    {
+      "title": "Expertise",
+      "text": "Up-to-date knowledge of immigration law and the experience of over 300 successful cases."
+    },
+    {
+      "title": "Partnership",
+      "text": "Continuous support before and after your arrival in Hungary."
+    }
+  ]
+}

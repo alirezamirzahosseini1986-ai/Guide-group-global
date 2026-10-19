@@ -1,0 +1,62 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+pageKey: about
+layout: base.njk
+permalink: "/{{ lang.code }}/about/"
+preloadRatio: 1.6
+eleventyComputed:
+  preloadImage: "{{ i18n[lang.code].about.hero.image }}"
+---
+{%- import "macros.njk" as m -%}
+{%- set L = lang.code -%}
+{%- set d = i18n[L].about -%}
+{%- set ui = i18n[L].ui -%}
+
+{{ m.pageHero(d.hero, ui, L, "about", 1.6) }}
+
+<section class="section" aria-labelledby="story-title">
+  <div class="container two-col">
+    <h2 class="display-lg sticky-title" id="story-title" data-reveal>{{ d.story.title }}</h2>
+    <div class="prose">
+      <p class="body-lg dropcap" data-reveal>{{ d.story.text_1 }}</p>
+      <p class="body-lg" data-reveal="1">{{ d.story.text_2 }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section split" aria-labelledby="vision-title">
+  <div class="container split-grid">
+    <figure class="split-media" data-reveal-img>{{ m.picture(d.vision.image, d.vision.image_alt, 1200, 1.2, "(min-width: 900px) 50vw, 100vw") }}</figure>
+    <div class="split-copy">
+      <p class="eyebrow" data-reveal>{{ d.vision.kicker }}</p>
+      <h2 class="display-md" id="vision-title" data-reveal="1">{{ d.vision.title }}</h2>
+      <p class="body-lg" data-reveal="2">{{ d.vision.text }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-label="{{ ui.nav.about }}">
+  <div class="container">
+    <ol class="pillars">
+      {%- for p in d.pillars %}
+      <li class="pillar" data-tilt="6" data-reveal="{{ loop.index0 }}">
+        <span class="pillar-n" aria-hidden="true">{{ loop.index | pad2(L) }}</span>
+        <h3 class="display-sm">{{ p.title }}</h3>
+        <p>{{ p.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section promise" aria-labelledby="promise-title">
+  <div class="container narrow">
+    <h2 class="eyebrow" id="promise-title" data-reveal>{{ d.promise.title }}</h2>
+    <p class="statement statement-sm" data-split>{{ d.promise.text }}</p>
+  </div>
+</section>
+
+{{ m.ctaBand(ui, L, site) }}

@@ -1,0 +1,104 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+pageKey: golden
+layout: base.njk
+permalink: "/{{ lang.code }}/golden-visa/"
+---
+{%- import "macros.njk" as m -%}
+{%- set L = lang.code -%}
+{%- set d = i18n[L].golden -%}
+{%- set ui = i18n[L].ui -%}
+{%- set spot = i18n[L].home.spotlight -%}
+
+<section class="page-hero page-hero-golden" data-hero>
+  <div class="hero-scene">
+    <div class="hero-media hero-media-abstract" data-depth="0.4"><div class="aurora"></div></div>
+    <div class="cloud cloud-1" data-depth="1.2"></div>
+    <div class="cloud cloud-2" data-depth="0.9"></div>
+    <canvas class="hero-dust" aria-hidden="true"></canvas>
+  </div>
+  <div class="container golden-hero-grid hero-content">
+    <div>
+      <nav class="breadcrumb" aria-label="{{ ui.breadcrumb_label }}" data-hero-fade>
+        <ol><li><a href="{{ 'home' | localUrl(L) }}">{{ ui.nav.home }}</a></li><li aria-current="page">{{ ui.nav.golden }}</li></ol>
+      </nav>
+      <p class="eyebrow" data-hero-fade>{{ d.hero.kicker }}</p>
+      <h1 class="page-title"><span class="hero-line-wrap"><span class="hero-line">{{ d.hero.title }}</span></span></h1>
+      <p class="lead" data-hero-fade>{{ d.hero.text }}</p>
+    </div>
+    <div class="golden-hero-card" data-hero-fade>{{ m.residenceCard(spot, site) }}</div>
+  </div>
+</section>
+
+<section class="section promise" aria-labelledby="opp-title">
+  <div class="container narrow">
+    <h2 class="eyebrow" id="opp-title" data-reveal>{{ d.opportunity.title }}</h2>
+    <p class="statement statement-sm" data-split>{{ d.opportunity.text }}</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="opt-title">
+  <div class="container">
+    {{ m.sectionHead("", d.options.title, d.options.text, "opt-title") }}
+    <ol class="options">
+      {%- for o in d.options.items %}
+      <li class="option" data-tilt="5" data-reveal="{{ loop.index0 }}">
+        <span class="option-n" aria-hidden="true">{{ loop.index | pad2(L) }}</span>
+        <p class="option-amount"><bdi>{{ o.amount }}</bdi></p>
+        <h3 class="display-sm">{{ o.title }}</h3>
+        <p>{{ o.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ben-title">
+  <div class="container">
+    {{ m.sectionHead("", d.benefits.title, "", "ben-title") }}
+    <ul class="pillars">
+      {%- for b in d.benefits.items %}
+      <li class="pillar" data-reveal="{{ loop.index0 }}">
+        <span class="pillar-n" aria-hidden="true">✦</span>
+        <h3 class="display-sm">{{ b.title }}</h3>
+        <p>{{ b.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section split split-video" aria-labelledby="quiz-title">
+  <div class="container split-grid">
+    <div class="split-copy">
+      <h2 class="display-md" id="quiz-title" data-reveal>{{ d.quiz.title }}</h2>
+      <ul class="facts">
+        {%- for q in d.quiz.items %}
+        <li data-reveal="{{ loop.index }}"><span class="fact-q" aria-hidden="true">{% if lang.dir == "rtl" %}؟{% else %}?{% endif %}</span><p>{{ q.text }}</p></li>
+        {%- endfor %}
+      </ul>
+      <p class="body-lg gold-text" data-reveal="4">{{ d.quiz.closing }}</p>
+    </div>
+    <div class="split-media-video">{{ m.videoCard(d.quiz.video, d.quiz.poster, ui) }}</div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="faq-title">
+  <div class="container narrow">
+    {{ m.sectionHead("", d.faq.title, "", "faq-title") }}
+    <div class="faq">
+      {%- for f in d.faq.items %}
+      <details class="faq-item" data-reveal="{{ loop.index0 }}"{% if loop.first %} open{% endif %}>
+        <summary><h3>{{ f.q }}</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>{{ f.a }}</p></div>
+      </details>
+      {%- endfor %}
+    </div>
+    <p class="legal-note" data-reveal><strong>{{ d.updated }}</strong> — {{ ui.disclaimer }}</p>
+  </div>
+</section>
+
+{{ m.ctaBand(ui, L, site) }}

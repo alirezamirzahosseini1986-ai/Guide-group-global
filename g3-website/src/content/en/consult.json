@@ -1,0 +1,42 @@
+{
+  "seo": {
+    "title": "Book a Hungary Immigration Consultation | Guide Group Global",
+    "description": "Request an in-person or phone consultation at our Tehran or Budapest office about study, business and investment immigration, or the Hungary Golden Visa."
+  },
+  "hero": {
+    "kicker": "Consultation",
+    "title": "The first step toward a secure, successful future",
+    "text": "We are here to guide you through immigration, investment and study in Hungary with precise, specialist advice. Once you submit your request, our team reviews your needs and goals and prepares a personalised plan for you.",
+    "image": "https://static.wixstatic.com/media/nsplsh_4d4950ae1f2a45adb77293846e1770e7~mv2.jpg",
+    "image_alt": "A view of a European city"
+  },
+  "form": {
+    "title": "Consultation request form",
+    "required_note": "Fields marked with an asterisk are required.",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone number (with country code)",
+    "purpose": "Purpose of consultation",
+    "purposes": [
+      "Study immigration",
+      "Immigration through business and investment",
+      "Golden Visa and long-term residence",
+      "Other"
+    ],
+    "location": "Current country and city of residence",
+    "children": "Children's ages (if applying with family)",
+    "notes": "Additional details",
+    "office": "Consultation type",
+    "offices": [
+      "Tehran office, in person (free)",
+      "Tehran office, by phone (500,000 Toman)",
+      "Budapest office, in person (€100)",
+      "Budapest office, by phone (€100)"
+    ],
+    "consent": "I agree to the processing of my data to answer this request, as described in the privacy policy.",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "success": "Your request has been received. Our advisors will contact you shortly.",
+    "error": "Sending failed. Please try again or contact us on WhatsApp."
+  }
+}

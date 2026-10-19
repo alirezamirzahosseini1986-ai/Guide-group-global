@@ -1,0 +1,102 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+pageKey: consult
+layout: base.njk
+permalink: "/{{ lang.code }}/consultation/"
+---
+{%- import "macros.njk" as m -%}
+{%- set L = lang.code -%}
+{%- set d = i18n[L].consult -%}
+{%- set ui = i18n[L].ui -%}
+{%- set f = d.form -%}
+
+{{ m.pageHero(d.hero, ui, L, "consult", 1.78) }}
+
+<section class="section consult" aria-labelledby="form-title">
+  <div class="container consult-grid">
+    <form class="form" data-form method="POST" action="https://formsubmit.co/{{ site.form.email }}"
+      data-ajax="https://formsubmit.co/ajax/{{ site.form.email }}"
+      data-sending="{{ f.sending }}" data-success="{{ f.success }}" data-error="{{ f.error }}" accept-charset="UTF-8">
+      <h2 class="display-md" id="form-title">{{ f.title }}</h2>
+      <p class="muted">{{ f.required_note }}</p>
+
+      <input type="hidden" name="_subject" value="Consultation request ({{ L | upper }}) — {{ site.brand.name }}">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="{{ 'consult' | localUrl(L) | abs }}">
+      <input type="hidden" name="language" value="{{ lang.name }}">
+      <div class="hp" aria-hidden="true"><label>Leave empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-name">{{ f.name }} <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-email">{{ f.email }} <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email" dir="ltr" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-phone">{{ f.phone }} <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" dir="ltr" inputmode="tel" required pattern="[+0-9()\s\-]{7,}">
+        </div>
+        <div class="field">
+          <label for="f-loc">{{ f.location }} <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-loc" name="location" type="text" autocomplete="address-level2" required>
+        </div>
+      </div>
+
+      <fieldset class="choices">
+        <legend>{{ f.purpose }} <span class="req" aria-hidden="true">*</span></legend>
+        {%- for p in f.purposes %}
+        <label class="choice"><input type="radio" name="purpose" value="{{ p }}" required><span>{{ p }}</span></label>
+        {%- endfor %}
+      </fieldset>
+
+      <div class="field">
+        <label for="f-kids">{{ f.children }}</label>
+        <input id="f-kids" name="children_ages" type="text">
+      </div>
+      <div class="field">
+        <label for="f-notes">{{ f.notes }}</label>
+        <textarea id="f-notes" name="notes" rows="4"></textarea>
+      </div>
+
+      <fieldset class="choices">
+        <legend>{{ f.office }} <span class="req" aria-hidden="true">*</span></legend>
+        {%- for o in f.offices %}
+        <label class="choice"><input type="radio" name="consultation_type" value="{{ o }}" required><span>{{ o }}</span></label>
+        {%- endfor %}
+      </fieldset>
+
+      <label class="consent-check"><input type="checkbox" name="consent" value="yes" required> <span>{{ f.consent }} <a href="{{ 'privacy' | localUrl(L) }}">{{ ui.nav.privacy }}</a></span></label>
+
+      <button class="btn btn-gold btn-lg" type="submit">{{ f.submit }}</button>
+      <p class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
+    </form>
+
+    <aside class="contact-cards" aria-label="{{ ui.footer.contact_title }}">
+      <a class="contact-card" href="https://wa.me/{{ site.contact.whatsapp }}?text={{ ui.whatsapp_message | urlencode }}" rel="noopener" target="_blank" data-tilt="6">
+        <span class="eyebrow">{{ ui.whatsapp }}</span><strong><bdi dir="ltr">{{ site.contact.phone_1_display | nbsp }}</bdi></strong>
+      </a>
+      <a class="contact-card" href="tel:{{ site.contact.phone_2 }}" data-tilt="6">
+        <span class="eyebrow">{{ ui.call | nbsp }}</span><strong><bdi dir="ltr">{{ site.contact.phone_2_display | nbsp }}</bdi></strong>
+      </a>
+      <a class="contact-card" href="mailto:{{ site.contact.email }}" data-tilt="6">
+        <span class="eyebrow">{{ ui.email }}</span><strong><bdi dir="ltr">{{ site.contact.email }}</bdi></strong>
+      </a>
+      <a class="contact-card" href="{{ site.contact.map_url }}" rel="noopener" target="_blank" data-tilt="6">
+        <span class="eyebrow">{{ ui.address }}</span><strong>{% include "partials/address.njk" %}</strong>
+        <span class="link-arrow">{{ ui.open_map }} <span class="arrow" aria-hidden="true">→</span></span>
+      </a>
+      <div class="contact-card contact-time">
+        <span class="eyebrow">{{ ui.local_time }}</span><strong><time data-clock dir="ltr">--:--</time></strong>
+      </div>
+    </aside>
+  </div>
+</section>

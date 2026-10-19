@@ -1,0 +1,52 @@
+{
+  "seo": {
+    "title": "Immigrate to Hungary via Business & Investment | G3",
+    "description": "Hungarian residency by registering a company, buying a business or property. Expert case review and full support from our Budapest team."
+  },
+  "hero": {
+    "kicker": "Immigration",
+    "title": "Immigration to Hungary: a safe road to a brighter future",
+    "text": "If you are looking for new opportunities to live and do business in Europe, Hungary, one of the most dynamic countries in the European Union, may be your best choice. With years of experience and a specialist team, we open up the different immigration routes for you and stand beside you at every stage.",
+    "image": "https://static.wixstatic.com/media/nsplsh_33315166596f316833326f~mv2_d_5304_7952_s_4_2.jpg",
+    "image_alt": "Historic architecture in a European city centre"
+  },
+  "business": {
+    "kicker": "Route 01",
+    "title": "Residency by starting a business or buying an active one",
+    "text": "One of the most effective ways to obtain residency in Hungary is to register and launch a company, or to buy an active business. You invest in a thriving economy while benefiting from legal support to grow your business. Starting a new venture or acquiring a ready-made one grows your capital and also opens the way to Hungarian residency."
+  },
+  "realestate": {
+    "kicker": "Route 02",
+    "title": "Real estate investment: a sure step toward the Golden Visa",
+    "text_1": "The best immigration route is the fastest one that is also the safest from an investment point of view. For people seeking a secure, stable route, buying a residential property worth at least €500,000 under the Guest Investor Residence programme (Golden Visa) is an attractive option: capital that holds its value and brings a 10-year residence permit and access to the Schengen area.",
+    "text_2": "Investment conditions can differ for each person or family, so a careful professional review of your case before any step is the most important part of our service. Read our Golden Visa page for the full conditions, and book a consultation to speak with our advisors.",
+    "cta": "Golden Visa conditions",
+    "video": "https://video.wixstatic.com/video/71e9a2_73cc09b6a9ae41b4b67e26be12c7389c/720p/mp4/file.mp4",
+    "poster": "https://static.wixstatic.com/media/71e9a2_73cc09b6a9ae41b4b67e26be12c7389cf002.jpg"
+  },
+  "steps": {
+    "title": "How we work together",
+    "items": [
+      {
+        "title": "Case review",
+        "text": "An advisor assesses your financial and family situation and your goals."
+      },
+      {
+        "title": "Choosing the route",
+        "text": "We recommend the safest residency route for your capital and plans."
+      },
+      {
+        "title": "Execution and documents",
+        "text": "Company registration, business or property purchase, and full document preparation."
+      },
+      {
+        "title": "Residence permit",
+        "text": "We follow your application with the immigration authority until your card is issued."
+      }
+    ]
+  },
+  "future": {
+    "title": "A secure future in Hungary",
+    "text": "Our team is ready to guide you with specialist methods and deep experience, from the first review to setting up or buying a business and investing. With its strategic position in Europe and strong economic potential, Hungary is a safe route for immigration and a new life. Choose us, and all that remains is to take the step toward a brighter future."
+  }
+}

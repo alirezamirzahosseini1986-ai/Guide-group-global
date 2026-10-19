@@ -1,0 +1,58 @@
+{
+  "lang_name": "English",
+  "skip_link": "Skip to main content",
+  "nav_label": "Main navigation",
+  "nav": {
+    "home": "Home",
+    "immigration": "Immigration",
+    "study": "Study",
+    "golden": "Golden Visa",
+    "about": "About us",
+    "consult": "Book a consultation",
+    "privacy": "Privacy & legal notice"
+  },
+  "menu_open": "Open menu",
+  "menu_close": "Close menu",
+  "lang_switch": "Choose language",
+  "cta_consult": "Book a consultation",
+  "scroll_hint": "Scroll to begin the journey",
+  "read_more": "Learn more",
+  "breadcrumb_label": "Breadcrumb",
+  "local_time": "Local time in Budapest",
+  "call": "Call us",
+  "whatsapp": "Chat on WhatsApp",
+  "whatsapp_message": "Hello, I would like to book a consultation.",
+  "email": "Email",
+  "address": "Budapest office",
+  "address_line": "Budapest, Hungary",
+  "open_map": "View on map",
+  "video_play": "Play video",
+  "disclaimer": "The information on this website is general and does not replace individual legal advice. Hungarian immigration rules can change; please confirm current conditions with our advisors before taking any step.",
+  "cta_band": {
+    "kicker": "Personal consultation",
+    "title": "Tell us where you start. We handle the rest of the way.",
+    "text": "Share your situation with us. One of our advisors reviews your case personally and recommends the best and safest route for you.",
+    "button": "Request a consultation"
+  },
+  "footer": {
+    "tagline": "Your trusted partner for immigration, study and investment in Hungary, since 2010.",
+    "contact_title": "Contact",
+    "pages_title": "Pages",
+    "social_title": "Follow us",
+    "company_title": "Company details",
+    "company_intro": "A brand of",
+    "reg_label": "Company reg. no.",
+    "tax_label": "Tax no.",
+    "office_label": "Registered office",
+    "rights": "All rights reserved.",
+    "back_top": "Back to top"
+  },
+  "not_found": {
+    "title": "This page could not be found",
+    "text": "The address may be mistyped, or the page may have moved.",
+    "button": "Back to home"
+  },
+  "consent_text": "With your consent, we use Google Analytics to improve this website.",
+  "consent_yes": "Accept",
+  "consent_no": "No, thanks"
+}

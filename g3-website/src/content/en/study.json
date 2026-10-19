@@ -1,0 +1,65 @@
+{
+  "seo": {
+    "title": "Study in Hungary, No Language Certificate | Guide Group Global",
+    "description": "Study in Hungary from grade 9 to university with no language certificate. Bilingual diploma, A-Levels and admission to Semmelweis, BME, ELTE."
+  },
+  "hero": {
+    "kicker": "Study",
+    "title": "Study in Hungary: a sure bridge to an international future",
+    "text": "With an advanced education system and outstanding facilities, Hungary has become a popular destination for school and university students seeking high-quality education and global growth opportunities.",
+    "image": "https://static.wixstatic.com/media/nsplsh_524fd77ae2cc4de79f102e5e2323bd27~mv2.jpg",
+    "image_alt": "An urban and academic setting in Europe"
+  },
+  "highlights": [
+    {
+      "title": "No language certificate",
+      "text": "Study from grade 9 to university with no language certificate required and no foreign-language exam stress."
+    },
+    {
+      "title": "A-Level diploma",
+      "text": "Students can earn an A-Level diploma at the same time as their school studies."
+    },
+    {
+      "title": "Bilingual diploma",
+      "text": "A bilingual diploma recognised in Europe, the US and Iran."
+    }
+  ],
+  "diploma": {
+    "kicker": "A unique advantage",
+    "title": "Bilingual diploma and international recognition",
+    "text": "One unique advantage of studying in Hungary is the bilingual diploma recognised in Europe, the US and Iran. Alongside Hungarian as their first language, students choose a second language from English, German or Spanish and reach a high level of fluency in both. This diploma raises the chance of admission to leading international universities and, because it aligns with EU education standards, strengthens students' career prospects on the global job market.",
+    "video": "https://video.wixstatic.com/video/71e9a2_53e271c6be1d4601aae29ff8ffc4afb2/720p/mp4/file.mp4",
+    "poster": "https://static.wixstatic.com/media/71e9a2_53e271c6be1d4601aae29ff8ffc4afb2f002.jpg"
+  },
+  "future": {
+    "title": "A bright future through study in Hungary",
+    "text_1": "Choosing Hungary as a study destination begins a path that leads to progress and success. With high-quality education and a respected bilingual diploma, students can reach leading universities worldwide and pursue career opportunities in Europe, the US and other advanced economies.",
+    "text_2": "We are here to accompany you through every stage of this exciting journey and to help make your dream of studying in Europe come true."
+  },
+  "universities": {
+    "title": "Hungary's leading universities",
+    "text": "Hungarian universities hold strong positions in global rankings, and several are recognised among respected universities worldwide for their teaching quality, research facilities and distinguished faculty.",
+    "items": [
+      {
+        "abbr": "BME",
+        "name": "Budapest University of Technology and Economics",
+        "text": "With remarkable achievements in engineering and technology, BME has trained graduates who have excelled at major global companies and international projects."
+      },
+      {
+        "abbr": "Semmelweis",
+        "name": "Semmelweis University",
+        "text": "One of the finest medical universities, with leading research and partnerships with world-class institutions, holding a special place among medical schools worldwide."
+      },
+      {
+        "abbr": "Corvinus",
+        "name": "Corvinus University of Budapest",
+        "text": "A leading centre for economics, management and social sciences in Central Europe, training specialists for global success through international programmes."
+      },
+      {
+        "abbr": "ELTE",
+        "name": "Eötvös Loránd University",
+        "text": "One of the oldest and most respected universities in Central Europe, known for the humanities and natural sciences and home to outstanding teaching and research."
+      }
+    ]
+  }
+}

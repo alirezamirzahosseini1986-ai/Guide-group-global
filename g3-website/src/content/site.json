@@ -1,0 +1,47 @@
+{
+  "brand": {
+    "name": "Guide Group Global",
+    "short": "G3",
+    "legacy_name": "Persian Guide Group",
+    "logo": "",
+    "logo_alt": "Guide Group Global"
+  },
+  "site_url": "https://persianguidegroup.co",
+  "default_lang": "fa",
+  "founded": "2010",
+  "contact": {
+    "address_street": "Lechner Ödön fasor 2",
+    "address_postcode": "1095",
+    "address_city": "Budapest",
+    "address_country": "HU",
+    "phone_1": "+36705738870",
+    "phone_1_display": "+36 70 573 88 70",
+    "phone_2": "+36203875947",
+    "phone_2_display": "+36 20 387 59 47",
+    "email": "info@persianguidegroup.co",
+    "whatsapp": "36705738870",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=Lechner+%C3%96d%C3%B6n+fasor+2%2C+1095+Budapest"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/persianguidegroup/",
+    "facebook": "https://www.facebook.com/persianguidegroup",
+    "telegram": "",
+    "youtube": "",
+    "linkedin": ""
+  },
+  "company": {
+    "legal_name": "Golden Activity Kft.",
+    "registered_office": "1095 Budapest, Haller utca 23-25 A/215",
+    "registration_number": "01-09-196137",
+    "tax_number": "25037915-2-43"
+  },
+  "form": {
+    "email": "info@persianguidegroup.co"
+  },
+  "seo": {
+    "og_image": "https://static.wixstatic.com/media/nsplsh_716e55673172646e556c6b~mv2_d_4928_3264_s_4_2.jpg",
+    "google_verification": "",
+    "bing_verification": "",
+    "ga4_id": ""
+  }
+}

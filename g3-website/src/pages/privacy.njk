@@ -1,0 +1,36 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+pageKey: privacy
+layout: base.njk
+permalink: "/{{ lang.code }}/privacy/"
+---
+{%- set L = lang.code -%}
+{%- set d = i18n[L].privacy -%}
+{%- set ui = i18n[L].ui -%}
+
+<section class="section legal-page">
+  <div class="container narrow">
+    <nav class="breadcrumb" aria-label="{{ ui.breadcrumb_label }}">
+      <ol><li><a href="{{ 'home' | localUrl(L) }}">{{ ui.nav.home }}</a></li><li aria-current="page">{{ ui.nav.privacy }}</li></ol>
+    </nav>
+    <h1 class="display-lg">{{ d.title }}</h1>
+    {%- for s in d.sections %}
+    <h2 class="display-sm">{{ s.title }}</h2>
+    <p class="body-lg">{{ s.text }}</p>
+    {%- endfor %}
+    <div class="legal-box">
+      <h2 class="display-sm">{{ ui.footer.company_title }}</h2>
+      <dl>
+        <div><dt>{{ ui.footer.company_intro }}</dt><dd><bdi>{{ site.company.legal_name }}</bdi></dd></div>
+        <div><dt>{{ ui.footer.office_label }}</dt><dd><bdi dir="ltr">{{ site.company.registered_office }}</bdi></dd></div>
+        <div><dt>{{ ui.footer.reg_label }}</dt><dd><bdi dir="ltr">{{ site.company.registration_number }}</bdi></dd></div>
+        <div><dt>{{ ui.footer.tax_label }}</dt><dd><bdi dir="ltr">{{ site.company.tax_number }}</bdi></dd></div>
+        <div><dt>{{ ui.email }}</dt><dd><a href="mailto:{{ site.contact.email }}"><bdi dir="ltr">{{ site.contact.email }}</bdi></a></dd></div>
+        <div><dt>{{ ui.call }}</dt><dd><a href="tel:{{ site.contact.phone_1 }}"><bdi dir="ltr">{{ site.contact.phone_1_display | nbsp }}</bdi></a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>

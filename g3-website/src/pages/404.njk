@@ -1,0 +1,30 @@
+---
+permalink: "/404.html"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — {{ site.brand.name }}</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#070b14">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/fonts/all.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="chooser">
+  <main class="chooser-main">
+    <p class="nf-code" dir="ltr">404</p>
+    <ul class="chooser-list">
+      {%- for l in langs %}
+      <li><a href="{{ 'home' | localUrl(l.code) }}" hreflang="{{ l.code }}" lang="{{ l.code }}" dir="{{ l.dir }}" class="chooser-link chooser-{{ l.code }}">
+        <span class="chooser-name">{{ i18n[l.code].ui.not_found.title }}</span>
+        <span class="chooser-sub">{{ i18n[l.code].ui.not_found.button }}</span>
+      </a></li>
+      {%- endfor %}
+    </ul>
+  </main>
+</body>
+</html>
